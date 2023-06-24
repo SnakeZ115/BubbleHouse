@@ -26,31 +26,43 @@ public class VentanaLogin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jTextField2 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jTextArea1.setText("PONGANSE A CHAMBEAR");
-        jScrollPane1.setViewportView(jTextArea1);
+        jButton2.setText("Cajero");
+
+        jButton3.setText("Administrador");
+
+        jTextField2.setText("LOGO");
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(343, Short.MAX_VALUE)
-                .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(321, 321, 321))
+            .add(layout.createSequentialGroup()
+                .add(216, 216, 216)
+                .add(jButton3)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 81, Short.MAX_VALUE)
+                .add(jButton2)
+                .add(239, 239, 239))
+            .add(layout.createSequentialGroup()
+                .add(295, 295, 295)
+                .add(jTextField2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 94, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(layout.createSequentialGroup()
-                .add(68, 68, 68)
-                .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(243, Short.MAX_VALUE))
+                .addContainerGap(136, Short.MAX_VALUE)
+                .add(jTextField2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 54, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(126, 126, 126)
+                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jButton2)
+                    .add(jButton3))
+                .add(61, 61, 61))
         );
 
         pack();
@@ -91,7 +103,8 @@ public class VentanaLogin extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    public static javax.swing.JButton jButton2;
+    public static javax.swing.JButton jButton3;
+    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }
