@@ -26,15 +26,15 @@ public class VentanaLogin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        Cajero = new javax.swing.JButton();
+        Administrador = new javax.swing.JButton();
         jTextField2 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton2.setText("Cajero");
+        Cajero.setText("Cajero");
 
-        jButton3.setText("Administrador");
+        Administrador.setText("Administrador");
 
         jTextField2.setText("LOGO");
 
@@ -44,9 +44,9 @@ public class VentanaLogin extends javax.swing.JFrame {
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(layout.createSequentialGroup()
                 .add(216, 216, 216)
-                .add(jButton3)
+                .add(Administrador)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 81, Short.MAX_VALUE)
-                .add(jButton2)
+                .add(Cajero)
                 .add(239, 239, 239))
             .add(layout.createSequentialGroup()
                 .add(296, 296, 296)
@@ -60,8 +60,8 @@ public class VentanaLogin extends javax.swing.JFrame {
                 .add(jTextField2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 54, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .add(129, 129, 129)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jButton2)
-                    .add(jButton3))
+                    .add(Cajero)
+                    .add(Administrador))
                 .add(61, 61, 61))
         );
 
@@ -103,8 +103,8 @@ public class VentanaLogin extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public static javax.swing.JButton jButton2;
-    public static javax.swing.JButton jButton3;
+    public static javax.swing.JButton Administrador;
+    public static javax.swing.JButton Cajero;
     private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }
