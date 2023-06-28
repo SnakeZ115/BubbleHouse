@@ -34,18 +34,23 @@ public class ventanaIngrediente extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        IngredienteNombre = new javax.swing.JTextField();
-        IngredienteLote = new javax.swing.JTextField();
-        IngredienteCantidad = new javax.swing.JTextField();
-        IngredienteUnidad = new javax.swing.JTextField();
-        IngredienteCaducidad = new javax.swing.JTextField();
-        IngredienteMarca = new javax.swing.JTextField();
-        IngredienteAgregar = new javax.swing.JButton();
-        IngredienteModificar = new javax.swing.JButton();
-        IngredienteEliminar = new javax.swing.JButton();
-        IngredeinteGuardar = new javax.swing.JButton();
+        TxtIngredienteNombre = new javax.swing.JTextField();
+        TxtIngredienteLote = new javax.swing.JTextField();
+        TxtIngredienteCantidad = new javax.swing.JTextField();
+        TxtIngredienteUnidad = new javax.swing.JTextField();
+        TxtIngredienteCaducidad = new javax.swing.JTextField();
+        TxtIngredienteMarca = new javax.swing.JTextField();
+        BotonIngredienteAgregar = new javax.swing.JButton();
+        BotonIngredienteModificar = new javax.swing.JButton();
+        BotonIngredienteEliminar = new javax.swing.JButton();
+        BotonIngredeinteGuardar = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        VentanaIngrediente = new javax.swing.JTable();
+        TxtIngredienteBuscar = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jLabel1.setFont(new java.awt.Font("Microsoft Tai Le", 0, 12)); // NOI18N
         jLabel1.setText("Nombre");
@@ -69,28 +74,40 @@ public class ventanaIngrediente extends javax.swing.JFrame {
 
         jLabel8.setText("Queda pendienteeeeee");
 
-        IngredienteCantidad.addActionListener(new java.awt.event.ActionListener() {
+        TxtIngredienteCantidad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                IngredienteCantidadActionPerformed(evt);
+                TxtIngredienteCantidadActionPerformed(evt);
             }
         });
 
-        IngredienteAgregar.setText("Agregar");
+        BotonIngredienteAgregar.setText("Agregar");
 
-        IngredienteModificar.setText("Modificar");
+        BotonIngredienteModificar.setText("Modificar");
 
-        IngredienteEliminar.setText("Eliminar");
+        BotonIngredienteEliminar.setText("Eliminar");
 
-        IngredeinteGuardar.setText("Guardar");
+        BotonIngredeinteGuardar.setText("Guardar");
+
+        VentanaIngrediente.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(VentanaIngrediente);
+
+        jLabel9.setFont(new java.awt.Font("Microsoft Tai Le", 0, 12)); // NOI18N
+        jLabel9.setText("Buscar:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel8)
-                .addGap(280, 280, 280))
             .addGroup(layout.createSequentialGroup()
                 .addGap(42, 42, 42)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -102,27 +119,39 @@ public class ventanaIngrediente extends javax.swing.JFrame {
                         .addComponent(jLabel2)
                         .addComponent(jLabel4))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(IngredienteAgregar)
+                        .addComponent(BotonIngredienteAgregar)
                         .addGap(19, 19, 19)))
                 .addGap(41, 41, 41)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel3)
-                            .addComponent(IngredienteNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
-                            .addComponent(IngredienteMarca)
-                            .addComponent(IngredienteCaducidad)
-                            .addComponent(IngredienteCantidad)
-                            .addComponent(IngredienteUnidad)
-                            .addComponent(IngredienteLote))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(TxtIngredienteNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+                            .addComponent(TxtIngredienteMarca)
+                            .addComponent(TxtIngredienteCaducidad)
+                            .addComponent(TxtIngredienteCantidad)
+                            .addComponent(TxtIngredienteUnidad)
+                            .addComponent(TxtIngredienteLote))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(IngredienteModificar)
+                        .addComponent(BotonIngredienteModificar)
                         .addGap(73, 73, 73)
-                        .addComponent(IngredienteEliminar)
+                        .addComponent(BotonIngredienteEliminar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 178, Short.MAX_VALUE)
-                        .addComponent(IngredeinteGuardar)
-                        .addGap(61, 61, 61))))
+                        .addComponent(BotonIngredeinteGuardar)))
+                .addGap(61, 61, 61))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel8)
+                        .addGap(280, 280, 280))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(TxtIngredienteBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(152, 152, 152))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -132,44 +161,53 @@ public class ventanaIngrediente extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(IngredienteNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TxtIngredienteNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(IngredienteMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
+                    .addComponent(TxtIngredienteMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(1, 1, 1)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(IngredienteCaducidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(IngredienteCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(13, 13, 13)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(IngredienteUnidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(IngredienteLote, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(IngredienteAgregar)
-                    .addComponent(IngredienteModificar)
-                    .addComponent(IngredienteEliminar)
-                    .addComponent(IngredeinteGuardar))
-                .addGap(25, 25, 25))
+                    .addComponent(jLabel9)
+                    .addComponent(TxtIngredienteBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4)
+                            .addComponent(TxtIngredienteCaducidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(24, 24, 24)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(TxtIngredienteCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(13, 13, 13)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(15, 15, 15)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel6)
+                            .addComponent(TxtIngredienteUnidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(25, 25, 25)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel7)
+                            .addComponent(TxtIngredienteLote, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(BotonIngredienteAgregar)
+                            .addComponent(BotonIngredienteModificar)
+                            .addComponent(BotonIngredienteEliminar)
+                            .addComponent(BotonIngredeinteGuardar))
+                        .addGap(25, 25, 25))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void IngredienteCantidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IngredienteCantidadActionPerformed
+    private void TxtIngredienteCantidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtIngredienteCantidadActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_IngredienteCantidadActionPerformed
+    }//GEN-LAST:event_TxtIngredienteCantidadActionPerformed
 
     /**
      * @param args the command line arguments
@@ -206,16 +244,18 @@ public class ventanaIngrediente extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public static javax.swing.JButton IngredeinteGuardar;
-    public static javax.swing.JButton IngredienteAgregar;
-    public static javax.swing.JTextField IngredienteCaducidad;
-    public static javax.swing.JTextField IngredienteCantidad;
-    public static javax.swing.JButton IngredienteEliminar;
-    private static javax.swing.JTextField IngredienteLote;
-    public static javax.swing.JTextField IngredienteMarca;
-    private static javax.swing.JButton IngredienteModificar;
-    public static javax.swing.JTextField IngredienteNombre;
-    public static javax.swing.JTextField IngredienteUnidad;
+    public static javax.swing.JButton BotonIngredeinteGuardar;
+    public static javax.swing.JButton BotonIngredienteAgregar;
+    public static javax.swing.JButton BotonIngredienteEliminar;
+    private static javax.swing.JButton BotonIngredienteModificar;
+    public static javax.swing.JTextField TxtIngredienteBuscar;
+    public static javax.swing.JTextField TxtIngredienteCaducidad;
+    public static javax.swing.JTextField TxtIngredienteCantidad;
+    private static javax.swing.JTextField TxtIngredienteLote;
+    public static javax.swing.JTextField TxtIngredienteMarca;
+    public static javax.swing.JTextField TxtIngredienteNombre;
+    public static javax.swing.JTextField TxtIngredienteUnidad;
+    public static javax.swing.JTable VentanaIngrediente;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -224,5 +264,7 @@ public class ventanaIngrediente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
 }

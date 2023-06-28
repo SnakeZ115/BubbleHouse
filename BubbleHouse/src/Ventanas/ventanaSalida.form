@@ -32,13 +32,13 @@
               </Group>
               <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="Leche" min="-2" max="-2" attributes="0"/>
-                  <Component id="Perlas" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="ComboboxLeche" min="-2" max="-2" attributes="0"/>
+                  <Component id="ComboBoxPerlas" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="Base" min="-2" max="-2" attributes="0"/>
-                          <Component id="Tamaño" min="-2" max="-2" attributes="0"/>
+                          <Component id="ComboboxBase" min="-2" max="-2" attributes="0"/>
+                          <Component id="ComboboxTamaño" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -46,7 +46,7 @@
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
-              <Component id="Terminado" min="-2" max="-2" attributes="0"/>
+              <Component id="BotonTerminado" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -56,33 +56,33 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="Tamaño" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="ComboboxTamaño" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="Base" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="ComboboxBase" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="Leche" min="-2" max="-2" attributes="0"/>
+                  <Component id="ComboboxLeche" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="Perlas" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="ComboBoxPerlas" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="54" max="32767" attributes="0"/>
-              <Component id="Terminado" min="-2" max="-2" attributes="0"/>
+              <Component id="BotonTerminado" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JComboBox" name="Tama&#xf1;o">
+    <Component class="javax.swing.JComboBox" name="ComboboxTama&#xf1;o">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Microsoft Tai Le" size="12" style="0"/>
@@ -99,7 +99,7 @@
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JComboBox" name="Base">
+    <Component class="javax.swing.JComboBox" name="ComboboxBase">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Microsoft Tai Le" size="12" style="0"/>
@@ -122,7 +122,7 @@
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JComboBox" name="Leche">
+    <Component class="javax.swing.JComboBox" name="ComboboxLeche">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Microsoft Tai Le" size="12" style="0"/>
@@ -139,7 +139,7 @@
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JComboBox" name="Perlas">
+    <Component class="javax.swing.JComboBox" name="ComboBoxPerlas">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="4">
@@ -154,7 +154,7 @@
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JButton" name="Terminado">
+    <Component class="javax.swing.JButton" name="BotonTerminado">
       <Properties>
         <Property name="text" type="java.lang.String" value="Terminado"/>
       </Properties>

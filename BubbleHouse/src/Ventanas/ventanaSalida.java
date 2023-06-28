@@ -26,11 +26,11 @@ public class ventanaSalida extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Tamaño = new javax.swing.JComboBox();
-        Base = new javax.swing.JComboBox();
-        Leche = new javax.swing.JComboBox();
-        Perlas = new javax.swing.JComboBox();
-        Terminado = new javax.swing.JButton();
+        ComboboxTamaño = new javax.swing.JComboBox();
+        ComboboxBase = new javax.swing.JComboBox();
+        ComboboxLeche = new javax.swing.JComboBox();
+        ComboBoxPerlas = new javax.swing.JComboBox();
+        BotonTerminado = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -38,18 +38,18 @@ public class ventanaSalida extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        Tamaño.setFont(new java.awt.Font("Microsoft Tai Le", 0, 12)); // NOI18N
-        Tamaño.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Chico", "Mediano", "Grande" }));
+        ComboboxTamaño.setFont(new java.awt.Font("Microsoft Tai Le", 0, 12)); // NOI18N
+        ComboboxTamaño.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Chico", "Mediano", "Grande" }));
 
-        Base.setFont(new java.awt.Font("Microsoft Tai Le", 0, 12)); // NOI18N
-        Base.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Coco", "Taro", "Tchai", "Blueberry", "Fresa", "Kiwi", "Matcha", "Vainilla", "Tchai" }));
+        ComboboxBase.setFont(new java.awt.Font("Microsoft Tai Le", 0, 12)); // NOI18N
+        ComboboxBase.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Coco", "Taro", "Tchai", "Blueberry", "Fresa", "Kiwi", "Matcha", "Vainilla", "Tchai" }));
 
-        Leche.setFont(new java.awt.Font("Microsoft Tai Le", 0, 12)); // NOI18N
-        Leche.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Entera", "Light", "Deslactosada" }));
+        ComboboxLeche.setFont(new java.awt.Font("Microsoft Tai Le", 0, 12)); // NOI18N
+        ComboboxLeche.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Entera", "Light", "Deslactosada" }));
 
-        Perlas.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Tapioca", "Fresa", "Kiwi", "Taro" }));
+        ComboBoxPerlas.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Tapioca", "Fresa", "Kiwi", "Taro" }));
 
-        Terminado.setText("Terminado");
+        BotonTerminado.setText("Terminado");
 
         jLabel1.setFont(new java.awt.Font("Microsoft Tai Le", 0, 12)); // NOI18N
         jLabel1.setText("Tamaño");
@@ -76,17 +76,17 @@ public class ventanaSalida extends javax.swing.JFrame {
                     .addComponent(jLabel4))
                 .addGap(69, 69, 69)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Leche, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Perlas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ComboboxLeche, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ComboBoxPerlas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(3, 3, 3)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Base, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Tamaño, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(ComboboxBase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ComboboxTamaño, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(305, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Terminado)
+                .addComponent(BotonTerminado)
                 .addGap(89, 89, 89))
         );
         layout.setVerticalGroup(
@@ -94,22 +94,22 @@ public class ventanaSalida extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(78, 78, 78)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Tamaño, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ComboboxTamaño, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
                 .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Base, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ComboboxBase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Leche, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ComboboxLeche, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Perlas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ComboBoxPerlas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
-                .addComponent(Terminado)
+                .addComponent(BotonTerminado)
                 .addGap(51, 51, 51))
         );
 
@@ -151,11 +151,11 @@ public class ventanaSalida extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public static javax.swing.JComboBox Base;
-    public static javax.swing.JComboBox Leche;
-    public static javax.swing.JComboBox Perlas;
-    public static javax.swing.JComboBox Tamaño;
-    public static javax.swing.JButton Terminado;
+    public static javax.swing.JButton BotonTerminado;
+    public static javax.swing.JComboBox ComboBoxPerlas;
+    public static javax.swing.JComboBox ComboboxBase;
+    public static javax.swing.JComboBox ComboboxLeche;
+    public static javax.swing.JComboBox ComboboxTamaño;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

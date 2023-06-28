@@ -41,18 +41,18 @@
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="ProveedoresAgregar" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="BotonProveedoresAgregar" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                              <Component id="ProvedoresModificar" min="-2" max="-2" attributes="0"/>
+                              <Component id="BotonProvedoresModificar" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="ProveedoresEliminar" min="-2" max="-2" attributes="0"/>
+                              <Component id="BotonProveedoresEliminar" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
-                              <Component id="ProveedoresCorreo" min="-2" pref="173" max="-2" attributes="0"/>
+                              <Component id="TxtProveedoresCorreo" min="-2" pref="173" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -64,8 +64,8 @@
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="ProveedoresApellidos" alignment="1" min="-2" pref="173" max="-2" attributes="0"/>
-                          <Component id="ProveedoresNombre" alignment="1" min="-2" pref="173" max="-2" attributes="0"/>
+                          <Component id="TxtProveedoresApellidos" alignment="1" min="-2" pref="173" max="-2" attributes="0"/>
+                          <Component id="TxtProveedoresNombre" alignment="1" min="-2" pref="173" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
@@ -76,16 +76,16 @@
                       </Group>
                       <EmptySpace min="39" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="ProveedoresNumero" pref="173" max="32767" attributes="0"/>
-                          <Component id="ProveedoresColonia" alignment="0" max="32767" attributes="0"/>
-                          <Component id="ProveedoresCalleNumero" alignment="0" max="32767" attributes="0"/>
+                          <Component id="TxtProveedoresNumero" pref="173" max="32767" attributes="0"/>
+                          <Component id="TxtProveedoresColonia" alignment="0" max="32767" attributes="0"/>
+                          <Component id="TxtProveedoresCalleNumero" alignment="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="ProveedoresGuardar" min="-2" max="-2" attributes="0"/>
+                      <Component id="BotonProveedoresGuardar" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
@@ -95,7 +95,7 @@
                           <Group type="102" attributes="0">
                               <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="ProveedorBuscar" min="-2" pref="80" max="-2" attributes="0"/>
+                              <Component id="TxtProveedorBuscar" min="-2" pref="80" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -111,26 +111,26 @@
               <EmptySpace min="-2" pref="116" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="ProveedoresNombre" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                  <Component id="TxtProveedoresNombre" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
                   <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="ProveedorBuscar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="TxtProveedorBuscar" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="ProveedoresApellidos" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                          <Component id="TxtProveedoresApellidos" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                          <Component id="ProveedoresCalleNumero" min="-2" max="-2" attributes="0"/>
+                          <Component id="TxtProveedoresCalleNumero" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                              <Component id="ProveedoresColonia" min="-2" max="-2" attributes="0"/>
+                              <Component id="TxtProveedoresColonia" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
@@ -140,12 +140,12 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                          <Component id="ProveedoresNumero" min="-2" pref="20" max="-2" attributes="0"/>
+                          <Component id="TxtProveedoresNumero" min="-2" pref="20" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="ProveedoresCorreo" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="TxtProveedoresCorreo" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Component id="jScrollPane1" alignment="1" min="-2" pref="179" max="-2" attributes="0"/>
@@ -153,13 +153,13 @@
               <EmptySpace pref="11" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="ProveedoresAgregar" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="ProveedoresEliminar" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="ProvedoresModificar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="BotonProveedoresAgregar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="BotonProveedoresEliminar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="BotonProvedoresModificar" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
-                      <Component id="ProveedoresGuardar" min="-2" max="-2" attributes="0"/>
+                      <Component id="BotonProveedoresGuardar" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
@@ -216,40 +216,40 @@
         <Property name="text" type="java.lang.String" value="Correo electronico"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="ProveedoresNombre">
+    <Component class="javax.swing.JTextField" name="TxtProveedoresNombre">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ProveedoresNombreActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TxtProveedoresNombreActionPerformed"/>
       </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JTextField" name="ProveedoresApellidos">
+    <Component class="javax.swing.JTextField" name="TxtProveedoresApellidos">
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JTextField" name="ProveedoresCalleNumero">
+    <Component class="javax.swing.JTextField" name="TxtProveedoresCalleNumero">
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JTextField" name="ProveedoresColonia">
+    <Component class="javax.swing.JTextField" name="TxtProveedoresColonia">
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JTextField" name="ProveedoresNumero">
+    <Component class="javax.swing.JTextField" name="TxtProveedoresNumero">
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="10"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JTextField" name="ProveedoresCorreo">
+    <Component class="javax.swing.JTextField" name="TxtProveedoresCorreo">
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JButton" name="ProveedoresAgregar">
+    <Component class="javax.swing.JButton" name="BotonProveedoresAgregar">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Microsoft Tai Le" size="12" style="0"/>
@@ -260,7 +260,7 @@
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JButton" name="ProveedoresEliminar">
+    <Component class="javax.swing.JButton" name="BotonProveedoresEliminar">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Microsoft Tai Le" size="12" style="0"/>
@@ -271,7 +271,7 @@
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JButton" name="ProvedoresModificar">
+    <Component class="javax.swing.JButton" name="BotonProvedoresModificar">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Microsoft Tai Le" size="12" style="0"/>
@@ -282,7 +282,7 @@
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JButton" name="ProveedoresGuardar">
+    <Component class="javax.swing.JButton" name="BotonProveedoresGuardar">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Microsoft Tai Le" size="12" style="0"/>
@@ -298,7 +298,7 @@
         <Property name="text" type="java.lang.String" value="Buscar:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="ProveedorBuscar">
+    <Component class="javax.swing.JTextField" name="TxtProveedorBuscar">
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
       </AuxValues>
@@ -310,7 +310,7 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JTable" name="jTable1">
+        <Component class="javax.swing.JTable" name="TablaProveedores">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
               <Table columnCount="4" rowCount="4">

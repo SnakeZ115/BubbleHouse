@@ -115,6 +115,6 @@ public class ventanaContraseniai extends javax.swing.JFrame {
     public static javax.swing.JButton jButton1;
     public static javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JPasswordField jPasswordField1;
+    public static javax.swing.JPasswordField jPasswordField1;
     // End of variables declaration//GEN-END:variables
 }
