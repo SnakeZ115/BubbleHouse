@@ -31,7 +31,7 @@ public class VentanaLogin extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         LblAdministrador = new javax.swing.JLabel();
         JblCajero = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1380, 820));
@@ -47,23 +47,23 @@ public class VentanaLogin extends javax.swing.JFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Logo.PNG"))); // NOI18N
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 170, -1, -1));
 
-        LblAdministrador.setFont(new java.awt.Font("Leelawadee", 1, 30)); // NOI18N
+        LblAdministrador.setFont(new java.awt.Font("Leelawadee", 1, 24)); // NOI18N
         LblAdministrador.setForeground(new java.awt.Color(238, 102, 71));
         LblAdministrador.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        LblAdministrador.setText("ADMINISTRADOR");
+        LblAdministrador.setText("Administrador");
         LblAdministrador.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         LblAdministrador.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanel2.add(LblAdministrador, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 270, 320, 90));
+        jPanel2.add(LblAdministrador, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 440, 250, 80));
 
-        JblCajero.setFont(new java.awt.Font("Leelawadee", 1, 30)); // NOI18N
+        JblCajero.setFont(new java.awt.Font("Leelawadee", 1, 24)); // NOI18N
         JblCajero.setForeground(new java.awt.Color(238, 102, 71));
         JblCajero.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        JblCajero.setText("CAJERO");
+        JblCajero.setText("Cajero");
         JblCajero.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(JblCajero, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 380, 330, 90));
+        jPanel2.add(JblCajero, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 330, 250, 80));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/RecuadroLogin.PNG"))); // NOI18N
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, -1, -1));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/RecuadroLogin.PNG"))); // NOI18N
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, -1, -1));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -118,8 +118,8 @@ public class VentanaLogin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel JblCajero;
     private javax.swing.JLabel LblAdministrador;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
