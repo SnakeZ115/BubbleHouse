@@ -51,7 +51,7 @@ public class VentanaLogin extends javax.swing.JFrame {
         LblAdministrador.setForeground(new java.awt.Color(238, 102, 71));
         LblAdministrador.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LblAdministrador.setText("Administrador");
-        LblAdministrador.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        LblAdministrador.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         LblAdministrador.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jPanel2.add(LblAdministrador, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 440, 250, 80));
 
@@ -59,7 +59,7 @@ public class VentanaLogin extends javax.swing.JFrame {
         JblCajero.setForeground(new java.awt.Color(238, 102, 71));
         JblCajero.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         JblCajero.setText("Cajero");
-        JblCajero.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        JblCajero.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel2.add(JblCajero, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 330, 250, 80));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/RecuadroLogin.PNG"))); // NOI18N
