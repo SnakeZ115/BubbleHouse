@@ -8,12 +8,12 @@ package Ventanas;
  *
  * @author Evelyn Ximena
  */
-public class ventanaIngrediente extends javax.swing.JFrame {
+public class ventanaLote extends javax.swing.JFrame {
 
     /**
      * Creates new form ventanaIngrediente
      */
-    public ventanaIngrediente() {
+    public ventanaLote() {
         initComponents();
     }
 
@@ -31,32 +31,24 @@ public class ventanaIngrediente extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        txtLoteIngrediente = new javax.swing.JTextField();
-        txtBuscar = new javax.swing.JTextField();
-        lblMarcaIngrediente = new javax.swing.JTextField();
-        txtCantidadIngrediente = new javax.swing.JTextField();
-        txtUnidadIngrediente = new javax.swing.JTextField();
+        txtBuscarLote = new javax.swing.JTextField();
         jPanel8 = new javax.swing.JPanel();
-        lblAgregar = new javax.swing.JLabel();
-        jPanel9 = new javax.swing.JPanel();
-        lblModificar = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
-        lblEliminar = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jLabel16 = new javax.swing.JLabel();
-        lblNombreIngrediente = new javax.swing.JTextField();
-        jPanel12 = new javax.swing.JPanel();
-        lblGuardar = new javax.swing.JLabel();
-        spinnerAñoCaducidad = new javax.swing.JSpinner();
-        spinnerDiaCaducidad = new javax.swing.JSpinner();
-        spinnerMesCaducidad = new javax.swing.JSpinner();
+        spinnerAñoCadLote = new javax.swing.JSpinner();
+        spinnerIngredienteLote = new javax.swing.JSpinner();
+        spinnerMesCadLote = new javax.swing.JSpinner();
+        spinnerDiaCadLote = new javax.swing.JSpinner();
+        spinnerExistenciaLote = new javax.swing.JSpinner();
+        jLabel10 = new javax.swing.JLabel();
+        txtNombreLote = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         lblEmpleados = new javax.swing.JLabel();
@@ -64,12 +56,11 @@ public class ventanaIngrediente extends javax.swing.JFrame {
         lblIngredientes = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         lblProovedores = new javax.swing.JLabel();
-        jPanel11 = new javax.swing.JPanel();
+        jPanel9 = new javax.swing.JPanel();
         lblLotes = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setPreferredSize(new java.awt.Dimension(1380, 820));
         setResizable(false);
 
         jLabel3.setText("Caducidad");
@@ -90,112 +81,60 @@ public class ventanaIngrediente extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(245, 245, 245));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel5.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
-        jLabel5.setText("Lote");
-        jPanel4.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, -1, -1));
-
         jLabel6.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
         jLabel6.setText("Buscar:");
         jPanel4.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 20, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
-        jLabel7.setText("Marca");
+        jLabel7.setText("Fecha de caducidad");
         jPanel4.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
-        jLabel8.setText("Caducidad");
+        jLabel8.setText("Existencia");
         jPanel4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
-        jLabel9.setText("Cantidad");
+        jLabel9.setText("Ingrediente");
         jPanel4.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, -1, -1));
 
-        jLabel10.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
-        jLabel10.setText("Unidad");
-        jPanel4.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, -1, -1));
-
-        txtLoteIngrediente.addActionListener(new java.awt.event.ActionListener() {
+        txtBuscarLote.setFont(new java.awt.Font("Leelawadee UI", 0, 14)); // NOI18N
+        txtBuscarLote.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtLoteIngredienteActionPerformed(evt);
+                txtBuscarLoteActionPerformed(evt);
             }
         });
-        jPanel4.add(txtLoteIngrediente, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 240, 190, 30));
-
-        txtBuscar.setFont(new java.awt.Font("Leelawadee UI", 0, 14)); // NOI18N
-        txtBuscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtBuscarActionPerformed(evt);
-            }
-        });
-        jPanel4.add(txtBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 20, 190, 30));
-
-        lblMarcaIngrediente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                lblMarcaIngredienteActionPerformed(evt);
-            }
-        });
-        jPanel4.add(lblMarcaIngrediente, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 80, 190, 30));
-
-        txtCantidadIngrediente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCantidadIngredienteActionPerformed(evt);
-            }
-        });
-        jPanel4.add(txtCantidadIngrediente, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 160, 190, 30));
-
-        txtUnidadIngrediente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUnidadIngredienteActionPerformed(evt);
-            }
-        });
-        jPanel4.add(txtUnidadIngrediente, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 200, 190, 30));
+        jPanel4.add(txtBuscarLote, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 20, 190, 30));
 
         jPanel8.setBackground(new java.awt.Color(245, 191, 174));
 
-        lblAgregar.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
-        lblAgregar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblAgregar.setText("Agregar");
-        lblAgregar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel11.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel11.setText("Agregar");
+        jLabel11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblAgregar, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblAgregar, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel4.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 180, -1));
-
-        jPanel9.setBackground(new java.awt.Color(245, 191, 174));
-
-        lblModificar.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
-        lblModificar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblModificar.setText("Modificar");
-        lblModificar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
-        jPanel9.setLayout(jPanel9Layout);
-        jPanel9Layout.setHorizontalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblModificar, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
-        );
-        jPanel9Layout.setVerticalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblModificar, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-        );
-
-        jPanel4.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 310, 180, -1));
+        jPanel4.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, 180, -1));
 
         jPanel10.setBackground(new java.awt.Color(245, 191, 174));
 
-        lblEliminar.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
-        lblEliminar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblEliminar.setText("Eliminar");
-        lblEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel13.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel13.setText("Salir");
+        jLabel13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
@@ -203,16 +142,16 @@ public class ventanaIngrediente extends javax.swing.JFrame {
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(lblEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(lblEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel4.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 310, -1, -1));
+        jPanel4.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 470, 180, -1));
 
         jTable1.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -229,45 +168,23 @@ public class ventanaIngrediente extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 60, 440, 390));
+        jPanel4.add(spinnerAñoCadLote, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 80, 80, 30));
+        jPanel4.add(spinnerIngredienteLote, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 160, 80, 30));
+        jPanel4.add(spinnerMesCadLote, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 80, 80, 30));
+        jPanel4.add(spinnerDiaCadLote, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, 80, 30));
+        jPanel4.add(spinnerExistenciaLote, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 120, 80, 30));
 
-        jLabel16.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
-        jLabel16.setText("Nombre");
-        jPanel4.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, -1, -1));
+        jLabel10.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
+        jLabel10.setText("Nombre del lote");
+        jPanel4.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, -1, -1));
 
-        lblNombreIngrediente.setFont(new java.awt.Font("Leelawadee UI", 0, 14)); // NOI18N
-        lblNombreIngrediente.addActionListener(new java.awt.event.ActionListener() {
+        txtNombreLote.setFont(new java.awt.Font("Leelawadee UI", 0, 14)); // NOI18N
+        txtNombreLote.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                lblNombreIngredienteActionPerformed(evt);
+                txtNombreLoteActionPerformed(evt);
             }
         });
-        jPanel4.add(lblNombreIngrediente, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 40, 190, 30));
-
-        jPanel12.setBackground(new java.awt.Color(245, 191, 174));
-
-        lblGuardar.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
-        lblGuardar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblGuardar.setText("Guardar");
-        lblGuardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
-        jPanel12.setLayout(jPanel12Layout);
-        jPanel12Layout.setHorizontalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(lblGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        jPanel12Layout.setVerticalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(lblGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
-        jPanel4.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 470, -1, -1));
-        jPanel4.add(spinnerAñoCaducidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 120, -1, 30));
-        jPanel4.add(spinnerDiaCaducidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, -1, 30));
-        jPanel4.add(spinnerMesCaducidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 120, -1, 30));
+        jPanel4.add(txtNombreLote, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 40, 260, 30));
 
         jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 1280, 530));
 
@@ -286,9 +203,9 @@ public class ventanaIngrediente extends javax.swing.JFrame {
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addComponent(lblEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lblEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -347,29 +264,29 @@ public class ventanaIngrediente extends javax.swing.JFrame {
 
         jPanel3.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 20, 220, 40));
 
-        jPanel11.setBackground(new java.awt.Color(233, 203, 193));
+        jPanel9.setBackground(new java.awt.Color(233, 203, 193));
 
         lblLotes.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
         lblLotes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblLotes.setText("Lotes");
         lblLotes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
-        jPanel11.setLayout(jPanel11Layout);
-        jPanel11Layout.setHorizontalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(lblLotes, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
-        jPanel11Layout.setVerticalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(lblLotes, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel3.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 20, 220, 40));
+        jPanel3.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 20, 220, 40));
 
         jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, -1, 80));
 
@@ -397,29 +314,13 @@ public class ventanaIngrediente extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtLoteIngredienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLoteIngredienteActionPerformed
+    private void txtBuscarLoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarLoteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtLoteIngredienteActionPerformed
+    }//GEN-LAST:event_txtBuscarLoteActionPerformed
 
-    private void txtBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarActionPerformed
+    private void txtNombreLoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreLoteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscarActionPerformed
-
-    private void lblMarcaIngredienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lblMarcaIngredienteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lblMarcaIngredienteActionPerformed
-
-    private void txtCantidadIngredienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantidadIngredienteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCantidadIngredienteActionPerformed
-
-    private void txtUnidadIngredienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUnidadIngredienteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtUnidadIngredienteActionPerformed
-
-    private void lblNombreIngredienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lblNombreIngredienteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lblNombreIngredienteActionPerformed
+    }//GEN-LAST:event_txtNombreLoteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -438,37 +339,36 @@ public class ventanaIngrediente extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ventanaIngrediente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ventanaLote.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ventanaIngrediente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ventanaLote.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ventanaIngrediente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ventanaLote.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ventanaIngrediente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ventanaLote.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ventanaIngrediente().setVisible(true);
+                new ventanaLote().setVisible(true);
             }
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -479,22 +379,16 @@ public class ventanaIngrediente extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JLabel lblAgregar;
-    private javax.swing.JLabel lblEliminar;
     private javax.swing.JLabel lblEmpleados;
-    private javax.swing.JLabel lblGuardar;
     private javax.swing.JLabel lblIngredientes;
     private javax.swing.JLabel lblLotes;
-    private javax.swing.JTextField lblMarcaIngrediente;
-    private javax.swing.JLabel lblModificar;
-    private javax.swing.JTextField lblNombreIngrediente;
     private javax.swing.JLabel lblProovedores;
-    private javax.swing.JSpinner spinnerAñoCaducidad;
-    private javax.swing.JSpinner spinnerDiaCaducidad;
-    private javax.swing.JSpinner spinnerMesCaducidad;
-    private javax.swing.JTextField txtBuscar;
-    private javax.swing.JTextField txtCantidadIngrediente;
-    private javax.swing.JTextField txtLoteIngrediente;
-    private javax.swing.JTextField txtUnidadIngrediente;
+    private javax.swing.JSpinner spinnerAñoCadLote;
+    private javax.swing.JSpinner spinnerDiaCadLote;
+    private javax.swing.JSpinner spinnerExistenciaLote;
+    private javax.swing.JSpinner spinnerIngredienteLote;
+    private javax.swing.JSpinner spinnerMesCadLote;
+    private javax.swing.JTextField txtBuscarLote;
+    private javax.swing.JTextField txtNombreLote;
     // End of variables declaration//GEN-END:variables
 }
