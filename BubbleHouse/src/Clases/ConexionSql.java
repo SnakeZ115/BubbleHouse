@@ -8,38 +8,26 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
-
 public class ConexionSql {
 
     Connection conectar = null;
+    
     String URL = "jdbc:mysql://localhost:3306/bubblehouse?characterEncoding=latin1";
-    String USER = " ";
+    String USER = "root";
+    String PSWD = "paxxword";
     String CE = "CONEXION ESTABLECIDA";
     String CD = "ERROR DE CONEXION: ";
+    
 
-    public Connection conexion() {
+    public boolean conexion(String usuario, String paxxword) {
         try {
-            JPasswordField passwordField = new JPasswordField();
             Class.forName("com.mysql.jdbc.Driver");
-            USER = JOptionPane.showInputDialog("USUARIO: ");
-            int option = JOptionPane.showConfirmDialog(null, passwordField, "Contraseña", JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
-            if (option == JOptionPane.OK_OPTION) {
-                char[] contrasenaChars = passwordField.getPassword();
-                String PSWDD = new String(contrasenaChars);
-                conectar = DriverManager.getConnection(URL, USER, PSWDD);
-                JOptionPane.showMessageDialog(null, CE);
-                Statement estado = conectar.createStatement();
-            }
+            conectar = DriverManager.getConnection(URL,usuario,paxxword );
+            JOptionPane.showMessageDialog(null, CE);
+ 
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, CD + e.getMessage());
-
+            return false;    
         }
-        return conectar;
-    }
-
-    public static void main(String[] args) throws SQLException {
-        ConexionSql bd = new ConexionSql();
-        bd.conexion();
-        
+        return true;
     }
 }

@@ -155,7 +155,7 @@ public class ventanaIngrediente extends javax.swing.JFrame {
         lblAgregar.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
         lblAgregar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblAgregar.setText("Agregar");
-        lblAgregar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblAgregar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -175,7 +175,7 @@ public class ventanaIngrediente extends javax.swing.JFrame {
         lblModificar.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
         lblModificar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblModificar.setText("Modificar");
-        lblModificar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblModificar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -195,7 +195,7 @@ public class ventanaIngrediente extends javax.swing.JFrame {
         lblEliminar.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
         lblEliminar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblEliminar.setText("Eliminar");
-        lblEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
@@ -247,7 +247,7 @@ public class ventanaIngrediente extends javax.swing.JFrame {
         lblGuardar.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
         lblGuardar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblGuardar.setText("Guardar");
-        lblGuardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblGuardar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
@@ -280,7 +280,7 @@ public class ventanaIngrediente extends javax.swing.JFrame {
         lblEmpleados.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
         lblEmpleados.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblEmpleados.setText("Empleados");
-        lblEmpleados.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblEmpleados.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -304,7 +304,7 @@ public class ventanaIngrediente extends javax.swing.JFrame {
         lblIngredientes.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
         lblIngredientes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblIngredientes.setText("Ingredientes");
-        lblIngredientes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblIngredientes.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -328,7 +328,7 @@ public class ventanaIngrediente extends javax.swing.JFrame {
         lblProovedores.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
         lblProovedores.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblProovedores.setText("Proovedores");
-        lblProovedores.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblProovedores.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -352,7 +352,7 @@ public class ventanaIngrediente extends javax.swing.JFrame {
         lblLotes.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
         lblLotes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblLotes.setText("Lotes");
-        lblLotes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblLotes.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
