@@ -66,7 +66,6 @@ public class ventanaContraseniaiC extends javax.swing.JFrame {
 
         jPanel.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 480, 150, 40));
 
-        jpass.setEditable(false);
         jpass.setBackground(new java.awt.Color(252, 140, 174));
         jpass.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jpass.setForeground(new java.awt.Color(255, 255, 255));

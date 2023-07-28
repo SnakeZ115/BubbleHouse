@@ -157,7 +157,6 @@
                 </Container>
                 <Component class="javax.swing.JPasswordField" name="jpass">
                   <Properties>
-                    <Property name="editable" type="boolean" value="false"/>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ae" green="8c" red="fc" type="rgb"/>
                     </Property>
