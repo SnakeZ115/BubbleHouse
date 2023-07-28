@@ -42,13 +42,17 @@ public class ventanaLote extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        spinnerAñoCadLote = new javax.swing.JSpinner();
+        spinnerAñoEntradaLote = new javax.swing.JSpinner();
         spinnerIngredienteLote = new javax.swing.JSpinner();
-        spinnerMesCadLote = new javax.swing.JSpinner();
-        spinnerDiaCadLote = new javax.swing.JSpinner();
+        spinnerMesEntradaLote = new javax.swing.JSpinner();
+        spinnerDiaEntradaLote = new javax.swing.JSpinner();
         spinnerExistenciaLote = new javax.swing.JSpinner();
         jLabel10 = new javax.swing.JLabel();
         txtNombreLote = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        spinnerDiaCadLote1 = new javax.swing.JSpinner();
+        spinnerMesCadLote1 = new javax.swing.JSpinner();
+        spinnerAñoCadLote1 = new javax.swing.JSpinner();
         jPanel3 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         lblEmpleados = new javax.swing.JLabel();
@@ -86,8 +90,8 @@ public class ventanaLote extends javax.swing.JFrame {
         jPanel4.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 20, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
-        jLabel7.setText("Fecha de caducidad");
-        jPanel4.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, -1, -1));
+        jLabel7.setText("Fecha de entrada");
+        jPanel4.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
         jLabel8.setText("Existencia");
@@ -127,7 +131,7 @@ public class ventanaLote extends javax.swing.JFrame {
                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel4.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, 180, -1));
+        jPanel4.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, 180, -1));
 
         jPanel10.setBackground(new java.awt.Color(245, 191, 174));
 
@@ -168,10 +172,10 @@ public class ventanaLote extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 60, 440, 390));
-        jPanel4.add(spinnerAñoCadLote, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 80, 80, 30));
+        jPanel4.add(spinnerAñoEntradaLote, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 200, 80, 30));
         jPanel4.add(spinnerIngredienteLote, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 160, 80, 30));
-        jPanel4.add(spinnerMesCadLote, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 80, 80, 30));
-        jPanel4.add(spinnerDiaCadLote, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, 80, 30));
+        jPanel4.add(spinnerMesEntradaLote, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 200, 80, 30));
+        jPanel4.add(spinnerDiaEntradaLote, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 200, 80, 30));
         jPanel4.add(spinnerExistenciaLote, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 120, 80, 30));
 
         jLabel10.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
@@ -185,6 +189,13 @@ public class ventanaLote extends javax.swing.JFrame {
             }
         });
         jPanel4.add(txtNombreLote, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 40, 260, 30));
+
+        jLabel12.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
+        jLabel12.setText("Fecha de caducidad");
+        jPanel4.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, -1, -1));
+        jPanel4.add(spinnerDiaCadLote1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, 80, 30));
+        jPanel4.add(spinnerMesCadLote1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 80, 80, 30));
+        jPanel4.add(spinnerAñoCadLote1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 80, 80, 30));
 
         jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 1280, 530));
 
@@ -360,6 +371,7 @@ public class ventanaLote extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel3;
@@ -383,11 +395,14 @@ public class ventanaLote extends javax.swing.JFrame {
     private javax.swing.JLabel lblIngredientes;
     private javax.swing.JLabel lblLotes;
     private javax.swing.JLabel lblProovedores;
-    private javax.swing.JSpinner spinnerAñoCadLote;
-    private javax.swing.JSpinner spinnerDiaCadLote;
+    private javax.swing.JSpinner spinnerAñoCadLote1;
+    private javax.swing.JSpinner spinnerAñoEntradaLote;
+    private javax.swing.JSpinner spinnerDiaCadLote1;
+    private javax.swing.JSpinner spinnerDiaEntradaLote;
     private javax.swing.JSpinner spinnerExistenciaLote;
     private javax.swing.JSpinner spinnerIngredienteLote;
-    private javax.swing.JSpinner spinnerMesCadLote;
+    private javax.swing.JSpinner spinnerMesCadLote1;
+    private javax.swing.JSpinner spinnerMesEntradaLote;
     private javax.swing.JTextField txtBuscarLote;
     private javax.swing.JTextField txtNombreLote;
     // End of variables declaration//GEN-END:variables

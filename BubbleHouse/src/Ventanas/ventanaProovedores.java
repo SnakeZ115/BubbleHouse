@@ -40,7 +40,7 @@ public class ventanaProovedores extends javax.swing.JFrame {
         txtApellidosProovedor = new javax.swing.JTextField();
         txtCalleNumProovedor = new javax.swing.JTextField();
         txtColoniaProovedor = new javax.swing.JTextField();
-        txtCorreoProveedor = new javax.swing.JTextField();
+        txtEmpresaProveedor = new javax.swing.JTextField();
         jPanel8 = new javax.swing.JPanel();
         lblAgregar = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
@@ -55,6 +55,8 @@ public class ventanaProovedores extends javax.swing.JFrame {
         lblGuardar = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         txtTelefonoProovedor = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        txtCorreoProveedor1 = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         lblEmpleados = new javax.swing.JLabel();
@@ -96,8 +98,8 @@ public class ventanaProovedores extends javax.swing.JFrame {
         jPanel4.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
-        jLabel8.setText("Correo");
-        jPanel4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, -1, -1));
+        jLabel8.setText("Empresa");
+        jPanel4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 280, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
         jLabel9.setText("Calle y número");
@@ -136,12 +138,12 @@ public class ventanaProovedores extends javax.swing.JFrame {
         });
         jPanel4.add(txtColoniaProovedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 160, 190, 30));
 
-        txtCorreoProveedor.addActionListener(new java.awt.event.ActionListener() {
+        txtEmpresaProveedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCorreoProveedorActionPerformed(evt);
+                txtEmpresaProveedorActionPerformed(evt);
             }
         });
-        jPanel4.add(txtCorreoProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 240, 190, 30));
+        jPanel4.add(txtEmpresaProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 280, 190, 30));
 
         jPanel8.setBackground(new java.awt.Color(245, 191, 174));
 
@@ -154,14 +156,18 @@ public class ventanaProovedores extends javax.swing.JFrame {
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblAgregar, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lblAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblAgregar, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lblAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel4.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 180, -1));
+        jPanel4.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, 180, -1));
 
         jPanel9.setBackground(new java.awt.Color(245, 191, 174));
 
@@ -174,14 +180,18 @@ public class ventanaProovedores extends javax.swing.JFrame {
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblModificar, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lblModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblModificar, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lblModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel4.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 310, 180, -1));
+        jPanel4.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 360, 180, -1));
 
         jPanel10.setBackground(new java.awt.Color(245, 191, 174));
 
@@ -205,7 +215,7 @@ public class ventanaProovedores extends javax.swing.JFrame {
                 .addComponent(lblEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel4.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 310, -1, -1));
+        jPanel4.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 360, -1, -1));
 
         jTable1.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -269,6 +279,17 @@ public class ventanaProovedores extends javax.swing.JFrame {
             }
         });
         jPanel4.add(txtTelefonoProovedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 200, 190, 30));
+
+        jLabel11.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
+        jLabel11.setText("Correo");
+        jPanel4.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, -1, -1));
+
+        txtCorreoProveedor1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCorreoProveedor1ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(txtCorreoProveedor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 240, 190, 30));
 
         jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 1280, 530));
 
@@ -414,9 +435,9 @@ public class ventanaProovedores extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtColoniaProovedorActionPerformed
 
-    private void txtCorreoProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCorreoProveedorActionPerformed
+    private void txtEmpresaProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmpresaProveedorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtCorreoProveedorActionPerformed
+    }//GEN-LAST:event_txtEmpresaProveedorActionPerformed
 
     private void txtNombreProovedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreProovedorActionPerformed
         // TODO add your handling code here:
@@ -425,6 +446,10 @@ public class ventanaProovedores extends javax.swing.JFrame {
     private void txtTelefonoProovedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefonoProovedorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTelefonoProovedorActionPerformed
+
+    private void txtCorreoProveedor1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCorreoProveedor1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCorreoProveedor1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -465,6 +490,7 @@ public class ventanaProovedores extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel18;
@@ -499,7 +525,8 @@ public class ventanaProovedores extends javax.swing.JFrame {
     private javax.swing.JTextField txtBuscarProovedor;
     private javax.swing.JTextField txtCalleNumProovedor;
     private javax.swing.JTextField txtColoniaProovedor;
-    private javax.swing.JTextField txtCorreoProveedor;
+    private javax.swing.JTextField txtCorreoProveedor1;
+    private javax.swing.JTextField txtEmpresaProveedor;
     private javax.swing.JTextField txtNombreProovedor;
     private javax.swing.JTextField txtTelefonoProovedor;
     // End of variables declaration//GEN-END:variables

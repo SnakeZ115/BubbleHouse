@@ -40,7 +40,7 @@ public class ventanaEmpleados extends javax.swing.JFrame {
         txtApellidosEmpleado = new javax.swing.JTextField();
         txtPuestoEmpleado = new javax.swing.JTextField();
         txtCalleNumEmpleado = new javax.swing.JTextField();
-        txtColoniaEmpleado = new javax.swing.JTextField();
+        txtTelefonoEmpleado = new javax.swing.JTextField();
         jPanel8 = new javax.swing.JPanel();
         lblAgregar = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
@@ -53,6 +53,8 @@ public class ventanaEmpleados extends javax.swing.JFrame {
         txtNombresEmpleado = new javax.swing.JTextField();
         jPanel12 = new javax.swing.JPanel();
         lblGuardar = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        txtColoniaEmpleado1 = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         lblEmpleados = new javax.swing.JLabel();
@@ -102,8 +104,8 @@ public class ventanaEmpleados extends javax.swing.JFrame {
         jPanel4.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
-        jLabel10.setText("Colonia");
-        jPanel4.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, -1, -1));
+        jLabel10.setText("Teléfono");
+        jPanel4.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, -1, -1));
 
         txtBuscarEmpleado.setFont(new java.awt.Font("Leelawadee UI", 0, 14)); // NOI18N
         txtBuscarEmpleado.addActionListener(new java.awt.event.ActionListener() {
@@ -134,12 +136,12 @@ public class ventanaEmpleados extends javax.swing.JFrame {
         });
         jPanel4.add(txtCalleNumEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 160, 190, 30));
 
-        txtColoniaEmpleado.addActionListener(new java.awt.event.ActionListener() {
+        txtTelefonoEmpleado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtColoniaEmpleadoActionPerformed(evt);
+                txtTelefonoEmpleadoActionPerformed(evt);
             }
         });
-        jPanel4.add(txtColoniaEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 200, 190, 30));
+        jPanel4.add(txtTelefonoEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 240, 190, 30));
 
         jPanel8.setBackground(new java.awt.Color(245, 191, 174));
 
@@ -256,6 +258,17 @@ public class ventanaEmpleados extends javax.swing.JFrame {
         );
 
         jPanel4.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 470, -1, -1));
+
+        jLabel11.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
+        jLabel11.setText("Colonia");
+        jPanel4.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, -1, -1));
+
+        txtColoniaEmpleado1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtColoniaEmpleado1ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(txtColoniaEmpleado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 200, 190, 30));
 
         jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 1280, 530));
 
@@ -401,13 +414,17 @@ public class ventanaEmpleados extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCalleNumEmpleadoActionPerformed
 
-    private void txtColoniaEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtColoniaEmpleadoActionPerformed
+    private void txtTelefonoEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefonoEmpleadoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtColoniaEmpleadoActionPerformed
+    }//GEN-LAST:event_txtTelefonoEmpleadoActionPerformed
 
     private void txtNombresEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombresEmpleadoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNombresEmpleadoActionPerformed
+
+    private void txtColoniaEmpleado1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtColoniaEmpleado1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtColoniaEmpleado1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -446,6 +463,7 @@ public class ventanaEmpleados extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel3;
@@ -478,8 +496,9 @@ public class ventanaEmpleados extends javax.swing.JFrame {
     private javax.swing.JTextField txtApellidosEmpleado;
     private javax.swing.JTextField txtBuscarEmpleado;
     private javax.swing.JTextField txtCalleNumEmpleado;
-    private javax.swing.JTextField txtColoniaEmpleado;
+    private javax.swing.JTextField txtColoniaEmpleado1;
     private javax.swing.JTextField txtNombresEmpleado;
     private javax.swing.JTextField txtPuestoEmpleado;
+    private javax.swing.JTextField txtTelefonoEmpleado;
     // End of variables declaration//GEN-END:variables
 }
