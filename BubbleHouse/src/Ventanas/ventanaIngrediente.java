@@ -4,6 +4,8 @@
  */
 package Ventanas;
 
+import Clases.Mostrar;
+
 /**
  *
  * @author Evelyn Ximena
@@ -15,6 +17,7 @@ public class ventanaIngrediente extends javax.swing.JFrame {
      */
     public ventanaIngrediente() {
         initComponents();
+        Mostrar.mostrarDatosIngredientes();
     }
 
     /**
@@ -49,7 +52,7 @@ public class ventanaIngrediente extends javax.swing.JFrame {
         jPanel10 = new javax.swing.JPanel();
         lblEliminar = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTableIngredientes = new javax.swing.JTable();
         jLabel16 = new javax.swing.JLabel();
         lblNombreIngrediente = new javax.swing.JTextField();
         jPanel12 = new javax.swing.JPanel();
@@ -66,6 +69,7 @@ public class ventanaIngrediente extends javax.swing.JFrame {
         lblProovedores = new javax.swing.JLabel();
         jPanel11 = new javax.swing.JPanel();
         lblLotes = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -214,19 +218,19 @@ public class ventanaIngrediente extends javax.swing.JFrame {
 
         jPanel4.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 310, -1, -1));
 
-        jTable1.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTableIngredientes.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        jTableIngredientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {},
+                {},
+                {},
+                {}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(jTableIngredientes);
 
         jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 60, 440, 390));
 
@@ -281,6 +285,11 @@ public class ventanaIngrediente extends javax.swing.JFrame {
         lblEmpleados.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblEmpleados.setText("Empleados");
         lblEmpleados.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblEmpleados.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblEmpleadosMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -329,6 +338,11 @@ public class ventanaIngrediente extends javax.swing.JFrame {
         lblProovedores.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblProovedores.setText("Proovedores");
         lblProovedores.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblProovedores.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblProovedoresMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -353,6 +367,11 @@ public class ventanaIngrediente extends javax.swing.JFrame {
         lblLotes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblLotes.setText("Lotes");
         lblLotes.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblLotes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblLotesMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
@@ -370,6 +389,7 @@ public class ventanaIngrediente extends javax.swing.JFrame {
         );
 
         jPanel3.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 20, 220, 40));
+        jPanel3.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 60, 220, 10));
 
         jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, -1, 80));
 
@@ -420,6 +440,28 @@ public class ventanaIngrediente extends javax.swing.JFrame {
     private void lblNombreIngredienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lblNombreIngredienteActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_lblNombreIngredienteActionPerformed
+
+    private void lblLotesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLotesMouseClicked
+        
+        ventanaLote newframe = new ventanaLote();
+        newframe.setVisible(true);
+        this.dispose();
+        
+    }//GEN-LAST:event_lblLotesMouseClicked
+
+    private void lblEmpleadosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblEmpleadosMouseClicked
+        ventanaEmpleados newframe = new ventanaEmpleados();
+        newframe.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_lblEmpleadosMouseClicked
+
+    private void lblProovedoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblProovedoresMouseClicked
+        
+        ventanaProovedores newframe = new ventanaProovedores();
+        newframe.setVisible(true);
+        this.dispose();
+        
+    }//GEN-LAST:event_lblProovedoresMouseClicked
 
     /**
      * @param args the command line arguments
@@ -478,7 +520,8 @@ public class ventanaIngrediente extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JSeparator jSeparator1;
+    public static javax.swing.JTable jTableIngredientes;
     private javax.swing.JLabel lblAgregar;
     private javax.swing.JLabel lblEliminar;
     private javax.swing.JLabel lblEmpleados;

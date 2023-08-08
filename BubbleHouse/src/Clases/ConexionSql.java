@@ -10,13 +10,10 @@ import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 public class ConexionSql {
 
-    Connection conectar = null;
+    public static Connection conectar = null;
     
     String URL = "jdbc:mysql://localhost:3306/bubblehouse?characterEncoding=latin1";
-    String USER = "root";
-    String PSWD = "paxxword";
     String CE = "CONEXION ESTABLECIDA";
-    String CD = "ERROR DE CONEXION: ";
     
 
     public boolean conexion(String usuario, String paxxword) {

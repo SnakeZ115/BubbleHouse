@@ -3,6 +3,7 @@
  * and open the template in the editor.
  */
 package Ventanas;
+import Clases.Mostrar;
 
 /**
  *
@@ -15,6 +16,7 @@ public class ventanaProovedores extends javax.swing.JFrame {
      */
     public ventanaProovedores() {
         initComponents();
+        Mostrar.mostrarDatosProveedores();
     }
 
     /**
@@ -48,7 +50,7 @@ public class ventanaProovedores extends javax.swing.JFrame {
         jPanel10 = new javax.swing.JPanel();
         lblEliminar = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTableProveedores = new javax.swing.JTable();
         jLabel16 = new javax.swing.JLabel();
         txtNombreProovedor = new javax.swing.JTextField();
         jPanel12 = new javax.swing.JPanel();
@@ -66,6 +68,7 @@ public class ventanaProovedores extends javax.swing.JFrame {
         lblProovedores = new javax.swing.JLabel();
         jPanel11 = new javax.swing.JPanel();
         lblLotes = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -150,7 +153,7 @@ public class ventanaProovedores extends javax.swing.JFrame {
         lblAgregar.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
         lblAgregar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblAgregar.setText("Agregar");
-        lblAgregar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblAgregar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -174,7 +177,7 @@ public class ventanaProovedores extends javax.swing.JFrame {
         lblModificar.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
         lblModificar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblModificar.setText("Modificar");
-        lblModificar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblModificar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -198,7 +201,7 @@ public class ventanaProovedores extends javax.swing.JFrame {
         lblEliminar.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
         lblEliminar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblEliminar.setText("Eliminar");
-        lblEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
@@ -217,21 +220,21 @@ public class ventanaProovedores extends javax.swing.JFrame {
 
         jPanel4.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 360, -1, -1));
 
-        jTable1.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTableProveedores.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        jTableProveedores.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {},
+                {},
+                {},
+                {}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(jTableProveedores);
 
-        jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 60, 440, 390));
+        jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 60, 480, 390));
 
         jLabel16.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
         jLabel16.setText("Nombre");
@@ -250,7 +253,7 @@ public class ventanaProovedores extends javax.swing.JFrame {
         lblGuardar.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
         lblGuardar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblGuardar.setText("Guardar");
-        lblGuardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblGuardar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
@@ -302,7 +305,12 @@ public class ventanaProovedores extends javax.swing.JFrame {
         lblEmpleados.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
         lblEmpleados.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblEmpleados.setText("Empleados");
-        lblEmpleados.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblEmpleados.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblEmpleados.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblEmpleadosMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -326,7 +334,12 @@ public class ventanaProovedores extends javax.swing.JFrame {
         lblIngredientes.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
         lblIngredientes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblIngredientes.setText("Ingredientes");
-        lblIngredientes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblIngredientes.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblIngredientes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblIngredientesMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -350,7 +363,7 @@ public class ventanaProovedores extends javax.swing.JFrame {
         lblProovedores.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
         lblProovedores.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblProovedores.setText("Proovedores");
-        lblProovedores.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblProovedores.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -374,7 +387,12 @@ public class ventanaProovedores extends javax.swing.JFrame {
         lblLotes.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
         lblLotes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblLotes.setText("Lotes");
-        lblLotes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblLotes.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblLotes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblLotesMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
@@ -392,6 +410,7 @@ public class ventanaProovedores extends javax.swing.JFrame {
         );
 
         jPanel3.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 20, 220, 40));
+        jPanel3.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 60, 220, 20));
 
         jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, -1, 80));
 
@@ -450,6 +469,30 @@ public class ventanaProovedores extends javax.swing.JFrame {
     private void txtCorreoProveedor1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCorreoProveedor1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCorreoProveedor1ActionPerformed
+
+    private void lblEmpleadosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblEmpleadosMouseClicked
+        
+        ventanaEmpleados newframe = new ventanaEmpleados();
+        newframe.setVisible(true);
+        this.dispose();
+
+    }//GEN-LAST:event_lblEmpleadosMouseClicked
+
+    private void lblIngredientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblIngredientesMouseClicked
+        
+        ventanaIngrediente newframe = new ventanaIngrediente();
+        newframe.setVisible(true);
+        this.dispose();
+
+    }//GEN-LAST:event_lblIngredientesMouseClicked
+
+    private void lblLotesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLotesMouseClicked
+        
+        ventanaLote newframe = new ventanaLote();
+        newframe.setVisible(true);
+        this.dispose();
+
+    }//GEN-LAST:event_lblLotesMouseClicked
 
     /**
      * @param args the command line arguments
@@ -512,7 +555,8 @@ public class ventanaProovedores extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JSeparator jSeparator1;
+    public static javax.swing.JTable jTableProveedores;
     private javax.swing.JLabel lblAgregar;
     private javax.swing.JLabel lblEliminar;
     private javax.swing.JLabel lblEmpleados;

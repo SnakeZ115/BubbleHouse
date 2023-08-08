@@ -170,7 +170,7 @@ public class VentanaPrueba extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    public void mostrarDatos (){
+    public static void mostrarDatos (){
         String[] titulos = {"Codigo", "Colonia"};
         String[] registros = new String[2];
         
@@ -178,9 +178,9 @@ public class VentanaPrueba extends javax.swing.JFrame {
         String SQL = "call ProbarBD";
         try{
             
-            Statement st = cc.createStatement();
+            Statement st = conexion.createStatement();
             ResultSet rs=st.executeQuery(SQL);
-            
+        
             while (rs.next()){
                 
                 registros[0]=rs.getString("idColonia");
@@ -205,7 +205,7 @@ public class VentanaPrueba extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try{
             java.sql.CallableStatement insert;
-            insert = cc.prepareCall("{call AltaColonias(?)}");
+            insert = conection.prepareCall("{call AltaColonias(?)}");
                 insert.setString(1,jTextField1.getText());
                 insert.execute();
                 JOptionPane.showMessageDialog(null,"Colonia agregada");

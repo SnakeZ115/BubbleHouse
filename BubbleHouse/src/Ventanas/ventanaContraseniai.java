@@ -129,7 +129,6 @@ public class ventanaContraseniai extends javax.swing.JFrame {
         newframe.setVisible(true);
         this.dispose();
 
-
     }//GEN-LAST:event_jLabel4MouseClicked
 
     private void jLabelEntrarAdministradorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelEntrarAdministradorMouseClicked
@@ -147,8 +146,6 @@ public class ventanaContraseniai extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(null, "Error de contrasenia");
         }
-
-
     }//GEN-LAST:event_jLabelEntrarAdministradorMouseClicked
 
     /**

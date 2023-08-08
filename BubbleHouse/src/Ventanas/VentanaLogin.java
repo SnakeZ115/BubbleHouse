@@ -8,7 +8,8 @@ public class VentanaLogin extends javax.swing.JFrame {
     public VentanaLogin() {
         initComponents();
     }
-
+    
+    
   
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -39,7 +40,7 @@ public class VentanaLogin extends javax.swing.JFrame {
         LblAdministrador.setForeground(new java.awt.Color(238, 102, 71));
         LblAdministrador.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LblAdministrador.setText("Administrador");
-        LblAdministrador.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        LblAdministrador.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         LblAdministrador.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         LblAdministrador.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -52,7 +53,7 @@ public class VentanaLogin extends javax.swing.JFrame {
         JblCajero.setForeground(new java.awt.Color(238, 102, 71));
         JblCajero.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         JblCajero.setText("Cajero");
-        JblCajero.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        JblCajero.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         JblCajero.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 JblCajeroMouseClicked(evt);
@@ -124,6 +125,7 @@ public class VentanaLogin extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new VentanaLogin().setVisible(true);
             }
