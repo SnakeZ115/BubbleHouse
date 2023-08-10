@@ -3,7 +3,8 @@
  * and open the template in the editor.
  */
 package Ventanas;
-import Clases.Mostrar;
+import Clases.*;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -58,7 +59,7 @@ public class ventanaProovedores extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         txtTelefonoProovedor = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
-        txtCorreoProveedor1 = new javax.swing.JTextField();
+        txtCorreoProveedor = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         lblEmpleados = new javax.swing.JLabel();
@@ -154,6 +155,11 @@ public class ventanaProovedores extends javax.swing.JFrame {
         lblAgregar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblAgregar.setText("Agregar");
         lblAgregar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblAgregar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblAgregarMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -287,12 +293,12 @@ public class ventanaProovedores extends javax.swing.JFrame {
         jLabel11.setText("Correo");
         jPanel4.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, -1, -1));
 
-        txtCorreoProveedor1.addActionListener(new java.awt.event.ActionListener() {
+        txtCorreoProveedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCorreoProveedor1ActionPerformed(evt);
+                txtCorreoProveedorActionPerformed(evt);
             }
         });
-        jPanel4.add(txtCorreoProveedor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 240, 190, 30));
+        jPanel4.add(txtCorreoProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 240, 190, 30));
 
         jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 1280, 530));
 
@@ -466,9 +472,9 @@ public class ventanaProovedores extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTelefonoProovedorActionPerformed
 
-    private void txtCorreoProveedor1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCorreoProveedor1ActionPerformed
+    private void txtCorreoProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCorreoProveedorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtCorreoProveedor1ActionPerformed
+    }//GEN-LAST:event_txtCorreoProveedorActionPerformed
 
     private void lblEmpleadosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblEmpleadosMouseClicked
         
@@ -493,6 +499,31 @@ public class ventanaProovedores extends javax.swing.JFrame {
         this.dispose();
 
     }//GEN-LAST:event_lblLotesMouseClicked
+
+    private void lblAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAgregarMouseClicked
+        // TODO add your handling code here:
+        String nombre = txtNombreProovedor.getText();
+        String apellidos = txtApellidosProovedor.getText();
+        String calleNumero = txtCalleNumProovedor.getText();
+        String colonia = txtColoniaProovedor.getText().toUpperCase();
+        String telefono = txtTelefonoProovedor.getText();
+        String correo = txtCorreoProveedor.getText();
+        String empresa = txtEmpresaProveedor.getText();
+        
+        if (nombre.isEmpty() || apellidos.isEmpty() || calleNumero.isEmpty() || colonia.isEmpty() || telefono.isEmpty() || correo.isEmpty() || empresa.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Por favor, complete todos los campos.", "Campos Vacíos", JOptionPane.WARNING_MESSAGE);
+        } 
+        else {
+            try {
+                Agregar agregar = new Agregar();
+                agregar.agregarProovedores(nombre, apellidos, calleNumero, colonia, telefono, correo, empresa);
+
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, e);
+            }
+        }
+        
+    }//GEN-LAST:event_lblAgregarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -565,13 +596,13 @@ public class ventanaProovedores extends javax.swing.JFrame {
     private javax.swing.JLabel lblLotes;
     private javax.swing.JLabel lblModificar;
     private javax.swing.JLabel lblProovedores;
-    private javax.swing.JTextField txtApellidosProovedor;
+    public static javax.swing.JTextField txtApellidosProovedor;
     private javax.swing.JTextField txtBuscarProovedor;
-    private javax.swing.JTextField txtCalleNumProovedor;
-    private javax.swing.JTextField txtColoniaProovedor;
-    private javax.swing.JTextField txtCorreoProveedor1;
-    private javax.swing.JTextField txtEmpresaProveedor;
-    private javax.swing.JTextField txtNombreProovedor;
-    private javax.swing.JTextField txtTelefonoProovedor;
+    public static javax.swing.JTextField txtCalleNumProovedor;
+    public static javax.swing.JTextField txtColoniaProovedor;
+    public static javax.swing.JTextField txtCorreoProveedor;
+    public static javax.swing.JTextField txtEmpresaProveedor;
+    public static javax.swing.JTextField txtNombreProovedor;
+    public static javax.swing.JTextField txtTelefonoProovedor;
     // End of variables declaration//GEN-END:variables
 }

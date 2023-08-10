@@ -37,13 +37,10 @@ public class ventanaIngrediente extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         txtLoteIngrediente = new javax.swing.JTextField();
         txtBuscar = new javax.swing.JTextField();
-        lblMarcaIngrediente = new javax.swing.JTextField();
-        txtCantidadIngrediente = new javax.swing.JTextField();
+        txtMarcaIngrediente = new javax.swing.JTextField();
         txtUnidadIngrediente = new javax.swing.JTextField();
         jPanel8 = new javax.swing.JPanel();
         lblAgregar = new javax.swing.JLabel();
@@ -54,12 +51,9 @@ public class ventanaIngrediente extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableIngredientes = new javax.swing.JTable();
         jLabel16 = new javax.swing.JLabel();
-        lblNombreIngrediente = new javax.swing.JTextField();
+        txtNombreIngrediente = new javax.swing.JTextField();
         jPanel12 = new javax.swing.JPanel();
         lblGuardar = new javax.swing.JLabel();
-        spinnerAñoCaducidad = new javax.swing.JSpinner();
-        spinnerDiaCaducidad = new javax.swing.JSpinner();
-        spinnerMesCaducidad = new javax.swing.JSpinner();
         jPanel3 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         lblEmpleados = new javax.swing.JLabel();
@@ -95,8 +89,8 @@ public class ventanaIngrediente extends javax.swing.JFrame {
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel5.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
-        jLabel5.setText("Lote");
-        jPanel4.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, -1, -1));
+        jLabel5.setText("Tipo ingrediente");
+        jPanel4.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
         jLabel6.setText("Buscar:");
@@ -104,26 +98,18 @@ public class ventanaIngrediente extends javax.swing.JFrame {
 
         jLabel7.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
         jLabel7.setText("Marca");
-        jPanel4.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, -1, -1));
-
-        jLabel8.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
-        jLabel8.setText("Caducidad");
-        jPanel4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, -1, -1));
-
-        jLabel9.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
-        jLabel9.setText("Cantidad");
-        jPanel4.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, -1, -1));
+        jPanel4.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
         jLabel10.setText("Unidad");
-        jPanel4.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, -1, -1));
+        jPanel4.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, -1, -1));
 
         txtLoteIngrediente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtLoteIngredienteActionPerformed(evt);
             }
         });
-        jPanel4.add(txtLoteIngrediente, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 240, 190, 30));
+        jPanel4.add(txtLoteIngrediente, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 190, 190, 30));
 
         txtBuscar.setFont(new java.awt.Font("Leelawadee UI", 0, 14)); // NOI18N
         txtBuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -133,26 +119,19 @@ public class ventanaIngrediente extends javax.swing.JFrame {
         });
         jPanel4.add(txtBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 20, 190, 30));
 
-        lblMarcaIngrediente.addActionListener(new java.awt.event.ActionListener() {
+        txtMarcaIngrediente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                lblMarcaIngredienteActionPerformed(evt);
+                txtMarcaIngredienteActionPerformed(evt);
             }
         });
-        jPanel4.add(lblMarcaIngrediente, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 80, 190, 30));
-
-        txtCantidadIngrediente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCantidadIngredienteActionPerformed(evt);
-            }
-        });
-        jPanel4.add(txtCantidadIngrediente, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 160, 190, 30));
+        jPanel4.add(txtMarcaIngrediente, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 90, 190, 30));
 
         txtUnidadIngrediente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtUnidadIngredienteActionPerformed(evt);
             }
         });
-        jPanel4.add(txtUnidadIngrediente, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 200, 190, 30));
+        jPanel4.add(txtUnidadIngrediente, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 140, 190, 30));
 
         jPanel8.setBackground(new java.awt.Color(245, 191, 174));
 
@@ -238,13 +217,13 @@ public class ventanaIngrediente extends javax.swing.JFrame {
         jLabel16.setText("Nombre");
         jPanel4.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, -1, -1));
 
-        lblNombreIngrediente.setFont(new java.awt.Font("Leelawadee UI", 0, 14)); // NOI18N
-        lblNombreIngrediente.addActionListener(new java.awt.event.ActionListener() {
+        txtNombreIngrediente.setFont(new java.awt.Font("Leelawadee UI", 0, 14)); // NOI18N
+        txtNombreIngrediente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                lblNombreIngredienteActionPerformed(evt);
+                txtNombreIngredienteActionPerformed(evt);
             }
         });
-        jPanel4.add(lblNombreIngrediente, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 40, 190, 30));
+        jPanel4.add(txtNombreIngrediente, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 40, 190, 30));
 
         jPanel12.setBackground(new java.awt.Color(245, 191, 174));
 
@@ -269,9 +248,6 @@ public class ventanaIngrediente extends javax.swing.JFrame {
         );
 
         jPanel4.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 470, -1, -1));
-        jPanel4.add(spinnerAñoCaducidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 120, -1, 30));
-        jPanel4.add(spinnerDiaCaducidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, -1, 30));
-        jPanel4.add(spinnerMesCaducidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 120, -1, 30));
 
         jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 1280, 530));
 
@@ -425,21 +401,17 @@ public class ventanaIngrediente extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtBuscarActionPerformed
 
-    private void lblMarcaIngredienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lblMarcaIngredienteActionPerformed
+    private void txtMarcaIngredienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMarcaIngredienteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_lblMarcaIngredienteActionPerformed
-
-    private void txtCantidadIngredienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantidadIngredienteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCantidadIngredienteActionPerformed
+    }//GEN-LAST:event_txtMarcaIngredienteActionPerformed
 
     private void txtUnidadIngredienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUnidadIngredienteActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtUnidadIngredienteActionPerformed
 
-    private void lblNombreIngredienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lblNombreIngredienteActionPerformed
+    private void txtNombreIngredienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreIngredienteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_lblNombreIngredienteActionPerformed
+    }//GEN-LAST:event_txtNombreIngredienteActionPerformed
 
     private void lblLotesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLotesMouseClicked
         
@@ -505,8 +477,6 @@ public class ventanaIngrediente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
@@ -528,16 +498,12 @@ public class ventanaIngrediente extends javax.swing.JFrame {
     private javax.swing.JLabel lblGuardar;
     private javax.swing.JLabel lblIngredientes;
     private javax.swing.JLabel lblLotes;
-    private javax.swing.JTextField lblMarcaIngrediente;
     private javax.swing.JLabel lblModificar;
-    private javax.swing.JTextField lblNombreIngrediente;
     private javax.swing.JLabel lblProovedores;
-    private javax.swing.JSpinner spinnerAñoCaducidad;
-    private javax.swing.JSpinner spinnerDiaCaducidad;
-    private javax.swing.JSpinner spinnerMesCaducidad;
     private javax.swing.JTextField txtBuscar;
-    private javax.swing.JTextField txtCantidadIngrediente;
     private javax.swing.JTextField txtLoteIngrediente;
+    public static javax.swing.JTextField txtMarcaIngrediente;
+    public static javax.swing.JTextField txtNombreIngrediente;
     private javax.swing.JTextField txtUnidadIngrediente;
     // End of variables declaration//GEN-END:variables
 }

@@ -18,7 +18,7 @@ public class ventanaEmpleados extends javax.swing.JFrame {
      */
     public ventanaEmpleados() {
         initComponents();
-        Mostrar.mostrarDatosEmplpeados();
+        Mostrar.mostrarDatosEmpleados();
     }
     
         
@@ -60,7 +60,7 @@ public class ventanaEmpleados extends javax.swing.JFrame {
         jPanel12 = new javax.swing.JPanel();
         lblGuardar = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        txtColoniaEmpleado1 = new javax.swing.JTextField();
+        txtColoniaEmpleado = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         lblEmpleados = new javax.swing.JLabel();
@@ -275,12 +275,12 @@ public class ventanaEmpleados extends javax.swing.JFrame {
         jLabel11.setText("Colonia");
         jPanel4.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, -1, -1));
 
-        txtColoniaEmpleado1.addActionListener(new java.awt.event.ActionListener() {
+        txtColoniaEmpleado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtColoniaEmpleado1ActionPerformed(evt);
+                txtColoniaEmpleadoActionPerformed(evt);
             }
         });
-        jPanel4.add(txtColoniaEmpleado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 200, 190, 30));
+        jPanel4.add(txtColoniaEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 200, 190, 30));
 
         jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 1280, 530));
 
@@ -450,9 +450,9 @@ public class ventanaEmpleados extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNombresEmpleadoActionPerformed
 
-    private void txtColoniaEmpleado1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtColoniaEmpleado1ActionPerformed
+    private void txtColoniaEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtColoniaEmpleadoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtColoniaEmpleado1ActionPerformed
+    }//GEN-LAST:event_txtColoniaEmpleadoActionPerformed
 
     private void lblProovedoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblProovedoresMouseClicked
         
@@ -480,7 +480,23 @@ public class ventanaEmpleados extends javax.swing.JFrame {
 
     private void lblAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAgregarMouseClicked
         // TODO add your handling code here:
+        String nombre = txtNombresEmpleado.getText();
+        String apellidos = txtApellidosEmpleado.getText();
+        String puesto = txtPuestoEmpleado.getText().toUpperCase();
+        String calleNumero = txtCalleNumEmpleado.getText();
+        String colonia = txtColoniaEmpleado.getText().toUpperCase();
+        String telefono = txtTelefonoEmpleado.getText();
         
+        if (nombre.isEmpty() || apellidos.isEmpty() || calleNumero.isEmpty() || puesto.isEmpty() || telefono.isEmpty() || colonia.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Por favor, complete todos los campos.", "Campos Vacíos", JOptionPane.WARNING_MESSAGE);
+        }
+        
+        try {
+            Agregar agregar = new Agregar();
+            agregar.agregarEmpleado(nombre, apellidos, calleNumero, colonia, telefono, puesto);
+        } catch (Exception e) {
+            
+        }
     }//GEN-LAST:event_lblAgregarMouseClicked
 
     /**
@@ -551,12 +567,12 @@ public class ventanaEmpleados extends javax.swing.JFrame {
     private javax.swing.JLabel lblLotes;
     private javax.swing.JLabel lblModificar;
     private javax.swing.JLabel lblProovedores;
-    private javax.swing.JTextField txtApellidosEmpleado;
+    public static javax.swing.JTextField txtApellidosEmpleado;
     private javax.swing.JTextField txtBuscarEmpleado;
-    private javax.swing.JTextField txtCalleNumEmpleado;
-    private javax.swing.JTextField txtColoniaEmpleado1;
-    private javax.swing.JTextField txtNombresEmpleado;
-    private javax.swing.JTextField txtPuestoEmpleado;
-    private javax.swing.JTextField txtTelefonoEmpleado;
+    public static javax.swing.JTextField txtCalleNumEmpleado;
+    public static javax.swing.JTextField txtColoniaEmpleado;
+    public static javax.swing.JTextField txtNombresEmpleado;
+    public static javax.swing.JTextField txtPuestoEmpleado;
+    public static javax.swing.JTextField txtTelefonoEmpleado;
     // End of variables declaration//GEN-END:variables
 }

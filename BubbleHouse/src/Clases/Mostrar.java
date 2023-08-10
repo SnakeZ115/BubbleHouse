@@ -9,12 +9,12 @@ import Ventanas.*;
 
 public class Mostrar {
     
-    public static void mostrarDatosEmplpeados (){
+    public static void mostrarDatosEmpleados (){
         String[] titulos = {"Codigo", "Nombres", "Apellidos", "Calle y Numero", "Puesto", "Colonia"};
         String[] registros = new String[6];
         
         DefaultTableModel modelo=new DefaultTableModel(null, titulos);
-        String SQL = "call MostrarEmpleado";
+        String SQL = "{call MostrarEmpleado}";
         try{
             
             Statement st = ConexionSql.conectar.createStatement();

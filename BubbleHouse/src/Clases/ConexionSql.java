@@ -12,7 +12,9 @@ public class ConexionSql {
 
     public static Connection conectar = null;
     
-    String URL = "jdbc:mysql://localhost:3306/bubblehouse?characterEncoding=latin1";
+    String URL = "jdbc:mysql://localhost:3306/bubblehouse?"
+                 + "characterEncoding=latin1"
+                 + "&noAccessToProcedureBodies=true";
     String CE = "CONEXION ESTABLECIDA";
     
 
