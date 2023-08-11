@@ -1,27 +1,24 @@
-
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package Ventanas;
-
-import java.sql.ResultSet;
-import java.sql.Statement;
-import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
 import Clases.*;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Evelyn Ximena
  */
-public class ventanaEmpleados extends javax.swing.JFrame {
+public class ventanaCorreos extends javax.swing.JFrame {
 
     /**
      * Creates new form ventanaIngrediente
      */
-    public ventanaEmpleados() {
+    public ventanaCorreos() {
         initComponents();
-        Mostrar.mostrarDatosEmpleados();
+        Mostrar.mostrarDatosProveedores();
     }
-    
-        
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -39,12 +36,8 @@ public class ventanaEmpleados extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        txtBuscarEmpleado = new javax.swing.JTextField();
-        txtApellidosEmpleado = new javax.swing.JTextField();
-        txtPuestoEmpleado = new javax.swing.JTextField();
-        txtCalleNumEmpleado = new javax.swing.JTextField();
+        txtBuscar = new javax.swing.JTextField();
+        txtCorreo = new javax.swing.JTextField();
         jPanel8 = new javax.swing.JPanel();
         lblAgregar = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
@@ -52,13 +45,11 @@ public class ventanaEmpleados extends javax.swing.JFrame {
         jPanel10 = new javax.swing.JPanel();
         lblEliminar = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTablempleados = new javax.swing.JTable();
+        jTableProveedores = new javax.swing.JTable();
         jLabel16 = new javax.swing.JLabel();
-        txtNombresEmpleado = new javax.swing.JTextField();
+        txtId = new javax.swing.JTextField();
         jPanel12 = new javax.swing.JPanel();
         lblGuardar = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        txtColoniaEmpleado = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         lblProovedores = new javax.swing.JLabel();
@@ -100,55 +91,28 @@ public class ventanaEmpleados extends javax.swing.JFrame {
         jPanel4.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 20, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
-        jLabel7.setText("Apellidos");
+        jLabel7.setText("Correo");
         jPanel4.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, -1, -1));
 
-        jLabel8.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
-        jLabel8.setText("Puesto");
-        jPanel4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, -1, -1));
-
-        jLabel9.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
-        jLabel9.setText("Calle y número");
-        jPanel4.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, -1, -1));
-
-        txtBuscarEmpleado.setFont(new java.awt.Font("Leelawadee UI", 0, 14)); // NOI18N
-        txtBuscarEmpleado.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txtBuscarEmpleadoMouseClicked(evt);
-            }
-        });
-        txtBuscarEmpleado.addActionListener(new java.awt.event.ActionListener() {
+        txtBuscar.setFont(new java.awt.Font("Leelawadee UI", 0, 14)); // NOI18N
+        txtBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtBuscarEmpleadoActionPerformed(evt);
+                txtBuscarActionPerformed(evt);
             }
         });
-        txtBuscarEmpleado.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtBuscar.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtBuscarEmpleadoKeyReleased(evt);
+                txtBuscarKeyReleased(evt);
             }
         });
-        jPanel4.add(txtBuscarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 20, 280, 30));
+        jPanel4.add(txtBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 20, 280, 30));
 
-        txtApellidosEmpleado.addActionListener(new java.awt.event.ActionListener() {
+        txtCorreo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtApellidosEmpleadoActionPerformed(evt);
+                txtCorreoActionPerformed(evt);
             }
         });
-        jPanel4.add(txtApellidosEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 80, 190, 30));
-
-        txtPuestoEmpleado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPuestoEmpleadoActionPerformed(evt);
-            }
-        });
-        jPanel4.add(txtPuestoEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, 190, 30));
-
-        txtCalleNumEmpleado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCalleNumEmpleadoActionPerformed(evt);
-            }
-        });
-        jPanel4.add(txtCalleNumEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 160, 190, 30));
+        jPanel4.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 80, 190, 30));
 
         jPanel8.setBackground(new java.awt.Color(245, 191, 174));
 
@@ -166,14 +130,18 @@ public class ventanaEmpleados extends javax.swing.JFrame {
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblAgregar, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lblAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblAgregar, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lblAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel4.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 180, -1));
+        jPanel4.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, 180, -1));
 
         jPanel9.setBackground(new java.awt.Color(245, 191, 174));
 
@@ -186,14 +154,18 @@ public class ventanaEmpleados extends javax.swing.JFrame {
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblModificar, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lblModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblModificar, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lblModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel4.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 310, 180, -1));
+        jPanel4.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 360, 180, -1));
 
         jPanel10.setBackground(new java.awt.Color(245, 191, 174));
 
@@ -217,10 +189,10 @@ public class ventanaEmpleados extends javax.swing.JFrame {
                 .addComponent(lblEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel4.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 310, -1, -1));
+        jPanel4.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 360, -1, -1));
 
-        jTablempleados.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
-        jTablempleados.setModel(new javax.swing.table.DefaultTableModel(
+        jTableProveedores.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        jTableProveedores.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
                 {},
@@ -231,21 +203,21 @@ public class ventanaEmpleados extends javax.swing.JFrame {
 
             }
         ));
-        jScrollPane1.setViewportView(jTablempleados);
+        jScrollPane1.setViewportView(jTableProveedores);
 
-        jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 60, 440, 390));
+        jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 60, 480, 390));
 
         jLabel16.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
-        jLabel16.setText("Nombres");
+        jLabel16.setText("ID");
         jPanel4.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, -1, -1));
 
-        txtNombresEmpleado.setFont(new java.awt.Font("Leelawadee UI", 0, 14)); // NOI18N
-        txtNombresEmpleado.addActionListener(new java.awt.event.ActionListener() {
+        txtId.setFont(new java.awt.Font("Leelawadee UI", 0, 14)); // NOI18N
+        txtId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNombresEmpleadoActionPerformed(evt);
+                txtIdActionPerformed(evt);
             }
         });
-        jPanel4.add(txtNombresEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 40, 190, 30));
+        jPanel4.add(txtId, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 40, 190, 30));
 
         jPanel12.setBackground(new java.awt.Color(245, 191, 174));
 
@@ -271,17 +243,6 @@ public class ventanaEmpleados extends javax.swing.JFrame {
 
         jPanel4.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 470, -1, -1));
 
-        jLabel11.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
-        jLabel11.setText("Colonia");
-        jPanel4.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, -1, -1));
-
-        txtColoniaEmpleado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtColoniaEmpleadoActionPerformed(evt);
-            }
-        });
-        jPanel4.add(txtColoniaEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 200, 190, 30));
-
         jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 1280, 530));
 
         jPanel3.setBackground(new java.awt.Color(255, 230, 231));
@@ -294,19 +255,14 @@ public class ventanaEmpleados extends javax.swing.JFrame {
         lblProovedores.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblProovedores.setText("Proovedores");
         lblProovedores.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        lblProovedores.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblProovedoresMouseClicked(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(lblProovedores, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 1, Short.MAX_VALUE)
+                .addComponent(lblProovedores, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -315,7 +271,7 @@ public class ventanaEmpleados extends javax.swing.JFrame {
                 .addComponent(lblProovedores, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel3.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 190, 40));
+        jPanel3.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 190, -1));
 
         jPanel13.setBackground(new java.awt.Color(233, 203, 193));
 
@@ -323,12 +279,19 @@ public class ventanaEmpleados extends javax.swing.JFrame {
         lblEmpleados.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblEmpleados.setText("Empleados");
         lblEmpleados.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblEmpleados.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblEmpleadosMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
         jPanel13Layout.setHorizontalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblEmpleados, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addComponent(lblEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 1, Short.MAX_VALUE))
         );
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -337,7 +300,7 @@ public class ventanaEmpleados extends javax.swing.JFrame {
                 .addComponent(lblEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel3.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 20, 190, 40));
+        jPanel3.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 20, 190, -1));
 
         jPanel14.setBackground(new java.awt.Color(233, 203, 193));
 
@@ -355,9 +318,9 @@ public class ventanaEmpleados extends javax.swing.JFrame {
         jPanel14.setLayout(jPanel14Layout);
         jPanel14Layout.setHorizontalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(lblIngredientes, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel14Layout.createSequentialGroup()
+                .addComponent(lblIngredientes, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 1, Short.MAX_VALUE))
         );
         jPanel14Layout.setVerticalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -366,7 +329,7 @@ public class ventanaEmpleados extends javax.swing.JFrame {
                 .addComponent(lblIngredientes, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel3.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 20, 190, 40));
+        jPanel3.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 20, 190, -1));
 
         jPanel15.setBackground(new java.awt.Color(233, 203, 193));
 
@@ -385,17 +348,17 @@ public class ventanaEmpleados extends javax.swing.JFrame {
         jPanel15Layout.setHorizontalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel15Layout.createSequentialGroup()
-                .addComponent(lblLotes, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 1, Short.MAX_VALUE))
+                .addComponent(lblLotes, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel15Layout.setVerticalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel15Layout.createSequentialGroup()
-                .addComponent(lblLotes, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel15Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lblLotes, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel3.add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 20, 190, 40));
+        jPanel3.add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 20, 190, -1));
 
         jPanel16.setBackground(new java.awt.Color(233, 203, 193));
 
@@ -414,8 +377,8 @@ public class ventanaEmpleados extends javax.swing.JFrame {
         jPanel16Layout.setHorizontalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel16Layout.createSequentialGroup()
-                .addComponent(lblCorreos, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 1, Short.MAX_VALUE))
+                .addComponent(lblCorreos, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 2, Short.MAX_VALUE))
         );
         jPanel16Layout.setVerticalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -424,7 +387,7 @@ public class ventanaEmpleados extends javax.swing.JFrame {
                 .addComponent(lblCorreos, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel3.add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 20, 190, 40));
+        jPanel3.add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 20, 190, -1));
 
         jPanel17.setBackground(new java.awt.Color(233, 203, 193));
 
@@ -453,7 +416,7 @@ public class ventanaEmpleados extends javax.swing.JFrame {
                 .addComponent(lblTelefonos, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel3.add(jPanel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 20, 190, 40));
+        jPanel3.add(jPanel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 20, 190, -1));
 
         jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, -1, 80));
 
@@ -481,93 +444,81 @@ public class ventanaEmpleados extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtBuscarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarEmpleadoActionPerformed
+    private void txtBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscarEmpleadoActionPerformed
+    }//GEN-LAST:event_txtBuscarActionPerformed
 
-    private void txtApellidosEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtApellidosEmpleadoActionPerformed
+    private void txtCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCorreoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtApellidosEmpleadoActionPerformed
+    }//GEN-LAST:event_txtCorreoActionPerformed
 
-    private void txtPuestoEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPuestoEmpleadoActionPerformed
+    private void txtIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtPuestoEmpleadoActionPerformed
+    }//GEN-LAST:event_txtIdActionPerformed
 
-    private void txtCalleNumEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCalleNumEmpleadoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCalleNumEmpleadoActionPerformed
-
-    private void txtNombresEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombresEmpleadoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNombresEmpleadoActionPerformed
-
-    private void txtColoniaEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtColoniaEmpleadoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtColoniaEmpleadoActionPerformed
-
-    private void lblProovedoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblProovedoresMouseClicked
+    private void lblEmpleadosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblEmpleadosMouseClicked
         
-        ventanaProovedores newframe = new ventanaProovedores();
+        ventanaEmpleados newframe = new ventanaEmpleados();
         newframe.setVisible(true);
         this.dispose();
-        
-    }//GEN-LAST:event_lblProovedoresMouseClicked
+
+    }//GEN-LAST:event_lblEmpleadosMouseClicked
 
     private void lblIngredientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblIngredientesMouseClicked
-            
+        
         ventanaIngrediente newframe = new ventanaIngrediente();
         newframe.setVisible(true);
         this.dispose();
-        
+
     }//GEN-LAST:event_lblIngredientesMouseClicked
 
-    private void lblCorreosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCorreosMouseClicked
+    private void lblTelefonosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTelefonosMouseClicked
         
         ventanaLote newframe = new ventanaLote();
         newframe.setVisible(true);
         this.dispose();
-        
-    }//GEN-LAST:event_lblCorreosMouseClicked
+
+    }//GEN-LAST:event_lblTelefonosMouseClicked
 
     private void lblAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAgregarMouseClicked
         // TODO add your handling code here:
-        String nombre = txtNombresEmpleado.getText();
-        String apellidos = txtApellidosEmpleado.getText();
-        String puesto = txtPuestoEmpleado.getText().toUpperCase();
-        String calleNumero = txtCalleNumEmpleado.getText();
-        String colonia = txtColoniaEmpleado.getText().toUpperCase();
-        String telefono = txtTelefonoEmpleado.getText();
+        String nombre = txtId.getText();
+        String apellidos = txtCorreo.getText();
+        String calleNumero = txtCalleNumProovedor.getText();
+        String colonia = txtColoniaProovedor.getText().toUpperCase();
+        String telefono = txtTelefonoProovedor.getText();
+        String correo = txtCorreoProveedor.getText();
+        String empresa = txtEmpresaProveedor.getText();
         
-        if (nombre.isEmpty() || apellidos.isEmpty() || calleNumero.isEmpty() || puesto.isEmpty() || telefono.isEmpty() || colonia.isEmpty()) {
+        if (nombre.isEmpty() || apellidos.isEmpty() || calleNumero.isEmpty() || colonia.isEmpty() || telefono.isEmpty() || correo.isEmpty() || empresa.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Por favor, complete todos los campos.", "Campos Vacíos", JOptionPane.WARNING_MESSAGE);
+        } 
+        else {
+            try {
+                Agregar agregar = new Agregar();
+                agregar.agregarProovedores(nombre, apellidos, calleNumero, colonia, telefono, correo, empresa);
+
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, e);
+                Mostrar.mostrarDatosProveedores();
+            }
         }
         
-        try {
-            Agregar agregar = new Agregar();
-            agregar.agregarEmpleado(nombre, apellidos, calleNumero, colonia, telefono, puesto);
-            Mostrar.mostrarDatosEmpleados();
-        } catch (Exception e) {
-            
-        }
     }//GEN-LAST:event_lblAgregarMouseClicked
 
-    private void txtBuscarEmpleadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtBuscarEmpleadoMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscarEmpleadoMouseClicked
-
-    private void txtBuscarEmpleadoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarEmpleadoKeyReleased
-
-        Buscar.buscarEmpleados(txtBuscarEmpleado.getText());
+    private void txtBuscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarKeyReleased
         
-    }//GEN-LAST:event_txtBuscarEmpleadoKeyReleased
-
-    private void lblTelefonosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTelefonosMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lblTelefonosMouseClicked
+        Buscar.buscarProovedores(txtBuscar.getText());
+        
+    }//GEN-LAST:event_txtBuscarKeyReleased
 
     private void lblLotesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLotesMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_lblLotesMouseClicked
+
+    private void lblCorreosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCorreosMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblCorreosMouseClicked
 
     /**
      * @param args the command line arguments
@@ -586,33 +537,36 @@ public class ventanaEmpleados extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ventanaEmpleados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ventanaCorreos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ventanaEmpleados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ventanaCorreos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ventanaEmpleados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ventanaCorreos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ventanaEmpleados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ventanaCorreos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ventanaEmpleados().setVisible(true);
+                new ventanaCorreos().setVisible(true);
             }
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel12;
@@ -628,7 +582,7 @@ public class ventanaEmpleados extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
-    public static javax.swing.JTable jTablempleados;
+    public static javax.swing.JTable jTableProveedores;
     private javax.swing.JLabel lblAgregar;
     private javax.swing.JLabel lblCorreos;
     private javax.swing.JLabel lblEliminar;
@@ -639,11 +593,8 @@ public class ventanaEmpleados extends javax.swing.JFrame {
     private javax.swing.JLabel lblModificar;
     private javax.swing.JLabel lblProovedores;
     private javax.swing.JLabel lblTelefonos;
-    public static javax.swing.JTextField txtApellidosEmpleado;
-    private javax.swing.JTextField txtBuscarEmpleado;
-    public static javax.swing.JTextField txtCalleNumEmpleado;
-    public static javax.swing.JTextField txtColoniaEmpleado;
-    public static javax.swing.JTextField txtNombresEmpleado;
-    public static javax.swing.JTextField txtPuestoEmpleado;
+    private javax.swing.JTextField txtBuscar;
+    public static javax.swing.JTextField txtCorreo;
+    public static javax.swing.JTextField txtId;
     // End of variables declaration//GEN-END:variables
 }
