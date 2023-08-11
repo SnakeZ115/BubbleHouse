@@ -4,6 +4,7 @@
  */
 package Ventanas;
 
+import Clases.Buscar;
 import Clases.Mostrar;
 
 /**
@@ -111,7 +112,12 @@ public class ventanaLote extends javax.swing.JFrame {
                 txtBuscarLoteActionPerformed(evt);
             }
         });
-        jPanel4.add(txtBuscarLote, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 20, 190, 30));
+        txtBuscarLote.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtBuscarLoteKeyReleased(evt);
+            }
+        });
+        jPanel4.add(txtBuscarLote, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 20, 280, 30));
 
         jPanel8.setBackground(new java.awt.Color(245, 191, 174));
 
@@ -376,6 +382,12 @@ public class ventanaLote extends javax.swing.JFrame {
         this.dispose();
             
     }//GEN-LAST:event_lblProovedoresMouseClicked
+
+    private void txtBuscarLoteKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarLoteKeyReleased
+
+        Buscar.buscarLotes(txtBuscarLote.getText());
+        
+    }//GEN-LAST:event_txtBuscarLoteKeyReleased
 
     /**
      * @param args the command line arguments

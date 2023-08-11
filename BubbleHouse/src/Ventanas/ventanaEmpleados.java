@@ -115,12 +115,22 @@ public class ventanaEmpleados extends javax.swing.JFrame {
         jPanel4.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, -1, -1));
 
         txtBuscarEmpleado.setFont(new java.awt.Font("Leelawadee UI", 0, 14)); // NOI18N
+        txtBuscarEmpleado.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtBuscarEmpleadoMouseClicked(evt);
+            }
+        });
         txtBuscarEmpleado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtBuscarEmpleadoActionPerformed(evt);
             }
         });
-        jPanel4.add(txtBuscarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 20, 190, 30));
+        txtBuscarEmpleado.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtBuscarEmpleadoKeyReleased(evt);
+            }
+        });
+        jPanel4.add(txtBuscarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 20, 280, 30));
 
         txtApellidosEmpleado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -494,10 +504,21 @@ public class ventanaEmpleados extends javax.swing.JFrame {
         try {
             Agregar agregar = new Agregar();
             agregar.agregarEmpleado(nombre, apellidos, calleNumero, colonia, telefono, puesto);
+            Mostrar.mostrarDatosEmpleados();
         } catch (Exception e) {
             
         }
     }//GEN-LAST:event_lblAgregarMouseClicked
+
+    private void txtBuscarEmpleadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtBuscarEmpleadoMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBuscarEmpleadoMouseClicked
+
+    private void txtBuscarEmpleadoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarEmpleadoKeyReleased
+
+        Buscar.buscarEmpleados(txtBuscarEmpleado.getText());
+        
+    }//GEN-LAST:event_txtBuscarEmpleadoKeyReleased
 
     /**
      * @param args the command line arguments

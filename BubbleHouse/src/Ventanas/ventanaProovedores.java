@@ -119,7 +119,12 @@ public class ventanaProovedores extends javax.swing.JFrame {
                 txtBuscarProovedorActionPerformed(evt);
             }
         });
-        jPanel4.add(txtBuscarProovedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 20, 190, 30));
+        txtBuscarProovedor.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtBuscarProovedorKeyReleased(evt);
+            }
+        });
+        jPanel4.add(txtBuscarProovedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 20, 280, 30));
 
         txtApellidosProovedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -520,10 +525,17 @@ public class ventanaProovedores extends javax.swing.JFrame {
 
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, e);
+                Mostrar.mostrarDatosProveedores();
             }
         }
         
     }//GEN-LAST:event_lblAgregarMouseClicked
+
+    private void txtBuscarProovedorKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarProovedorKeyReleased
+        
+        Buscar.buscarProovedores(txtBuscarProovedor.getText());
+        
+    }//GEN-LAST:event_txtBuscarProovedorKeyReleased
 
     /**
      * @param args the command line arguments

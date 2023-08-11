@@ -4,6 +4,7 @@
  */
 package Ventanas;
 
+import Clases.Buscar;
 import Clases.Mostrar;
 
 /**
@@ -117,7 +118,12 @@ public class ventanaIngrediente extends javax.swing.JFrame {
                 txtBuscarActionPerformed(evt);
             }
         });
-        jPanel4.add(txtBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 20, 190, 30));
+        txtBuscar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtBuscarKeyReleased(evt);
+            }
+        });
+        jPanel4.add(txtBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 20, 280, 30));
 
         txtMarcaIngrediente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -434,6 +440,12 @@ public class ventanaIngrediente extends javax.swing.JFrame {
         this.dispose();
         
     }//GEN-LAST:event_lblProovedoresMouseClicked
+
+    private void txtBuscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarKeyReleased
+
+        Buscar.buscarIngredientes(txtBuscar.getText());
+
+    }//GEN-LAST:event_txtBuscarKeyReleased
 
     /**
      * @param args the command line arguments

@@ -6,6 +6,7 @@ import java.sql.Statement;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import Ventanas.*;
+import java.sql.SQLException;
 
 public class Mostrar {
     
@@ -33,7 +34,7 @@ public class Mostrar {
             }
             ventanaEmpleados.jTablempleados.setModel(modelo);
         }
-        catch(Exception e){
+        catch(SQLException e){
                
             JOptionPane.showMessageDialog(null,"ERROR "+e);
 
@@ -65,7 +66,7 @@ public class Mostrar {
             }
             ventanaLote.jTableLotes.setModel(modelo);
         }
-        catch(Exception e){
+        catch(SQLException e){
                
             JOptionPane.showMessageDialog(null,"ERROR "+e);
 
@@ -94,14 +95,14 @@ public class Mostrar {
             }
             ventanaIngrediente.jTableIngredientes.setModel(modelo);
         }
-        catch(Exception e){
+        catch(SQLException e){
                
             JOptionPane.showMessageDialog(null,"ERROR "+e);
 
         }
     }
     
-        public static void mostrarDatosProveedores(){
+    public static void mostrarDatosProveedores(){
         String[] titulos = {"Codigo", "Nombre", "Apellidos", "Empresa", "Direccion", "Colonia"};
         String[] registros = new String[6];
         
@@ -124,7 +125,7 @@ public class Mostrar {
             }
             ventanaProovedores.jTableProveedores.setModel(modelo);
         }
-        catch(Exception e){
+        catch(SQLException e){
                
             JOptionPane.showMessageDialog(null,"ERROR "+e);
 
