@@ -29,6 +29,7 @@ public class ventanaProovedores extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        txtId = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
@@ -53,9 +54,9 @@ public class ventanaProovedores extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableProveedores = new javax.swing.JTable();
         jLabel16 = new javax.swing.JLabel();
-        txtNombreProovedor = new javax.swing.JTextField();
         jPanel12 = new javax.swing.JPanel();
         lblGuardar = new javax.swing.JLabel();
+        txtNombreProovedor = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         lblProovedores = new javax.swing.JLabel();
@@ -70,6 +71,13 @@ public class ventanaProovedores extends javax.swing.JFrame {
         jPanel17 = new javax.swing.JPanel();
         lblTelefonos = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
+
+        txtId.setFont(new java.awt.Font("Leelawadee UI", 0, 14)); // NOI18N
+        txtId.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtIdActionPerformed(evt);
+            }
+        });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -189,6 +197,11 @@ public class ventanaProovedores extends javax.swing.JFrame {
         lblModificar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblModificar.setText("Modificar");
         lblModificar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblModificar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblModificarMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -243,6 +256,11 @@ public class ventanaProovedores extends javax.swing.JFrame {
 
             }
         ));
+        jTableProveedores.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableProveedoresMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTableProveedores);
 
         jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 60, 480, 390));
@@ -250,14 +268,6 @@ public class ventanaProovedores extends javax.swing.JFrame {
         jLabel16.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
         jLabel16.setText("Nombre");
         jPanel4.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, -1, -1));
-
-        txtNombreProovedor.setFont(new java.awt.Font("Leelawadee UI", 0, 14)); // NOI18N
-        txtNombreProovedor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNombreProovedorActionPerformed(evt);
-            }
-        });
-        jPanel4.add(txtNombreProovedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 40, 190, 30));
 
         jPanel12.setBackground(new java.awt.Color(245, 191, 174));
 
@@ -282,6 +292,14 @@ public class ventanaProovedores extends javax.swing.JFrame {
         );
 
         jPanel4.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 470, -1, -1));
+
+        txtNombreProovedor.setFont(new java.awt.Font("Leelawadee UI", 0, 14)); // NOI18N
+        txtNombreProovedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNombreProovedorActionPerformed(evt);
+            }
+        });
+        jPanel4.add(txtNombreProovedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 40, 190, 30));
 
         jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 1280, 530));
 
@@ -507,9 +525,9 @@ public class ventanaProovedores extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEmpresaProveedorActionPerformed
 
-    private void txtNombreProovedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreProovedorActionPerformed
+    private void txtIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtNombreProovedorActionPerformed
+    }//GEN-LAST:event_txtIdActionPerformed
 
     private void lblEmpleadosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblEmpleadosMouseClicked
         
@@ -537,7 +555,7 @@ public class ventanaProovedores extends javax.swing.JFrame {
 
     private void lblAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAgregarMouseClicked
         // TODO add your handling code here:
-        String nombre = txtNombreProovedor.getText();
+        String nombre = txtId.getText();
         String apellidos = txtApellidosProovedor.getText();
         String calleNumero = txtCalleNumProovedor.getText();
         String colonia = txtColoniaProovedor.getText().toUpperCase();
@@ -572,6 +590,50 @@ public class ventanaProovedores extends javax.swing.JFrame {
     private void lblCorreosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCorreosMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_lblCorreosMouseClicked
+
+    private void jTableProveedoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableProveedoresMouseClicked
+        
+        int filaSeleccionada=jTableProveedores.rowAtPoint(evt.getPoint());
+        
+        txtId.setText((String) jTableProveedores.getValueAt(filaSeleccionada, 0));
+        txtNombreProovedor.setText(jTableProveedores.getValueAt(filaSeleccionada, 1).toString());
+        txtApellidosProovedor.setText(jTableProveedores.getValueAt(filaSeleccionada, 2).toString());
+        txtCalleNumProovedor.setText(jTableProveedores.getValueAt(filaSeleccionada, 5).toString());
+        txtColoniaProovedor.setText(jTableProveedores.getValueAt(filaSeleccionada, 4).toString());
+        txtEmpresaProveedor.setText(jTableProveedores.getValueAt(filaSeleccionada, 3).toString());
+        
+        
+    }//GEN-LAST:event_jTableProveedoresMouseClicked
+
+    private void txtNombreProovedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreProovedorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNombreProovedorActionPerformed
+
+    private void lblModificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblModificarMouseClicked
+       
+        int id = Integer.parseInt(txtId.getText());
+        String nombre = txtNombreProovedor.getText();
+        String apellidos = txtApellidosProovedor.getText();
+        String calleNumero = txtCalleNumProovedor.getText();
+        String colonia = txtColoniaProovedor.getText().toUpperCase();
+        String empresa = txtEmpresaProveedor.getText();
+        
+        if (nombre.isEmpty() || apellidos.isEmpty() || calleNumero.isEmpty() || colonia.isEmpty() || empresa.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Por favor, complete todos los campos.", "Campos Vacíos", JOptionPane.WARNING_MESSAGE);
+        } 
+        else {
+            try {
+                Modificar modificar = new Modificar();
+                modificar.modificarProovedores(id, nombre, apellidos, calleNumero, colonia, empresa);
+                Mostrar.mostrarDatosProveedores();
+                
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, e);
+                
+            }
+        }
+
+    }//GEN-LAST:event_lblModificarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -651,6 +713,7 @@ public class ventanaProovedores extends javax.swing.JFrame {
     public static javax.swing.JTextField txtCalleNumProovedor;
     public static javax.swing.JTextField txtColoniaProovedor;
     public static javax.swing.JTextField txtEmpresaProveedor;
+    public static javax.swing.JTextField txtId;
     public static javax.swing.JTextField txtNombreProovedor;
     // End of variables declaration//GEN-END:variables
 }

@@ -32,6 +32,7 @@ public class ventanaEmpleados extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        txtId = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
@@ -53,12 +54,11 @@ public class ventanaEmpleados extends javax.swing.JFrame {
         lblEliminar = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTablempleados = new javax.swing.JTable();
-        jLabel16 = new javax.swing.JLabel();
-        txtNombresEmpleado = new javax.swing.JTextField();
-        jPanel12 = new javax.swing.JPanel();
-        lblGuardar = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         txtColoniaEmpleado = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        txtNombresEmpleado = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         lblProovedores = new javax.swing.JLabel();
@@ -74,6 +74,13 @@ public class ventanaEmpleados extends javax.swing.JFrame {
         lblTelefonos = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
 
+        txtId.setFont(new java.awt.Font("Leelawadee UI", 0, 14)); // NOI18N
+        txtId.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtIdActionPerformed(evt);
+            }
+        });
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setResizable(false);
@@ -81,6 +88,7 @@ public class ventanaEmpleados extends javax.swing.JFrame {
         jLabel3.setText("Caducidad");
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setForeground(new java.awt.Color(255, 255, 255));
         jPanel2.setPreferredSize(new java.awt.Dimension(1380, 820));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -182,6 +190,11 @@ public class ventanaEmpleados extends javax.swing.JFrame {
         lblModificar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblModificar.setText("Modificar");
         lblModificar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblModificar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblModificarMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -232,45 +245,14 @@ public class ventanaEmpleados extends javax.swing.JFrame {
 
             }
         ));
+        jTablempleados.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTablempleadosMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTablempleados);
 
         jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 60, 440, 390));
-
-        jLabel16.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
-        jLabel16.setText("Nombres");
-        jPanel4.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, -1, -1));
-
-        txtNombresEmpleado.setFont(new java.awt.Font("Leelawadee UI", 0, 14)); // NOI18N
-        txtNombresEmpleado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNombresEmpleadoActionPerformed(evt);
-            }
-        });
-        jPanel4.add(txtNombresEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 40, 190, 30));
-
-        jPanel12.setBackground(new java.awt.Color(245, 191, 174));
-
-        lblGuardar.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
-        lblGuardar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblGuardar.setText("Guardar");
-        lblGuardar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-
-        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
-        jPanel12.setLayout(jPanel12Layout);
-        jPanel12Layout.setHorizontalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(lblGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        jPanel12Layout.setVerticalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(lblGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
-        jPanel4.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 470, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
         jLabel11.setText("Colonia");
@@ -282,6 +264,22 @@ public class ventanaEmpleados extends javax.swing.JFrame {
             }
         });
         jPanel4.add(txtColoniaEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 200, 190, 30));
+
+        jLabel17.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
+        jLabel17.setText("Nombres");
+        jPanel4.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, -1, -1));
+
+        jLabel18.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
+        jLabel18.setText("Nombres");
+        jPanel4.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, -1, -1));
+
+        txtNombresEmpleado.setFont(new java.awt.Font("Leelawadee UI", 0, 14)); // NOI18N
+        txtNombresEmpleado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNombresEmpleadoActionPerformed(evt);
+            }
+        });
+        jPanel4.add(txtNombresEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 40, 190, 30));
 
         jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 1280, 530));
 
@@ -501,10 +499,6 @@ public class ventanaEmpleados extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCalleNumEmpleadoActionPerformed
 
-    private void txtNombresEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombresEmpleadoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNombresEmpleadoActionPerformed
-
     private void txtColoniaEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtColoniaEmpleadoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtColoniaEmpleadoActionPerformed
@@ -535,7 +529,7 @@ public class ventanaEmpleados extends javax.swing.JFrame {
 
     private void lblAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAgregarMouseClicked
         // TODO add your handling code here:
-        String nombre = txtNombresEmpleado.getText();
+        String nombre = txtId.getText();
         String apellidos = txtApellidosEmpleado.getText();
         String puesto = txtPuestoEmpleado.getText().toUpperCase();
         String calleNumero = txtCalleNumEmpleado.getText();
@@ -571,6 +565,50 @@ public class ventanaEmpleados extends javax.swing.JFrame {
     private void lblLotesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLotesMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_lblLotesMouseClicked
+
+    private void jTablempleadosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTablempleadosMouseClicked
+
+        int filaSeleccionada=jTablempleados.rowAtPoint(evt.getPoint());
+        
+        txtId.setText((String) jTablempleados.getValueAt(filaSeleccionada, 0));
+        txtNombresEmpleado.setText(jTablempleados.getValueAt(filaSeleccionada, 1).toString());
+        txtApellidosEmpleado.setText(jTablempleados.getValueAt(filaSeleccionada, 2).toString());
+        txtPuestoEmpleado.setText(jTablempleados.getValueAt(filaSeleccionada, 3).toString());
+        txtCalleNumEmpleado.setText(jTablempleados.getValueAt(filaSeleccionada, 4).toString());
+        txtColoniaEmpleado.setText(jTablempleados.getValueAt(filaSeleccionada, 5).toString());
+
+    }//GEN-LAST:event_jTablempleadosMouseClicked
+
+    private void lblModificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblModificarMouseClicked
+        
+        int id = Integer.parseInt(txtId.getText());
+        String nombre = txtNombresEmpleado.getText();
+        String apellidos = txtApellidosEmpleado.getText();
+        String puesto = txtPuestoEmpleado.getText().toUpperCase();
+        String calleNumero = txtCalleNumEmpleado.getText();
+        String colonia = txtColoniaEmpleado.getText().toUpperCase();
+        
+        if (nombre.isEmpty() || apellidos.isEmpty() || calleNumero.isEmpty() || puesto.isEmpty() || colonia.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Por favor, complete todos los campos.", "Campos Vacíos", JOptionPane.WARNING_MESSAGE);
+        }
+        
+        try {
+            Modificar modificar = new Modificar();
+            modificar.modificarEmpleado(id,nombre, apellidos, calleNumero, colonia, puesto);
+            Mostrar.mostrarDatosEmpleados();
+        } catch (Exception e) {
+               JOptionPane.showMessageDialog(null, "Error: "+e);
+        }
+
+    }//GEN-LAST:event_lblModificarMouseClicked
+
+    private void txtIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIdActionPerformed
+
+    private void txtNombresEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombresEmpleadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNombresEmpleadoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -610,7 +648,8 @@ public class ventanaEmpleados extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -618,7 +657,6 @@ public class ventanaEmpleados extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
@@ -637,7 +675,6 @@ public class ventanaEmpleados extends javax.swing.JFrame {
     private javax.swing.JLabel lblCorreos;
     private javax.swing.JLabel lblEliminar;
     private javax.swing.JLabel lblEmpleados;
-    private javax.swing.JLabel lblGuardar;
     private javax.swing.JLabel lblIngredientes;
     private javax.swing.JLabel lblLotes;
     private javax.swing.JLabel lblModificar;
@@ -647,7 +684,8 @@ public class ventanaEmpleados extends javax.swing.JFrame {
     private javax.swing.JTextField txtBuscarEmpleado;
     public static javax.swing.JTextField txtCalleNumEmpleado;
     public static javax.swing.JTextField txtColoniaEmpleado;
-    public static javax.swing.JTextField txtNombresEmpleado;
+    public static javax.swing.JTextField txtId;
+    private javax.swing.JTextField txtNombresEmpleado;
     public static javax.swing.JTextField txtPuestoEmpleado;
     // End of variables declaration//GEN-END:variables
 }

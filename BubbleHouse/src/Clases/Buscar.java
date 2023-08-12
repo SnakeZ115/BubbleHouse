@@ -15,7 +15,7 @@ public class Buscar {
         String[] registros = new String[6];
 
         DefaultTableModel modelo = new DefaultTableModel(null, titulos);
-        String SQL = "SELECT * FROM empleados WHERE NombreEmp LIKE '%"+nombre+"%'"; //reemplazar por procedimiento almacenado
+        String SQL = "SELECT idEmpleados, NombreEmp,  ApellidosEmp, CalleNumero, NombrePuesto, NombreCol FROM empleados inner join colonias on Colonias_idColonia = idColonia inner join puesto on Puesto_IdPuesto = IdPuesto WHERE NombreEmp LIKE '%"+nombre+"%'"; //reemplazar por procedimiento almacenado
         try {
 
             Statement st = ConexionSql.conectar.createStatement();
@@ -27,8 +27,8 @@ public class Buscar {
                 registros[1] = rs.getString("NombreEmp");
                 registros[2] = rs.getString("ApellidosEmp");
                 registros[3] = rs.getString("CalleNumero");
-                registros[4] = rs.getString("Puesto_idPuesto");
-                registros[5] = rs.getString("COlonias_idCOlonia");
+                registros[4] = rs.getString("NombrePuesto");
+                registros[5] = rs.getString("NombreCol");
 
                 modelo.addRow(registros);
             }
@@ -46,7 +46,7 @@ public class Buscar {
         String[] registros = new String[6];
         
         DefaultTableModel modelo=new DefaultTableModel(null, titulos);
-        String SQL = "select * from proovedores where NombrePro like '%"+Nombre+"%'"; //Agregar procedimiento almacenado
+        String SQL = "select idProveedores, NombrePro, ApellidosPro, NombreEmpresa, CalleNumero, NombreCol from Proveedores inner join Colonias on Colonias_idColonia = idColonia where NombrePro like '%"+Nombre+"%'"; //Agregar procedimiento almacenado
         try{
             
             Statement st = ConexionSql.conectar.createStatement();
@@ -59,7 +59,7 @@ public class Buscar {
                 registros[2]=rs.getString("ApellidosPro");
                 registros[3]=rs.getString("NombreEmpresa");
                 registros[4]=rs.getString("CalleNumero");
-                registros[5]=rs.getString("Colonias_idColonia");                
+                registros[5]=rs.getString("NombreCol");                
                 modelo.addRow(registros);
             }
             ventanaProovedores.jTableProveedores.setModel(modelo);
@@ -76,7 +76,7 @@ public class Buscar {
         String[] registros = new String[6];
         
         DefaultTableModel modelo=new DefaultTableModel(null, titulos);
-        String SQL = "select * from ingredientes where NombreIngrediente like '%"+Nombre+"%'"; //Agregar procedimiento almacenado
+        String SQL = "select idIngredientes, NombreIngrediente, Marca, TipoUnidadMedida, TipoIngrediente, NombrePro from Ingredientes inner join proveedores on Proveedores_idProveedores = idProveedores where NombreIngrediente like '%"+Nombre+"%' or Marca like '%"+Nombre+"%' "; //Agregar procedimiento almacenado
         try{
             
             Statement st = ConexionSql.conectar.createStatement();
@@ -84,12 +84,12 @@ public class Buscar {
             
             while (rs.next()){
                 
-                registros[0]=rs.getString("IdIngrediente");
+                registros[0]=rs.getString("IdIngredientes");
                 registros[1]=rs.getString("NombreIngrediente");
                 registros[2]=rs.getString("Marca");
                 registros[3]=rs.getString("TipoUnidadMedida");
                 registros[4]=rs.getString("TipoIngrediente");
-                registros[5]=rs.getString("Proveedor_idProveedores");                
+                registros[5]=rs.getString("NombrePro");                
                 modelo.addRow(registros);
             }
             ventanaIngrediente.jTableIngredientes.setModel(modelo);

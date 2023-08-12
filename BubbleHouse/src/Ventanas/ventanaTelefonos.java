@@ -485,29 +485,7 @@ public class ventanaTelefonos extends javax.swing.JFrame {
     }//GEN-LAST:event_lblTelefonosMouseClicked
 
     private void lblAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAgregarMouseClicked
-        // TODO add your handling code here:
-        String nombre = txtId.getText();
-        String apellidos = txtTelefono.getText();
-        String calleNumero = txtCalleNumProovedor.getText();
-        String colonia = txtColoniaProovedor.getText().toUpperCase();
-        String telefono = txtTelefonoProovedor.getText();
-        String correo = txtCorreoProveedor.getText();
-        String empresa = txtEmpresaProveedor.getText();
-        
-        if (nombre.isEmpty() || apellidos.isEmpty() || calleNumero.isEmpty() || colonia.isEmpty() || telefono.isEmpty() || correo.isEmpty() || empresa.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Por favor, complete todos los campos.", "Campos Vacíos", JOptionPane.WARNING_MESSAGE);
-        } 
-        else {
-            try {
-                Agregar agregar = new Agregar();
-                agregar.agregarProovedores(nombre, apellidos, calleNumero, colonia, telefono, correo, empresa);
-
-            } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, e);
-                Mostrar.mostrarDatosProveedores();
-            }
-        }
-        
+      
     }//GEN-LAST:event_lblAgregarMouseClicked
 
     private void txtBuscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarKeyReleased

@@ -5,6 +5,7 @@
 package Ventanas;
 
 import Clases.*;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -29,6 +30,7 @@ public class ventanaIngrediente extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        txtId = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
@@ -51,11 +53,11 @@ public class ventanaIngrediente extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableIngredientes = new javax.swing.JTable();
         jLabel16 = new javax.swing.JLabel();
-        txtNombreIngrediente = new javax.swing.JTextField();
         jPanel12 = new javax.swing.JPanel();
         lblGuardar = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         txtTipoIngrediente = new javax.swing.JTextField();
+        txtNombreIngrediente = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         lblProovedores = new javax.swing.JLabel();
@@ -71,9 +73,15 @@ public class ventanaIngrediente extends javax.swing.JFrame {
         lblTelefonos = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
 
+        txtId.setFont(new java.awt.Font("Leelawadee UI", 0, 14)); // NOI18N
+        txtId.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtIdActionPerformed(evt);
+            }
+        });
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setPreferredSize(new java.awt.Dimension(1380, 820));
         setResizable(false);
 
         jLabel3.setText("Caducidad");
@@ -175,6 +183,11 @@ public class ventanaIngrediente extends javax.swing.JFrame {
         lblModificar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblModificar.setText("Modificar");
         lblModificar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblModificar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblModificarMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -225,6 +238,11 @@ public class ventanaIngrediente extends javax.swing.JFrame {
 
             }
         ));
+        jTableIngredientes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableIngredientesMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTableIngredientes);
 
         jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 60, 440, 390));
@@ -232,14 +250,6 @@ public class ventanaIngrediente extends javax.swing.JFrame {
         jLabel16.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
         jLabel16.setText("Nombre");
         jPanel4.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, -1, -1));
-
-        txtNombreIngrediente.setFont(new java.awt.Font("Leelawadee UI", 0, 14)); // NOI18N
-        txtNombreIngrediente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNombreIngredienteActionPerformed(evt);
-            }
-        });
-        jPanel4.add(txtNombreIngrediente, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 40, 190, 30));
 
         jPanel12.setBackground(new java.awt.Color(245, 191, 174));
 
@@ -275,6 +285,14 @@ public class ventanaIngrediente extends javax.swing.JFrame {
             }
         });
         jPanel4.add(txtTipoIngrediente, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 190, 190, 30));
+
+        txtNombreIngrediente.setFont(new java.awt.Font("Leelawadee UI", 0, 14)); // NOI18N
+        txtNombreIngrediente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNombreIngredienteActionPerformed(evt);
+            }
+        });
+        jPanel4.add(txtNombreIngrediente, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 40, 190, 30));
 
         jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 1280, 530));
 
@@ -496,9 +514,9 @@ public class ventanaIngrediente extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtUnidadIngredienteActionPerformed
 
-    private void txtNombreIngredienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreIngredienteActionPerformed
+    private void txtIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtNombreIngredienteActionPerformed
+    }//GEN-LAST:event_txtIdActionPerformed
 
     private void lblTelefonosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTelefonosMouseClicked
         
@@ -542,48 +560,70 @@ public class ventanaIngrediente extends javax.swing.JFrame {
 
     private void lblAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAgregarMouseClicked
         // TODO add your handling code here:
+        
         String nombre = txtNombreIngrediente.getText();
         String marca = txtMarcaIngrediente.getText();
         String unidad = txtUnidadIngrediente.getText();
         String tipo = txtTipoIngrediente.getText().toUpperCase();
         String proveedor = txtProveedorIngrediente.getText();
-
+        
+        if(nombre.isEmpty()||marca.isEmpty()||unidad.isEmpty()||tipo.isEmpty()||proveedor.isEmpty()){
+            JOptionPane.showMessageDialog(this, "Por favor, complete todos los campos.", "Campos Vacíos", JOptionPane.WARNING_MESSAGE);
+        }
+        
         try {
             Agregar agregar = new Agregar();
             agregar.agregarIngrediente(nombre, marca, unidad, tipo, proveedor);
+            Mostrar.mostrarDatosIngredientes();
         } catch (Exception e) {
-
+            JOptionPane.showMessageDialog(null, "Error: "+e);
         }
     }//GEN-LAST:event_lblAgregarMouseClicked
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ventanaIngrediente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ventanaIngrediente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ventanaIngrediente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ventanaIngrediente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void txtNombreIngredienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreIngredienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNombreIngredienteActionPerformed
 
-        /* Create and display the form */
+    private void jTableIngredientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableIngredientesMouseClicked
+
+        int filaSeleccionada=jTableIngredientes.rowAtPoint(evt.getPoint());
+        
+        txtId.setText((String) jTableIngredientes.getValueAt(filaSeleccionada, 0));
+        txtNombreIngrediente.setText(jTableIngredientes.getValueAt(filaSeleccionada, 1).toString());
+        txtMarcaIngrediente.setText(jTableIngredientes.getValueAt(filaSeleccionada, 2).toString());
+        txtUnidadIngrediente.setText(jTableIngredientes.getValueAt(filaSeleccionada, 3).toString());
+        txtTipoIngrediente.setText(jTableIngredientes.getValueAt(filaSeleccionada, 4).toString());
+        txtProveedorIngrediente.setText(jTableIngredientes.getValueAt(filaSeleccionada, 5).toString());
+
+        
+    }//GEN-LAST:event_jTableIngredientesMouseClicked
+
+    private void lblModificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblModificarMouseClicked
+       
+        int id = Integer.parseInt(txtId.getText());
+        String nombre = txtNombreIngrediente.getText();
+        String marca = txtMarcaIngrediente.getText();
+        String unidad = txtUnidadIngrediente.getText();
+        String tipo = txtTipoIngrediente.getText().toUpperCase();
+        String proveedor = txtProveedorIngrediente.getText();
+        
+        if(nombre.isEmpty()||marca.isEmpty()||unidad.isEmpty()||tipo.isEmpty()||proveedor.isEmpty()){
+            JOptionPane.showMessageDialog(this, "Por favor, complete todos los campos.", "Campos Vacíos", JOptionPane.WARNING_MESSAGE);
+        }
+        
+        try {
+            Modificar modificar = new Modificar();
+            modificar.modificarIngrediente(id, nombre, marca, unidad, tipo, proveedor);
+            Mostrar.mostrarDatosIngredientes();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error: "+e);
+        }
+
+    }//GEN-LAST:event_lblModificarMouseClicked
+
+  
+    public static void main(String args[]) {
+    
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new ventanaIngrediente().setVisible(true);
@@ -627,6 +667,7 @@ public class ventanaIngrediente extends javax.swing.JFrame {
     private javax.swing.JLabel lblProovedores;
     private javax.swing.JLabel lblTelefonos;
     private javax.swing.JTextField txtBuscar;
+    public static javax.swing.JTextField txtId;
     public static javax.swing.JTextField txtMarcaIngrediente;
     public static javax.swing.JTextField txtNombreIngrediente;
     private javax.swing.JTextField txtProveedorIngrediente;

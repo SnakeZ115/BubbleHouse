@@ -11,7 +11,7 @@ import java.sql.SQLException;
 public class Mostrar {
     
     public static void mostrarDatosEmpleados (){
-        String[] titulos = {"Codigo", "Nombres", "Apellidos", "Calle y Numero", "Puesto", "Colonia"};
+        String[] titulos = {"Codigo","Nombres", "Apellidos", "Calle y Numero", "Puesto", "Colonia"};
         String[] registros = new String[6];
         
         DefaultTableModel modelo=new DefaultTableModel(null, titulos);
@@ -27,8 +27,8 @@ public class Mostrar {
                 registros[1]=rs.getString("NombreEmp");
                 registros[2]=rs.getString("ApellidosEmp");
                 registros[3]=rs.getString("CalleNumero");
-                registros[4]=rs.getString("Puesto_idPuesto");
-                registros[5]=rs.getString("COlonias_idCOlonia");
+                registros[4]=rs.getString("NombrePuesto");
+                registros[5]=rs.getString("NombreCol");
                 
                 modelo.addRow(registros);
             }
@@ -77,7 +77,7 @@ public class Mostrar {
         String[] registros = new String[6];
         
         DefaultTableModel modelo=new DefaultTableModel(null, titulos);
-        String SQL = "select * from ingredientes"; //Agregar procedimiento almacenado
+        String SQL = "Call MostrarIngrediente"; 
         try{
             
             Statement st = ConexionSql.conectar.createStatement();
@@ -90,7 +90,7 @@ public class Mostrar {
                 registros[2]=rs.getString("Marca");
                 registros[3]=rs.getString("TipoUnidadMedida");
                 registros[4]=rs.getString("TipoIngrediente");
-                registros[5]=rs.getString("Proveedores_idProveedores");                
+                registros[5]=rs.getString("NombrePro");                
                 modelo.addRow(registros);
             }
             ventanaIngrediente.jTableIngredientes.setModel(modelo);
@@ -107,7 +107,7 @@ public class Mostrar {
         String[] registros = new String[6];
         
         DefaultTableModel modelo=new DefaultTableModel(null, titulos);
-        String SQL = "select * from proveedores"; //Agregar procedimiento almacenado
+        String SQL = "call MostrarProveedores"; //Agregar procedimiento almacenado
         try{
             
             Statement st = ConexionSql.conectar.createStatement();
@@ -120,7 +120,7 @@ public class Mostrar {
                 registros[2]=rs.getString("ApellidosPro");
                 registros[3]=rs.getString("NombreEmpresa");
                 registros[4]=rs.getString("CalleNumero");
-                registros[5]=rs.getString("Colonias_idColonia");                
+                registros[5]=rs.getString("NombreCol");                
                 modelo.addRow(registros);
             }
             ventanaProovedores.jTableProveedores.setModel(modelo);
