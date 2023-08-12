@@ -36,13 +36,15 @@ public class ventanaSalidas extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jPanel12 = new javax.swing.JPanel();
-        lblTerminado = new javax.swing.JLabel();
+        lblTerminado1 = new javax.swing.JLabel();
         cmbPerlas = new javax.swing.JComboBox<>();
         cmbTamaño = new javax.swing.JComboBox<>();
         cmbBase = new javax.swing.JComboBox<>();
         cmbLeche = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
+        jPanel13 = new javax.swing.JPanel();
+        lblReporte = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -84,10 +86,10 @@ public class ventanaSalidas extends javax.swing.JFrame {
 
         jPanel12.setBackground(new java.awt.Color(245, 191, 174));
 
-        lblTerminado.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
-        lblTerminado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTerminado.setText("Terminado");
-        lblTerminado.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblTerminado1.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        lblTerminado1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTerminado1.setText("Terminado");
+        lblTerminado1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
@@ -95,13 +97,13 @@ public class ventanaSalidas extends javax.swing.JFrame {
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(lblTerminado, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(lblTerminado1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(lblTerminado, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(lblTerminado1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         jPanel4.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 460, -1, -1));
@@ -130,6 +132,31 @@ public class ventanaSalidas extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(255, 230, 231));
         jPanel3.setPreferredSize(new java.awt.Dimension(1380, 80));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel13.setBackground(new java.awt.Color(245, 191, 174));
+
+        lblReporte.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        lblReporte.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblReporte.setText("Reporte");
+        lblReporte.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
+        jPanel13.setLayout(jPanel13Layout);
+        jPanel13Layout.setHorizontalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lblReporte, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel13Layout.setVerticalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lblReporte, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        jPanel3.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 20, -1, -1));
+
         jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, -1, 80));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -211,9 +238,11 @@ public class ventanaSalidas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JLabel lblTerminado;
+    private javax.swing.JLabel lblReporte;
+    private javax.swing.JLabel lblTerminado1;
     // End of variables declaration//GEN-END:variables
 }
