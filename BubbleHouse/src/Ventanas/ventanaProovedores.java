@@ -541,17 +541,15 @@ public class ventanaProovedores extends javax.swing.JFrame {
         String apellidos = txtApellidosProovedor.getText();
         String calleNumero = txtCalleNumProovedor.getText();
         String colonia = txtColoniaProovedor.getText().toUpperCase();
-        String telefono = txtTelefonoProovedor.getText();
-        String correo = txtCorreoProveedor.getText();
         String empresa = txtEmpresaProveedor.getText();
         
-        if (nombre.isEmpty() || apellidos.isEmpty() || calleNumero.isEmpty() || colonia.isEmpty() || telefono.isEmpty() || correo.isEmpty() || empresa.isEmpty()) {
+        if (nombre.isEmpty() || apellidos.isEmpty() || calleNumero.isEmpty() || colonia.isEmpty() || empresa.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Por favor, complete todos los campos.", "Campos Vacíos", JOptionPane.WARNING_MESSAGE);
         } 
         else {
             try {
                 Agregar agregar = new Agregar();
-                agregar.agregarProovedores(nombre, apellidos, calleNumero, colonia, telefono, correo, empresa);
+                agregar.agregarProovedores(nombre, apellidos, calleNumero, colonia, empresa);
 
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, e);

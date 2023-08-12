@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
 
 public class Agregar {
 
-    public void agregarProovedores(String nombre, String apellidos, String calleNumero, String colonia, String telefono, String correo, String empresa) {
+    public void agregarProovedores(String nombre, String apellidos, String calleNumero, String colonia, String empresa) {
         int idCol = 0;
         int agregado = 0;
         try {
@@ -72,7 +72,7 @@ public class Agregar {
 
     }
 
-    public void agregarEmpleado(String nombre, String apellidos, String calleNumero, String colonia, String telefono, String puesto) {
+    public void agregarEmpleado(String nombre, String apellidos, String calleNumero, String colonia, String puesto) {
 
         int idCol = 0;
         int idPuesto = 0;
@@ -172,68 +172,42 @@ public class Agregar {
 
     }
 
-    public void agregarIngrediente(String nombre, String marca, String tipounidadmedida, String tipounidadingrediente, String proveedores) {
+    public void agregarIngrediente(String nombre, String marca, String tipounidadmedida, String tipoingrediente, String proveedores) {
 
         int idPro = 0;
-        int agregado = 0;
+
         try {
 
             //BUSCA SI LA PROVEEDOR YA EXISTE
             java.sql.CallableStatement verificacion;
-            verificacion = ConexionSql.conectar.prepareCall("{call BuscarProveedor(?, ?)}");
+            verificacion = ConexionSql.conectar.prepareCall("{call BuscarProveedores(?, ?)}");
             verificacion.setString(1, proveedores);
             verificacion.registerOutParameter(2, Types.INTEGER);
             verificacion.execute();
             idPro = verificacion.getInt(2);
 
+            if (idPro == 0) { //NO ENCONTRO PROVEEDORES
 
-            if (idPro == 0) { //NO ENCONTRO PROVEEDORES, SE AGREGA
-                java.sql.CallableStatement agregarProveedores;
-                agregarProveedores = ConexionSql.conectar.prepareCall("{call AltaProveedores(?)}");
-                agregarProveedores.setString(1, proveedores);
-                agregarProveedores.execute();
-                agregado = 1; //VARIABLE PARA DECIR QUE SE AGREGÓ EL NUEVO PROVEEDOR
-            } else {
+                JOptionPane.showMessageDialog(null, "NO EXISTE EL PROVEEDOR");
+
+            }
+
+            else {
 
                 java.sql.CallableStatement agregar;
                 agregar = ConexionSql.conectar.prepareCall("{call AltaIngrediente(?,?,?,?,?)}");
                 agregar.setString(1, nombre);
                 agregar.setString(2, marca);
                 agregar.setString(3, tipounidadmedida);
-                agregar.setString(4, tipounidadingrediente);
+                agregar.setString(4, tipoingrediente);
                 agregar.setInt(5, idPro);
                 agregar.execute();
                 JOptionPane.showMessageDialog(null, "INGREDIENTE AGREGADO");
 
             }
-            if (agregado == 1) {
-
-                // Vuelve a buscar el proveedor ya agregado
-                java.sql.CallableStatement verificacionNueva;
-                verificacionNueva = ConexionSql.conectar.prepareCall("{call BuscarProveedores(?, ?)}");
-                verificacionNueva.setString(1, proveedores);
-                verificacionNueva.registerOutParameter(2, Types.INTEGER);
-                verificacionNueva.execute();
-                idPro = verificacionNueva.getInt(2);
-
-                // Se hace el agregado del ingrediente
-                java.sql.CallableStatement agregar;
-                agregar = ConexionSql.conectar.prepareCall("{call AltaIngrediente(?,?,?,?,?)}");
-                agregar.setString(1, nombre);
-                agregar.setString(2, marca);
-                agregar.setString(3, tipounidadmedida);
-                agregar.setString(4, tipounidadingrediente);
-                agregar.setInt(5, idPro);
-                agregar.execute();
-                JOptionPane.showMessageDialog(null, "INGREDIENTE AGREGADO");
-            }
-
-
-
-
         } catch (SQLException ex) {
-        }
 
+        }
     }
 
     public void agregarLote(String lote, String fechacaducidad, String existencia, String equivaleciaexistencia, String ingrediente, String fechaentrada) {

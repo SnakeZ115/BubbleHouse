@@ -540,15 +540,14 @@ public class ventanaEmpleados extends javax.swing.JFrame {
         String puesto = txtPuestoEmpleado.getText().toUpperCase();
         String calleNumero = txtCalleNumEmpleado.getText();
         String colonia = txtColoniaEmpleado.getText().toUpperCase();
-        String telefono = txtTelefonoEmpleado.getText();
         
-        if (nombre.isEmpty() || apellidos.isEmpty() || calleNumero.isEmpty() || puesto.isEmpty() || telefono.isEmpty() || colonia.isEmpty()) {
+        if (nombre.isEmpty() || apellidos.isEmpty() || calleNumero.isEmpty() || puesto.isEmpty() || colonia.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Por favor, complete todos los campos.", "Campos Vacíos", JOptionPane.WARNING_MESSAGE);
         }
         
         try {
             Agregar agregar = new Agregar();
-            agregar.agregarEmpleado(nombre, apellidos, calleNumero, colonia, telefono, puesto);
+            agregar.agregarEmpleado(nombre, apellidos, calleNumero, colonia, puesto);
             Mostrar.mostrarDatosEmpleados();
         } catch (Exception e) {
             

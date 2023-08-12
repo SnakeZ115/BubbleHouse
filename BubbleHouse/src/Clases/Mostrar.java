@@ -85,12 +85,12 @@ public class Mostrar {
             
             while (rs.next()){
                 
-                registros[0]=rs.getString("IdIngrediente");
+                registros[0]=rs.getString("IdIngredientes");
                 registros[1]=rs.getString("NombreIngrediente");
                 registros[2]=rs.getString("Marca");
                 registros[3]=rs.getString("TipoUnidadMedida");
                 registros[4]=rs.getString("TipoIngrediente");
-                registros[5]=rs.getString("Proveedor_idProveedores");                
+                registros[5]=rs.getString("Proveedores_idProveedores");                
                 modelo.addRow(registros);
             }
             ventanaIngrediente.jTableIngredientes.setModel(modelo);

@@ -4,8 +4,7 @@
  */
 package Ventanas;
 
-import Clases.Buscar;
-import Clases.Mostrar;
+import Clases.*;
 
 /**
  *
@@ -39,7 +38,7 @@ public class ventanaIngrediente extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        txtLoteIngrediente = new javax.swing.JTextField();
+        txtProveedorIngrediente = new javax.swing.JTextField();
         txtBuscar = new javax.swing.JTextField();
         txtMarcaIngrediente = new javax.swing.JTextField();
         txtUnidadIngrediente = new javax.swing.JTextField();
@@ -55,6 +54,8 @@ public class ventanaIngrediente extends javax.swing.JFrame {
         txtNombreIngrediente = new javax.swing.JTextField();
         jPanel12 = new javax.swing.JPanel();
         lblGuardar = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        txtTipoIngrediente = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         lblProovedores = new javax.swing.JLabel();
@@ -94,8 +95,8 @@ public class ventanaIngrediente extends javax.swing.JFrame {
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel5.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
-        jLabel5.setText("Tipo ingrediente");
-        jPanel4.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, -1, -1));
+        jLabel5.setText("Proveedor");
+        jPanel4.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
         jLabel6.setText("Buscar:");
@@ -109,12 +110,12 @@ public class ventanaIngrediente extends javax.swing.JFrame {
         jLabel10.setText("Unidad");
         jPanel4.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, -1, -1));
 
-        txtLoteIngrediente.addActionListener(new java.awt.event.ActionListener() {
+        txtProveedorIngrediente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtLoteIngredienteActionPerformed(evt);
+                txtProveedorIngredienteActionPerformed(evt);
             }
         });
-        jPanel4.add(txtLoteIngrediente, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 190, 190, 30));
+        jPanel4.add(txtProveedorIngrediente, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 240, 190, 30));
 
         txtBuscar.setFont(new java.awt.Font("Leelawadee UI", 0, 14)); // NOI18N
         txtBuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -149,6 +150,11 @@ public class ventanaIngrediente extends javax.swing.JFrame {
         lblAgregar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblAgregar.setText("Agregar");
         lblAgregar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblAgregar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblAgregarMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -258,6 +264,17 @@ public class ventanaIngrediente extends javax.swing.JFrame {
         );
 
         jPanel4.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 470, -1, -1));
+
+        jLabel8.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
+        jLabel8.setText("Tipo ingrediente");
+        jPanel4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, -1, -1));
+
+        txtTipoIngrediente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTipoIngredienteActionPerformed(evt);
+            }
+        });
+        jPanel4.add(txtTipoIngrediente, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 190, 190, 30));
 
         jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 1280, 530));
 
@@ -463,9 +480,9 @@ public class ventanaIngrediente extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtLoteIngredienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLoteIngredienteActionPerformed
+    private void txtProveedorIngredienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtProveedorIngredienteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtLoteIngredienteActionPerformed
+    }//GEN-LAST:event_txtProveedorIngredienteActionPerformed
 
     private void txtBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarActionPerformed
         // TODO add your handling code here:
@@ -519,6 +536,26 @@ public class ventanaIngrediente extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_lblCorreosMouseClicked
 
+    private void txtTipoIngredienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTipoIngredienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTipoIngredienteActionPerformed
+
+    private void lblAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAgregarMouseClicked
+        // TODO add your handling code here:
+        String nombre = txtNombreIngrediente.getText();
+        String marca = txtMarcaIngrediente.getText();
+        String unidad = txtUnidadIngrediente.getText();
+        String tipo = txtTipoIngrediente.getText().toUpperCase();
+        String proveedor = txtProveedorIngrediente.getText();
+
+        try {
+            Agregar agregar = new Agregar();
+            agregar.agregarIngrediente(nombre, marca, unidad, tipo, proveedor);
+        } catch (Exception e) {
+
+        }
+    }//GEN-LAST:event_lblAgregarMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -561,6 +598,7 @@ public class ventanaIngrediente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel12;
@@ -589,9 +627,10 @@ public class ventanaIngrediente extends javax.swing.JFrame {
     private javax.swing.JLabel lblProovedores;
     private javax.swing.JLabel lblTelefonos;
     private javax.swing.JTextField txtBuscar;
-    private javax.swing.JTextField txtLoteIngrediente;
     public static javax.swing.JTextField txtMarcaIngrediente;
     public static javax.swing.JTextField txtNombreIngrediente;
+    private javax.swing.JTextField txtProveedorIngrediente;
+    private javax.swing.JTextField txtTipoIngrediente;
     private javax.swing.JTextField txtUnidadIngrediente;
     // End of variables declaration//GEN-END:variables
 }
