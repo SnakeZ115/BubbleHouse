@@ -17,7 +17,7 @@ public class ventanaCorreos extends javax.swing.JFrame {
      */
     public ventanaCorreos() {
         initComponents();
-        Mostrar.mostrarDatosProveedores();
+        Mostrar.mostrarDatosProveedoresCorreos();
     }
 
     /**
@@ -45,11 +45,13 @@ public class ventanaCorreos extends javax.swing.JFrame {
         jPanel10 = new javax.swing.JPanel();
         lblEliminar = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTableProveedores = new javax.swing.JTable();
+        jtableCorreos = new javax.swing.JTable();
         jLabel16 = new javax.swing.JLabel();
         txtId = new javax.swing.JTextField();
         jPanel12 = new javax.swing.JPanel();
         lblGuardar = new javax.swing.JLabel();
+        txtDepartamento = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         lblProovedores = new javax.swing.JLabel();
@@ -92,8 +94,8 @@ public class ventanaCorreos extends javax.swing.JFrame {
         jPanel4.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 20, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
-        jLabel7.setText("Correo");
-        jPanel4.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, -1, -1));
+        jLabel7.setText("Departamento");
+        jPanel4.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, -1, -1));
 
         txtBuscar.setFont(new java.awt.Font("Leelawadee UI", 0, 14)); // NOI18N
         txtBuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -192,8 +194,8 @@ public class ventanaCorreos extends javax.swing.JFrame {
 
         jPanel4.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 360, -1, -1));
 
-        jTableProveedores.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
-        jTableProveedores.setModel(new javax.swing.table.DefaultTableModel(
+        jtableCorreos.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        jtableCorreos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
                 {},
@@ -204,7 +206,12 @@ public class ventanaCorreos extends javax.swing.JFrame {
 
             }
         ));
-        jScrollPane1.setViewportView(jTableProveedores);
+        jtableCorreos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jtableCorreosMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(jtableCorreos);
 
         jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 60, 480, 390));
 
@@ -244,6 +251,17 @@ public class ventanaCorreos extends javax.swing.JFrame {
 
         jPanel4.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 470, -1, -1));
 
+        txtDepartamento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDepartamentoActionPerformed(evt);
+            }
+        });
+        jPanel4.add(txtDepartamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, 190, 30));
+
+        jLabel8.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
+        jLabel8.setText("Correo");
+        jPanel4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, -1, -1));
+
         jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 1280, 530));
 
         jPanel3.setBackground(new java.awt.Color(255, 230, 231));
@@ -256,6 +274,11 @@ public class ventanaCorreos extends javax.swing.JFrame {
         lblProovedores.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblProovedores.setText("Proovedores");
         lblProovedores.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblProovedores.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblProovedoresMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -486,7 +509,7 @@ public class ventanaCorreos extends javax.swing.JFrame {
     }//GEN-LAST:event_lblTelefonosMouseClicked
 
     private void lblAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAgregarMouseClicked
-        // TODO add your handling code here:
+        String Id = 
     }//GEN-LAST:event_lblAgregarMouseClicked
 
     private void txtBuscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarKeyReleased
@@ -502,6 +525,21 @@ public class ventanaCorreos extends javax.swing.JFrame {
     private void lblCorreosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCorreosMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_lblCorreosMouseClicked
+
+    private void lblProovedoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblProovedoresMouseClicked
+        ventanaProovedores newframe = new ventanaProovedores();
+        newframe.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_lblProovedoresMouseClicked
+
+    private void jtableCorreosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtableCorreosMouseClicked
+        int FilaSeleccionada = jtableCorreos.rowAtPoint(evt.getPoint());
+        txtId.setText((String) jtableCorreos.getValueAt(FilaSeleccionada, 0));
+    }//GEN-LAST:event_jtableCorreosMouseClicked
+
+    private void txtDepartamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDepartamentoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDepartamentoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -550,6 +588,7 @@ public class ventanaCorreos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel12;
@@ -566,7 +605,7 @@ public class ventanaCorreos extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    public static javax.swing.JTable jTableProveedores;
+    public static javax.swing.JTable jtableCorreos;
     private javax.swing.JLabel lblAgregar;
     private javax.swing.JLabel lblCorreos;
     private javax.swing.JLabel lblEliminar;
@@ -579,6 +618,7 @@ public class ventanaCorreos extends javax.swing.JFrame {
     private javax.swing.JLabel lblTelefonos;
     private javax.swing.JTextField txtBuscar;
     public static javax.swing.JTextField txtCorreo;
+    public static javax.swing.JTextField txtDepartamento;
     public static javax.swing.JTextField txtId;
     // End of variables declaration//GEN-END:variables
 }

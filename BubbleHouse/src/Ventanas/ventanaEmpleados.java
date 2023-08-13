@@ -526,7 +526,7 @@ public class ventanaEmpleados extends javax.swing.JFrame {
 
     private void lblCorreosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCorreosMouseClicked
         
-        ventanaLote newframe = new ventanaLote();
+        ventanaCorreos newframe = new ventanaCorreos();
         newframe.setVisible(true);
         this.dispose();
         

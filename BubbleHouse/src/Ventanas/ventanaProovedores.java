@@ -593,7 +593,9 @@ public class ventanaProovedores extends javax.swing.JFrame {
     }//GEN-LAST:event_lblLotesMouseClicked
 
     private void lblCorreosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCorreosMouseClicked
-        // TODO add your handling code here:
+        ventanaCorreos newframe = new ventanaCorreos();
+        newframe.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_lblCorreosMouseClicked
 
     private void jTableProveedoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableProveedoresMouseClicked

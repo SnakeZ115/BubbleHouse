@@ -131,4 +131,34 @@ public class Mostrar {
 
         }
     }
+    
+    public static void mostrarDatosProveedoresCorreos(){
+        String[] titulos = {"Codigo", "Nombre", "Apellidos", "Empresa", "Direccion", "Colonia"};
+        String[] registros = new String[6];
+        
+        DefaultTableModel modelo=new DefaultTableModel(null, titulos);
+        String SQL = "{call MostrarProveedores}"; 
+        try{
+            
+            Statement st = ConexionSql.conectar.createStatement();
+            ResultSet rs=st.executeQuery(SQL);
+            
+            while (rs.next()){
+                
+                registros[0]=rs.getString("IdProveedores");
+                registros[1]=rs.getString("NombrePro");
+                registros[2]=rs.getString("ApellidosPro");
+                registros[3]=rs.getString("NombreEmpresa");
+                registros[4]=rs.getString("CalleNumero");
+                registros[5]=rs.getString("NombreCol");                
+                modelo.addRow(registros);
+            }
+            ventanaCorreos.jtableCorreos.setModel(modelo);
+        }
+        catch(SQLException e){
+               
+            JOptionPane.showMessageDialog(null,"ERROR "+e);
+
+        }
+    }
 }

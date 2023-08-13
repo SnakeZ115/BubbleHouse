@@ -334,6 +334,11 @@ public class ventanaLote extends javax.swing.JFrame {
         lblCorreos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblCorreos.setText("Correos");
         lblCorreos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblCorreos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblCorreosMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
         jPanel14.setLayout(jPanel14Layout);
@@ -440,6 +445,12 @@ public class ventanaLote extends javax.swing.JFrame {
         Buscar.buscarLotes(txtBuscarLote.getText());
         
     }//GEN-LAST:event_txtBuscarLoteKeyReleased
+
+    private void lblCorreosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCorreosMouseClicked
+        ventanaCorreos newframe = new ventanaCorreos();
+        newframe.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_lblCorreosMouseClicked
 
     /**
      * @param args the command line arguments

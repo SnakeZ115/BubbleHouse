@@ -65,7 +65,6 @@ public class Agregar {
                 JOptionPane.showMessageDialog(null, "PROVEEDOR AGREGADO");
             }
 
-
         } catch (SQLException ex) {
             Logger.getLogger(Agregar.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -190,9 +189,7 @@ public class Agregar {
 
                 JOptionPane.showMessageDialog(null, "NO EXISTE EL PROVEEDOR");
 
-            }
-
-            else {
+            } else {
 
                 java.sql.CallableStatement agregar;
                 agregar = ConexionSql.conectar.prepareCall("{call AltaIngrediente(?,?,?,?,?)}");
@@ -223,7 +220,6 @@ public class Agregar {
             verificacion.registerOutParameter(2, Types.INTEGER);
             verificacion.execute();
             idIngre = verificacion.getInt(2);
-
 
             if (idIngre == 0) { //NO ENCONTRO INGREDIENTE, SE AGREGA
                 java.sql.CallableStatement agregarIngrediente;
@@ -268,7 +264,6 @@ public class Agregar {
                 JOptionPane.showMessageDialog(null, "LOTE AGREGADO");
             }
 
-
         } catch (SQLException ex) {
         }
 
@@ -287,7 +282,6 @@ public class Agregar {
             verificacion.registerOutParameter(2, Types.INTEGER);
             verificacion.execute();
             idEmple = verificacion.getInt(2);
-
 
             if (idEmple == 0) { //NO ENCONTRO EMPLEADO, SE AGREGA
                 java.sql.CallableStatement agregarIngrediente;
@@ -325,9 +319,25 @@ public class Agregar {
                 JOptionPane.showMessageDialog(null, "BEBIDA AGREGADA");
             }
 
-
         } catch (SQLException ex) {
         }
 
     }
+
+    public void agregarCorreo(int idpro, String correo, String depar) {
+        
+        try{
+            
+        
+        java.sql.CallableStatement agregar;
+        agregar = ConexionSql.conectar.prepareCall("{call AltaCorreoPro(?,?,?)}");
+        agregar.setInt(1, idpro);
+        agregar.setString(2, correo);
+        agregar.setString(3, depar);
+        }
+        catch(SQLException ex){
+            JOptionPane.showMessageDialog(null, "Error: " + ex);
+        }
+    }
+
 }

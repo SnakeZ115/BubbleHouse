@@ -1,7 +1,7 @@
-
 package Ventanas;
 import Clases.ConexionSql;
 import javax.swing.JOptionPane;
+
 
 
 public class VentanaLogin extends javax.swing.JFrame {
