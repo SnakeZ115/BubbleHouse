@@ -581,8 +581,8 @@ public class ventanaEmpleados extends javax.swing.JFrame {
         txtId.setText((String) jTablempleados.getValueAt(filaSeleccionada, 0));
         txtNombresEmpleado.setText(jTablempleados.getValueAt(filaSeleccionada, 1).toString());
         txtApellidosEmpleado.setText(jTablempleados.getValueAt(filaSeleccionada, 2).toString());
-        txtPuestoEmpleado.setText(jTablempleados.getValueAt(filaSeleccionada, 3).toString());
-        txtCalleNumEmpleado.setText(jTablempleados.getValueAt(filaSeleccionada, 4).toString());
+        txtPuestoEmpleado.setText(jTablempleados.getValueAt(filaSeleccionada, 4).toString());
+        txtCalleNumEmpleado.setText(jTablempleados.getValueAt(filaSeleccionada, 3).toString());
         txtColoniaEmpleado.setText(jTablempleados.getValueAt(filaSeleccionada, 5).toString());
 
     }//GEN-LAST:event_jTablempleadosMouseClicked

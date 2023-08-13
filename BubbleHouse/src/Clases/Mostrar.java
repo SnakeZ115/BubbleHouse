@@ -46,7 +46,7 @@ public class Mostrar {
         String[] registros = new String[7];
         
         DefaultTableModel modelo=new DefaultTableModel(null, titulos);
-        String SQL = "select * from lotes"; //Agregar procedimiento almacenado
+        String SQL = "{call MostrarLotes}"; 
         try{
             
             Statement st = ConexionSql.conectar.createStatement();
@@ -77,7 +77,7 @@ public class Mostrar {
         String[] registros = new String[6];
         
         DefaultTableModel modelo=new DefaultTableModel(null, titulos);
-        String SQL = "Call MostrarIngrediente"; 
+        String SQL = "{Call MostrarIngrediente}"; 
         try{
             
             Statement st = ConexionSql.conectar.createStatement();
@@ -89,7 +89,7 @@ public class Mostrar {
                 registros[1]=rs.getString("NombreIngrediente");
                 registros[2]=rs.getString("Marca");
                 registros[3]=rs.getString("TipoUnidadMedida");
-                registros[4]=rs.getString("TipoIngrediente");
+                registros[4]=rs.getString("TipoIngredienteConversion(TipoIngrediente)");
                 registros[5]=rs.getString("NombrePro");                
                 modelo.addRow(registros);
             }
@@ -107,7 +107,7 @@ public class Mostrar {
         String[] registros = new String[6];
         
         DefaultTableModel modelo=new DefaultTableModel(null, titulos);
-        String SQL = "call MostrarProveedores"; //Agregar procedimiento almacenado
+        String SQL = "{call MostrarProveedores}"; 
         try{
             
             Statement st = ConexionSql.conectar.createStatement();

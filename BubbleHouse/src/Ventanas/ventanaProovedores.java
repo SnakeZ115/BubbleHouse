@@ -268,7 +268,7 @@ public class ventanaProovedores extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTableProveedores);
 
-        jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 60, 480, 390));
+        jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 60, 610, 390));
 
         jLabel16.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
         jLabel16.setText("Nombre");

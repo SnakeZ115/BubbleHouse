@@ -15,7 +15,7 @@ public class Buscar {
         String[] registros = new String[6];
 
         DefaultTableModel modelo = new DefaultTableModel(null, titulos);
-        String SQL = "SELECT idEmpleados, NombreEmp,  ApellidosEmp, CalleNumero, NombrePuesto, NombreCol FROM empleados inner join colonias on Colonias_idColonia = idColonia inner join puesto on Puesto_IdPuesto = IdPuesto WHERE NombreEmp LIKE '%"+nombre+"%'"; //reemplazar por procedimiento almacenado
+        String SQL = "call buscarEmpleado('" +nombre+"')"; //reemplazar por procedimiento almacenado
         try {
 
             Statement st = ConexionSql.conectar.createStatement();
@@ -40,13 +40,13 @@ public class Buscar {
         }
     }
     
-    public static void buscarProovedores(String Nombre){
+    public static void buscarProovedores(String nombre){
         
         String[] titulos = {"Codigo", "Nombre", "Apellidos", "Empresa", "Direccion", "Colonia"};
         String[] registros = new String[6];
         
         DefaultTableModel modelo=new DefaultTableModel(null, titulos);
-        String SQL = "select idProveedores, NombrePro, ApellidosPro, NombreEmpresa, CalleNumero, NombreCol from Proveedores inner join Colonias on Colonias_idColonia = idColonia where NombrePro like '%"+Nombre+"%'"; //Agregar procedimiento almacenado
+        String SQL = "call FiltrarProveedor ('" +nombre+"')" ; //Agregar procedimiento almacenado
         try{
             
             Statement st = ConexionSql.conectar.createStatement();
@@ -71,12 +71,12 @@ public class Buscar {
         }
     }
     
-    public static void buscarIngredientes(String Nombre){
+    public static void buscarIngredientes(String nombre){
         String[] titulos = {"Codigo", "Ingrediente", "Marca", "UnidadMedida", "TipoIngrediente", "Proveedor"};
         String[] registros = new String[6];
         
         DefaultTableModel modelo=new DefaultTableModel(null, titulos);
-        String SQL = "select idIngredientes, NombreIngrediente, Marca, TipoUnidadMedida, TipoIngrediente, NombrePro from Ingredientes inner join proveedores on Proveedores_idProveedores = idProveedores where NombreIngrediente like '%"+Nombre+"%' or Marca like '%"+Nombre+"%' "; //Agregar procedimiento almacenado
+        String SQL = "call BuscarIngrediente('" +nombre+"')";
         try{
             
             Statement st = ConexionSql.conectar.createStatement();
@@ -88,7 +88,7 @@ public class Buscar {
                 registros[1]=rs.getString("NombreIngrediente");
                 registros[2]=rs.getString("Marca");
                 registros[3]=rs.getString("TipoUnidadMedida");
-                registros[4]=rs.getString("TipoIngrediente");
+                registros[4]=rs.getString("TipoIngredienteConversion(TipoIngrediente)");
                 registros[5]=rs.getString("NombrePro");                
                 modelo.addRow(registros);
             }
