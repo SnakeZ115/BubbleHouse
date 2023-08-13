@@ -628,6 +628,7 @@ public class ventanaEmpleados extends javax.swing.JFrame {
             int id = Integer.parseInt(txtId.getText());
             Eliminar eliminar = new Eliminar();
             eliminar.eliminarEmpleado(id);
+            Mostrar.mostrarDatosEmpleados();
             
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "REGISTRO NO DETECTADO");

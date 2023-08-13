@@ -208,6 +208,11 @@ public class ventanaIngrediente extends javax.swing.JFrame {
         lblEliminar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblEliminar.setText("Eliminar");
         lblEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblEliminar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblEliminarMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
@@ -620,6 +625,20 @@ public class ventanaIngrediente extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_lblModificarMouseClicked
+
+    private void lblEliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblEliminarMouseClicked
+        // TODO add your handling code here:
+        try {
+
+            int id = Integer.parseInt(txtId.getText());
+            Eliminar eliminar = new Eliminar();
+            eliminar.eliminarIngrediente(id);
+            Mostrar.mostrarDatosIngredientes();
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "REGISTRO NO DETECTADO");
+        }
+    }//GEN-LAST:event_lblEliminarMouseClicked
 
   
     public static void main(String args[]) {
