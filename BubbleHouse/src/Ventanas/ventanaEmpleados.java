@@ -215,6 +215,11 @@ public class ventanaEmpleados extends javax.swing.JFrame {
         lblEliminar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblEliminar.setText("Eliminar");
         lblEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblEliminar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblEliminarMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
@@ -529,7 +534,7 @@ public class ventanaEmpleados extends javax.swing.JFrame {
 
     private void lblAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAgregarMouseClicked
         // TODO add your handling code here:
-        String nombre = txtId.getText();
+        String nombre = txtNombresEmpleado.getText();
         String apellidos = txtApellidosEmpleado.getText();
         String puesto = txtPuestoEmpleado.getText().toUpperCase();
         String calleNumero = txtCalleNumEmpleado.getText();
@@ -538,14 +543,17 @@ public class ventanaEmpleados extends javax.swing.JFrame {
         if (nombre.isEmpty() || apellidos.isEmpty() || calleNumero.isEmpty() || puesto.isEmpty() || colonia.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Por favor, complete todos los campos.", "Campos Vacíos", JOptionPane.WARNING_MESSAGE);
         }
-        
-        try {
-            Agregar agregar = new Agregar();
-            agregar.agregarEmpleado(nombre, apellidos, calleNumero, colonia, puesto);
-            Mostrar.mostrarDatosEmpleados();
-        } catch (Exception e) {
-            
+        else {
+            try {
+                Agregar agregar = new Agregar();
+                agregar.agregarEmpleado(nombre, apellidos, calleNumero, colonia, puesto);
+                Mostrar.mostrarDatosEmpleados();
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, e);
+            }
         }
+        
+
     }//GEN-LAST:event_lblAgregarMouseClicked
 
     private void txtBuscarEmpleadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtBuscarEmpleadoMouseClicked
@@ -591,14 +599,17 @@ public class ventanaEmpleados extends javax.swing.JFrame {
         if (nombre.isEmpty() || apellidos.isEmpty() || calleNumero.isEmpty() || puesto.isEmpty() || colonia.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Por favor, complete todos los campos.", "Campos Vacíos", JOptionPane.WARNING_MESSAGE);
         }
-        
-        try {
-            Modificar modificar = new Modificar();
-            modificar.modificarEmpleado(id,nombre, apellidos, calleNumero, colonia, puesto);
-            Mostrar.mostrarDatosEmpleados();
-        } catch (Exception e) {
-               JOptionPane.showMessageDialog(null, "Error: "+e);
+        else {
+            try {
+                Modificar modificar = new Modificar();
+                modificar.modificarEmpleado(id, nombre, apellidos, calleNumero, colonia, puesto);
+                Mostrar.mostrarDatosEmpleados();
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Error: " + e);
+            }
         }
+        
+
 
     }//GEN-LAST:event_lblModificarMouseClicked
 
@@ -609,6 +620,19 @@ public class ventanaEmpleados extends javax.swing.JFrame {
     private void txtNombresEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombresEmpleadoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNombresEmpleadoActionPerformed
+
+    private void lblEliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblEliminarMouseClicked
+        // TODO add your handling code here:
+        try {
+            
+            int id = Integer.parseInt(txtId.getText());
+            Eliminar eliminar = new Eliminar();
+            eliminar.eliminarEmpleado(id);
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "REGISTRO NO DETECTADO");
+        }
+    }//GEN-LAST:event_lblEliminarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -685,7 +709,7 @@ public class ventanaEmpleados extends javax.swing.JFrame {
     public static javax.swing.JTextField txtCalleNumEmpleado;
     public static javax.swing.JTextField txtColoniaEmpleado;
     public static javax.swing.JTextField txtId;
-    private javax.swing.JTextField txtNombresEmpleado;
+    public static javax.swing.JTextField txtNombresEmpleado;
     public static javax.swing.JTextField txtPuestoEmpleado;
     // End of variables declaration//GEN-END:variables
 }
