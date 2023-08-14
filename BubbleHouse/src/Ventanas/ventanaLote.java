@@ -4,8 +4,8 @@
  */
 package Ventanas;
 
-import Clases.Buscar;
-import Clases.Mostrar;
+import Clases.*;
+import java.util.Calendar;
 
 /**
  *
@@ -46,17 +46,15 @@ public class ventanaLote extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableLotes = new javax.swing.JTable();
-        spinnerAñoEntradaLote = new javax.swing.JSpinner();
-        spinnerIngredienteLote = new javax.swing.JSpinner();
-        spinnerMesEntradaLote = new javax.swing.JSpinner();
-        spinnerDiaEntradaLote = new javax.swing.JSpinner();
-        spinnerExistenciaLote = new javax.swing.JSpinner();
+        spinnerValorUnitarioLote = new javax.swing.JSpinner();
         jLabel10 = new javax.swing.JLabel();
-        txtNombreLote = new javax.swing.JTextField();
+        txtIngredienteLote = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
-        spinnerDiaCadLote1 = new javax.swing.JSpinner();
-        spinnerMesCadLote1 = new javax.swing.JSpinner();
-        spinnerAñoCadLote1 = new javax.swing.JSpinner();
+        jdcCaducidad = new com.toedter.calendar.JDateChooser();
+        jdcEntrada = new com.toedter.calendar.JDateChooser();
+        txtNombreLote = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
+        spinnerExistenciaLote = new javax.swing.JSpinner();
         jPanel3 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         lblProovedores = new javax.swing.JLabel();
@@ -100,14 +98,14 @@ public class ventanaLote extends javax.swing.JFrame {
 
         jLabel7.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
         jLabel7.setText("Fecha de entrada");
-        jPanel4.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, -1, -1));
+        jPanel4.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 260, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
         jLabel8.setText("Existencia");
         jPanel4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
-        jLabel9.setText("Ingrediente");
+        jLabel9.setText("Valor Unitario");
         jPanel4.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, -1, -1));
 
         txtBuscarLote.setFont(new java.awt.Font("Leelawadee UI", 0, 14)); // NOI18N
@@ -129,6 +127,11 @@ public class ventanaLote extends javax.swing.JFrame {
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel11.setText("Agregar");
         jLabel11.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel11MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -145,7 +148,7 @@ public class ventanaLote extends javax.swing.JFrame {
                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel4.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, 180, -1));
+        jPanel4.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 320, 180, -1));
 
         jPanel10.setBackground(new java.awt.Color(245, 191, 174));
 
@@ -185,16 +188,26 @@ public class ventanaLote extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTableLotes);
 
-        jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 60, 440, 390));
-        jPanel4.add(spinnerAñoEntradaLote, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 200, 80, 30));
-        jPanel4.add(spinnerIngredienteLote, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 160, 80, 30));
-        jPanel4.add(spinnerMesEntradaLote, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 200, 80, 30));
-        jPanel4.add(spinnerDiaEntradaLote, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 200, 80, 30));
-        jPanel4.add(spinnerExistenciaLote, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 120, 80, 30));
+        jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 60, 640, 390));
+        jPanel4.add(spinnerValorUnitarioLote, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 160, 80, 30));
 
         jLabel10.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
         jLabel10.setText("Nombre del lote");
         jPanel4.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, -1, -1));
+
+        txtIngredienteLote.setFont(new java.awt.Font("Leelawadee UI", 0, 14)); // NOI18N
+        txtIngredienteLote.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtIngredienteLoteActionPerformed(evt);
+            }
+        });
+        jPanel4.add(txtIngredienteLote, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 210, 260, 30));
+
+        jLabel12.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
+        jLabel12.setText("Fecha de caducidad");
+        jPanel4.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, -1, -1));
+        jPanel4.add(jdcCaducidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, 210, 30));
+        jPanel4.add(jdcEntrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 260, 210, 30));
 
         txtNombreLote.setFont(new java.awt.Font("Leelawadee UI", 0, 14)); // NOI18N
         txtNombreLote.addActionListener(new java.awt.event.ActionListener() {
@@ -204,12 +217,10 @@ public class ventanaLote extends javax.swing.JFrame {
         });
         jPanel4.add(txtNombreLote, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 40, 260, 30));
 
-        jLabel12.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
-        jLabel12.setText("Fecha de caducidad");
-        jPanel4.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, -1, -1));
-        jPanel4.add(spinnerDiaCadLote1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, 80, 30));
-        jPanel4.add(spinnerMesCadLote1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 80, 80, 30));
-        jPanel4.add(spinnerAñoCadLote1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 80, 80, 30));
+        jLabel14.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
+        jLabel14.setText("Ingrediente");
+        jPanel4.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 210, -1, -1));
+        jPanel4.add(spinnerExistenciaLote, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 120, 80, 30));
 
         jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 1280, 530));
 
@@ -363,6 +374,11 @@ public class ventanaLote extends javax.swing.JFrame {
         lblTelefonos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTelefonos.setText("Teléfonos");
         lblTelefonos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblTelefonos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblTelefonosMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
         jPanel15.setLayout(jPanel15Layout);
@@ -412,9 +428,9 @@ public class ventanaLote extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtBuscarLoteActionPerformed
 
-    private void txtNombreLoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreLoteActionPerformed
+    private void txtIngredienteLoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIngredienteLoteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtNombreLoteActionPerformed
+    }//GEN-LAST:event_txtIngredienteLoteActionPerformed
 
     private void lblIngredientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblIngredientesMouseClicked
         
@@ -451,6 +467,41 @@ public class ventanaLote extends javax.swing.JFrame {
         newframe.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_lblCorreosMouseClicked
+
+    private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
+        // TODO add your handling code here:
+        String nombre = txtNombreLote.getText();
+
+        // FECHA DE CADUCIDAD
+        String diaCaducidad = Integer.toString(jdcCaducidad.getCalendar().get(Calendar.DAY_OF_MONTH));
+        String mesCaducidad = Integer.toString(jdcCaducidad.getCalendar().get(Calendar.MONTH));
+        String anioCaducidad = Integer.toString(jdcCaducidad.getCalendar().get(Calendar.YEAR));
+        String fechaCaducidad = (anioCaducidad + "-" + mesCaducidad + "-" + diaCaducidad);
+
+        int existencia = (int)spinnerExistenciaLote.getValue();
+        int valorUnitario = (int)spinnerValorUnitarioLote.getValue();
+        String ingrediente = txtIngredienteLote.getText();
+
+        // FECHA DE ENTRADA
+        String diaEntrada = Integer.toString(jdcEntrada.getCalendar().get(Calendar.DAY_OF_MONTH));
+        String mesEntrada = Integer.toString(jdcEntrada.getCalendar().get(Calendar.MONTH));
+        String anioEntrada = Integer.toString(jdcEntrada.getCalendar().get(Calendar.YEAR));
+        String fechaEntrada = (anioEntrada + "-" + mesEntrada + "-" + diaEntrada);
+
+        Agregar agregar = new Agregar();
+        agregar.agregarLote(nombre, fechaCaducidad, existencia, ingrediente, fechaEntrada, valorUnitario);
+    }//GEN-LAST:event_jLabel11MouseClicked
+
+    private void txtNombreLoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreLoteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNombreLoteActionPerformed
+
+    private void lblTelefonosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTelefonosMouseClicked
+        // TODO add your handling code here:
+        ventanaTelefonos newframe = new ventanaTelefonos();
+        newframe.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_lblTelefonosMouseClicked
 
     /**
      * @param args the command line arguments
@@ -492,6 +543,7 @@ public class ventanaLote extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel6;
@@ -513,21 +565,18 @@ public class ventanaLote extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     public static javax.swing.JTable jTableLotes;
+    private com.toedter.calendar.JDateChooser jdcCaducidad;
+    private com.toedter.calendar.JDateChooser jdcEntrada;
     private javax.swing.JLabel lblCorreos;
     private javax.swing.JLabel lblEmpleados;
     private javax.swing.JLabel lblIngredientes;
     private javax.swing.JLabel lblLotes;
     private javax.swing.JLabel lblProovedores;
     private javax.swing.JLabel lblTelefonos;
-    private javax.swing.JSpinner spinnerAñoCadLote1;
-    private javax.swing.JSpinner spinnerAñoEntradaLote;
-    private javax.swing.JSpinner spinnerDiaCadLote1;
-    private javax.swing.JSpinner spinnerDiaEntradaLote;
     private javax.swing.JSpinner spinnerExistenciaLote;
-    private javax.swing.JSpinner spinnerIngredienteLote;
-    private javax.swing.JSpinner spinnerMesCadLote1;
-    private javax.swing.JSpinner spinnerMesEntradaLote;
+    private javax.swing.JSpinner spinnerValorUnitarioLote;
     private javax.swing.JTextField txtBuscarLote;
+    private javax.swing.JTextField txtIngredienteLote;
     private javax.swing.JTextField txtNombreLote;
     // End of variables declaration//GEN-END:variables
 }

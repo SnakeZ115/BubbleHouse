@@ -8,6 +8,9 @@ import java.sql.Types;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.sql.Date;
 
 public class Agregar {
 
@@ -24,11 +27,13 @@ public class Agregar {
             idCol = verificacion.getInt(2);
 
             if (idCol == 0) { //NO ENCONTRO COLONIA, SE AGREGA
+                
                 java.sql.CallableStatement agregarColonia;
                 agregarColonia = ConexionSql.conectar.prepareCall("{call AltaColonias(?)}");
                 agregarColonia.setString(1, colonia);
                 agregarColonia.execute();
                 agregado = 1; //VARIABLE PARA DECIR QUE SE AGREGÓ LA NUEVA COLONIA
+                
             } else {
 
                 java.sql.CallableStatement agregar;
@@ -97,17 +102,21 @@ public class Agregar {
             idPuesto = verificacionPuesto.getInt(2);
 
             if (idCol == 0) { //NO ENCONTRO COLONIA, SE AGREGA
+                
                 java.sql.CallableStatement agregarColonia;
                 agregarColonia = ConexionSql.conectar.prepareCall("{call AltaColonias(?)}");
                 agregarColonia.setString(1, colonia);
                 agregarColonia.execute();
                 agregado = 1; //VARIABLE PARA DECIR QUE SE AGREGÓ LA NUEVA COLONIA
+                
             } else if (idPuesto == 0) { //NO ENCONTRO EL PUESTO, LO AGREGA
+                
                 java.sql.CallableStatement agregarPuesto;
                 agregarPuesto = ConexionSql.conectar.prepareCall("{call AltaPuesto(?)}");
                 agregarPuesto.setString(1, puesto);
                 agregarPuesto.execute();
-                agregadoPuesto = 1; //VARIABLE PARA DECIR QUE SE AGREGÓ
+                agregadoPuesto = 1;//VARIABLE PARA DECIR QUE SE AGREGÓ
+                
             } else {
 
                 java.sql.CallableStatement agregar;
@@ -207,133 +216,77 @@ public class Agregar {
         }
     }
 
-    public void agregarLote(String lote, String fechacaducidad, String existencia, String equivaleciaexistencia, String ingrediente, String fechaentrada) {
-
-        int idIngre = 0;
-        int agregado = 0;
+    public void agregarLote(String lote, String fechaCaducidad, int existencia, String ingrediente, String fechaEntrada, int valorUnitario) {
+        
+        int idIngrediente = 0;
+        int equivalenciaExistencia = (existencia * valorUnitario) * 1000;
+        
+        //BUSCA SI LA PROVEEDOR YA EXISTE
         try {
-
-            //BUSCA SI EL INGREDIENTES YA EXISTE
+            
             java.sql.CallableStatement verificacion;
-            verificacion = ConexionSql.conectar.prepareCall("{call BuscarIngredientes(?, ?)}");
+            verificacion = ConexionSql.conectar.prepareCall("{call BuscarIdIngrediente(?, ?)}");
             verificacion.setString(1, ingrediente);
             verificacion.registerOutParameter(2, Types.INTEGER);
             verificacion.execute();
-            idIngre = verificacion.getInt(2);
+            idIngrediente = verificacion.getInt(2);
+            
+            if(idIngrediente == 0) {
+                
+                JOptionPane.showMessageDialog(null, "NO EXISTE EL INGREDIENTE");
+                
+            }
+            else {
+ 
+                try {
+                     //CONVERTIR STRINGS A FECHAS SQL
+                    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
-            if (idIngre == 0) { //NO ENCONTRO INGREDIENTE, SE AGREGA
-                java.sql.CallableStatement agregarIngrediente;
-                agregarIngrediente = ConexionSql.conectar.prepareCall("{call AltaIngredientes(?)}");
-                agregarIngrediente.setString(1, ingrediente);
-                agregarIngrediente.execute();
-                agregado = 1; //VARIABLE PARA DECIR QUE SE AGREGÓ EL NUEVO INGREDIENTE
-            } else {
+                    java.util.Date utilDate1 = dateFormat.parse(fechaCaducidad);
+                    java.util.Date utilDate2 = dateFormat.parse(fechaEntrada);
 
-                java.sql.CallableStatement agregar;
-                agregar = ConexionSql.conectar.prepareCall("{call AltaLote(?,?,?,?,?)}");
-                agregar.setString(1, lote);
-                agregar.setString(2, fechacaducidad);
-                agregar.setString(3, existencia);
-                agregar.setString(4, equivaleciaexistencia);
-                agregar.setInt(5, idIngre);
-                agregar.setString(6, fechaentrada);
-                agregar.execute();
-                JOptionPane.showMessageDialog(null, "LOTE AGREGADO");
+                    Date fechaCaducidadSql = new Date(utilDate1.getTime());
+                    Date fechaEntradaSql = new Date(utilDate2.getTime());
+                    //
+                    java.sql.CallableStatement agregar;
+                    agregar = ConexionSql.conectar.prepareCall("{call AltaLote(?,?,?,?,?,?,?)}");
+                    agregar.setString(1, lote);
+                    agregar.setDate(2, fechaCaducidadSql);
+                    agregar.setInt(3, existencia);
+                    agregar.setInt(4, valorUnitario);
+                    agregar.setInt(5, equivalenciaExistencia);
+                    agregar.setDate(6, fechaEntradaSql);
+                    agregar.setInt(7, idIngrediente);
+                    agregar.execute();
+                    JOptionPane.showMessageDialog(null, "INGREDIENTE AGREGADO");
+                    
+                } catch (ParseException ex) {
+                    Logger.getLogger(Agregar.class.getName()).log(Level.SEVERE, null, ex);
+                }
 
             }
-            if (agregado == 1) {
-
-                // Vuelve a buscar el ingrediente ya agregado
-                java.sql.CallableStatement verificacionNueva;
-                verificacionNueva = ConexionSql.conectar.prepareCall("{call BuscarIngredientes(?, ?)}");
-                verificacionNueva.setString(1, ingrediente);
-                verificacionNueva.registerOutParameter(2, Types.INTEGER);
-                verificacionNueva.execute();
-                idIngre = verificacionNueva.getInt(2);
-
-                // Se hace el agregado del lote
-                java.sql.CallableStatement agregar;
-                agregar = ConexionSql.conectar.prepareCall("{call AltaLote(?,?,?,?,?)}");
-                agregar.setString(1, lote);
-                agregar.setString(2, fechacaducidad);
-                agregar.setString(3, existencia);
-                agregar.setString(4, equivaleciaexistencia);
-                agregar.setInt(5, idIngre);
-                agregar.setString(6, fechaentrada);
-                agregar.execute();
-                JOptionPane.showMessageDialog(null, "LOTE AGREGADO");
-            }
-
         } catch (SQLException ex) {
+            Logger.getLogger(Agregar.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+        
     }
 
     public void agregarBebida(String fechasalida, String empleado) {
-
-        int idEmple = 0;
-        int agregado = 0;
-        try {
-
-            //BUSCA SI EL EMPLEADO YA EXISTE
-            java.sql.CallableStatement verificacion;
-            verificacion = ConexionSql.conectar.prepareCall("{call BuscarEmpleados(?, ?)}");
-            verificacion.setString(1, empleado);
-            verificacion.registerOutParameter(2, Types.INTEGER);
-            verificacion.execute();
-            idEmple = verificacion.getInt(2);
-
-            if (idEmple == 0) { //NO ENCONTRO EMPLEADO, SE AGREGA
-                java.sql.CallableStatement agregarIngrediente;
-                agregarIngrediente = ConexionSql.conectar.prepareCall("{call AltaEmpleados(?)}");
-                agregarIngrediente.setString(1, empleado);
-                agregarIngrediente.execute();
-                agregado = 1; //VARIABLE PARA DECIR QUE SE AGREGÓ EL NUEVO 
-            } else {
-
-                java.sql.CallableStatement agregar;
-                agregar = ConexionSql.conectar.prepareCall("{call AltaBebida(?,?,?,?,?)}");
-                agregar.setString(1, fechasalida);
-                agregar.setInt(2, idEmple);
-                agregar.execute();
-                JOptionPane.showMessageDialog(null, "BEBIDA AGREGADA");
-
-            }
-            if (agregado == 1) {
-
-                // Vuelve a buscar el ingrediente ya agregado
-                java.sql.CallableStatement verificacionNueva;
-                verificacionNueva = ConexionSql.conectar.prepareCall("{call BuscarEmpleado(?, ?)}");
-                verificacionNueva.setString(1, empleado);
-                verificacionNueva.registerOutParameter(2, Types.INTEGER);
-                verificacionNueva.execute();
-                idEmple = verificacionNueva.getInt(2);
-
-                // Se hace el agregado del lote
-                java.sql.CallableStatement agregar;
-                agregar = ConexionSql.conectar.prepareCall("{call AltaBebida(?,?,?,?,?)}");
-                agregar.setString(1, fechasalida);
-                agregar.setInt(2, idEmple);
-
-                agregar.execute();
-                JOptionPane.showMessageDialog(null, "BEBIDA AGREGADA");
-            }
-
-        } catch (SQLException ex) {
-        }
 
     }
 
     public void agregarCorreo(int idpro, String correo, String depar) {
         
         try{
+           
+            java.sql.CallableStatement agregar;
+            agregar = ConexionSql.conectar.prepareCall("{call AltaCorreoPro(?,?,?)}");
+            agregar.setInt(1, idpro);
+            agregar.setString(2, correo);
+            agregar.setString(3, depar);
+            agregar.execute();
+            JOptionPane.showMessageDialog(null, "CORREO AGREGADO");
             
-        
-        java.sql.CallableStatement agregar;
-        agregar = ConexionSql.conectar.prepareCall("{call AltaCorreoPro(?,?,?)}");
-        agregar.setInt(1, idpro);
-        agregar.setString(2, correo);
-        agregar.setString(3, depar);
         }
         catch(SQLException ex){
             JOptionPane.showMessageDialog(null, "Error: " + ex);

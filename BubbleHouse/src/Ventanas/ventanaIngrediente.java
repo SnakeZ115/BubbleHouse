@@ -525,7 +525,7 @@ public class ventanaIngrediente extends javax.swing.JFrame {
 
     private void lblTelefonosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTelefonosMouseClicked
         
-        ventanaLote newframe = new ventanaLote();
+        ventanaTelefonos newframe = new ventanaTelefonos();
         newframe.setVisible(true);
         this.dispose();
         
@@ -553,6 +553,9 @@ public class ventanaIngrediente extends javax.swing.JFrame {
 
     private void lblLotesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLotesMouseClicked
         // TODO add your handling code here:
+        ventanaLote newframe = new ventanaLote();
+        newframe.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_lblLotesMouseClicked
 
     private void lblCorreosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCorreosMouseClicked
