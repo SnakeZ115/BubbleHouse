@@ -133,5 +133,35 @@ public class Buscar {
         }
     }
     
+    public static void BuscarProveedoresCorreos(String nombre){
+        String[] titulos = {"CodigoCorreo,CodigoProveedor", "Nombre", "Apellidos","Correo", "Empresa", "Departamento"};
+        String[] registros = new String[7];
+        
+        DefaultTableModel modelo=new DefaultTableModel(null, titulos);
+        String SQL = "{call FiltrarCorreoPro('"+nombre+"')}"; 
+        try{
+            
+            Statement st = ConexionSql.conectar.createStatement();
+            ResultSet rs=st.executeQuery(SQL);
+            
+            while (rs.next()){
+                registros[0]=rs.getString("idCorreoPro");
+                registros[1]=rs.getString("IdProveedores");
+                registros[2]=rs.getString("NombrePro");
+                registros[3]=rs.getString("ApellidosPro");
+                registros[4]=rs.getString("CorreoProveedores");
+                registros[5]=rs.getString("NombreEmpresa");
+                registros[6]=rs.getString("DepartamentoProveedor");                
+                modelo.addRow(registros);
+            }
+            ventanaCorreos.jtableCorreos.setModel(modelo);
+        }
+        catch(SQLException e){
+               
+            JOptionPane.showMessageDialog(null,"ERROR "+e);
+
+        }
+    }
+    
 }
 
