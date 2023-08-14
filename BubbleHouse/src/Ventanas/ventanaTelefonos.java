@@ -37,23 +37,27 @@ public class ventanaTelefonos extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         txtBuscar = new javax.swing.JTextField();
-        txtTelefono = new javax.swing.JTextField();
-        jPanel8 = new javax.swing.JPanel();
-        lblAgregar = new javax.swing.JLabel();
-        jPanel9 = new javax.swing.JPanel();
-        lblModificar = new javax.swing.JLabel();
-        jPanel10 = new javax.swing.JPanel();
-        lblEliminar = new javax.swing.JLabel();
+        txtTelefonoProovedores = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableProveedores = new javax.swing.JTable();
         jLabel16 = new javax.swing.JLabel();
-        txtId = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTableProveedores1 = new javax.swing.JTable();
         jLabel8 = new javax.swing.JLabel();
         txtBuscar1 = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        txtTelefonoEmpleados = new javax.swing.JTextField();
+        jPanel12 = new javax.swing.JPanel();
+        lblAgregar = new javax.swing.JLabel();
+        jPanel21 = new javax.swing.JPanel();
+        lblModificar = new javax.swing.JLabel();
+        jPanel22 = new javax.swing.JPanel();
+        lblEliminar = new javax.swing.JLabel();
+        spinnerIdEmpleado = new javax.swing.JSpinner();
+        spinnerIdProovedores = new javax.swing.JSpinner();
         jPanel3 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         lblProovedores = new javax.swing.JLabel();
@@ -97,7 +101,7 @@ public class ventanaTelefonos extends javax.swing.JFrame {
 
         jLabel7.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
         jLabel7.setText("Teléfono");
-        jPanel4.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 400, -1, -1));
+        jPanel4.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 390, -1, -1));
 
         txtBuscar.setFont(new java.awt.Font("Leelawadee UI", 0, 14)); // NOI18N
         txtBuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -112,89 +116,12 @@ public class ventanaTelefonos extends javax.swing.JFrame {
         });
         jPanel4.add(txtBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 40, 280, 30));
 
-        txtTelefono.addActionListener(new java.awt.event.ActionListener() {
+        txtTelefonoProovedores.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtTelefonoActionPerformed(evt);
+                txtTelefonoProovedoresActionPerformed(evt);
             }
         });
-        jPanel4.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 400, 190, 30));
-
-        jPanel8.setBackground(new java.awt.Color(245, 191, 174));
-
-        lblAgregar.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
-        lblAgregar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblAgregar.setText("Agregar");
-        lblAgregar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        lblAgregar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblAgregarMouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
-        jPanel8.setLayout(jPanel8Layout);
-        jPanel8Layout.setHorizontalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(lblAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        jPanel8Layout.setVerticalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(lblAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
-        jPanel4.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 470, 180, -1));
-
-        jPanel9.setBackground(new java.awt.Color(245, 191, 174));
-
-        lblModificar.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
-        lblModificar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblModificar.setText("Modificar");
-        lblModificar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-
-        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
-        jPanel9.setLayout(jPanel9Layout);
-        jPanel9Layout.setHorizontalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(lblModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        jPanel9Layout.setVerticalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(lblModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
-        jPanel4.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 470, 180, -1));
-
-        jPanel10.setBackground(new java.awt.Color(245, 191, 174));
-
-        lblEliminar.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
-        lblEliminar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblEliminar.setText("Eliminar");
-        lblEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-
-        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
-        jPanel10.setLayout(jPanel10Layout);
-        jPanel10Layout.setHorizontalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(lblEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        jPanel10Layout.setVerticalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(lblEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
-        jPanel4.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 470, -1, -1));
+        jPanel4.add(txtTelefonoProovedores, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 390, 190, 30));
 
         jTableProveedores.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
         jTableProveedores.setModel(new javax.swing.table.DefaultTableModel(
@@ -214,15 +141,7 @@ public class ventanaTelefonos extends javax.swing.JFrame {
 
         jLabel16.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
         jLabel16.setText("ID");
-        jPanel4.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 360, -1, -1));
-
-        txtId.setFont(new java.awt.Font("Leelawadee UI", 0, 14)); // NOI18N
-        txtId.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtIdActionPerformed(evt);
-            }
-        });
-        jPanel4.add(txtId, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 360, 190, 30));
+        jPanel4.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 350, -1, -1));
 
         jTableProveedores1.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
         jTableProveedores1.setModel(new javax.swing.table.DefaultTableModel(
@@ -238,7 +157,7 @@ public class ventanaTelefonos extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(jTableProveedores1);
 
-        jPanel4.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 480, 250));
+        jPanel4.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, 480, 250));
 
         jLabel8.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
         jLabel8.setText("Proovedores");
@@ -255,15 +174,103 @@ public class ventanaTelefonos extends javax.swing.JFrame {
                 txtBuscar1KeyReleased(evt);
             }
         });
-        jPanel4.add(txtBuscar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 40, 280, 30));
+        jPanel4.add(txtBuscar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, 280, 30));
 
         jLabel9.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
         jLabel9.setText("Buscar:");
-        jPanel4.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, -1, -1));
+        jPanel4.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
         jLabel10.setText("Empleados");
-        jPanel4.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, -1, -1));
+        jPanel4.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, -1, -1));
+
+        jLabel17.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
+        jLabel17.setText("ID");
+        jPanel4.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 360, -1, -1));
+
+        jLabel11.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
+        jLabel11.setText("Teléfono");
+        jPanel4.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 400, -1, -1));
+
+        txtTelefonoEmpleados.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTelefonoEmpleadosActionPerformed(evt);
+            }
+        });
+        jPanel4.add(txtTelefonoEmpleados, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 400, 190, 30));
+
+        jPanel12.setBackground(new java.awt.Color(245, 191, 174));
+
+        lblAgregar.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        lblAgregar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblAgregar.setText("Agregar");
+        lblAgregar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblAgregar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblAgregarMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+        jPanel12.setLayout(jPanel12Layout);
+        jPanel12Layout.setHorizontalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblAgregar, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+        );
+        jPanel12Layout.setVerticalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lblAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        jPanel4.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 460, 180, -1));
+
+        jPanel21.setBackground(new java.awt.Color(245, 191, 174));
+
+        lblModificar.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        lblModificar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblModificar.setText("Modificar");
+        lblModificar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
+        javax.swing.GroupLayout jPanel21Layout = new javax.swing.GroupLayout(jPanel21);
+        jPanel21.setLayout(jPanel21Layout);
+        jPanel21Layout.setHorizontalGroup(
+            jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblModificar, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+        );
+        jPanel21Layout.setVerticalGroup(
+            jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel21Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lblModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        jPanel4.add(jPanel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 460, -1, -1));
+
+        jPanel22.setBackground(new java.awt.Color(245, 191, 174));
+
+        lblEliminar.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        lblEliminar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblEliminar.setText("Eliminar");
+        lblEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
+        javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
+        jPanel22.setLayout(jPanel22Layout);
+        jPanel22Layout.setHorizontalGroup(
+            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+        );
+        jPanel22Layout.setVerticalGroup(
+            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel22Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lblEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        jPanel4.add(jPanel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 460, -1, -1));
+        jPanel4.add(spinnerIdEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 360, -1, -1));
+        jPanel4.add(spinnerIdProovedores, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 350, -1, -1));
 
         jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 1280, 530));
 
@@ -473,13 +480,9 @@ public class ventanaTelefonos extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtBuscarActionPerformed
 
-    private void txtTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefonoActionPerformed
+    private void txtTelefonoProovedoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefonoProovedoresActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtTelefonoActionPerformed
-
-    private void txtIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtIdActionPerformed
+    }//GEN-LAST:event_txtTelefonoProovedoresActionPerformed
 
     private void lblEmpleadosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblEmpleadosMouseClicked
         
@@ -505,10 +508,6 @@ public class ventanaTelefonos extends javax.swing.JFrame {
 
     }//GEN-LAST:event_lblTelefonosMouseClicked
 
-    private void lblAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAgregarMouseClicked
-      
-    }//GEN-LAST:event_lblAgregarMouseClicked
-
     private void txtBuscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarKeyReleased
         
         Buscar.buscarProovedores(txtBuscar.getText());
@@ -533,6 +532,44 @@ public class ventanaTelefonos extends javax.swing.JFrame {
     private void txtBuscar1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscar1KeyReleased
         // TODO add your handling code here:
     }//GEN-LAST:event_txtBuscar1KeyReleased
+
+    private void txtTelefonoEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefonoEmpleadosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTelefonoEmpleadosActionPerformed
+
+    private void lblAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAgregarMouseClicked
+       
+        int idProovedores = 0;
+        int idEmpleados = 0;
+        
+        String telefonoProovedores;
+        String telefonoEmpleados;
+        
+        idProovedores = (int) spinnerIdProovedores.getValue();
+        idEmpleados = (int) spinnerIdEmpleado.getValue();
+        
+        telefonoProovedores = txtTelefonoProovedores.getText();
+        telefonoEmpleados = txtTelefonoEmpleados.getText();
+        
+        Agregar agregar = new Agregar();
+        
+        if(telefonoProovedores.isEmpty() && idProovedores == 0){ //AGREGAR TELEFONO EMPLEADOS 
+            
+            agregar.agregarTelefonoEmpleado(idEmpleados,telefonoEmpleados);
+            
+        }
+        else if(telefonoEmpleados.isEmpty() && idEmpleados == 0){ //AGREGAR TELEFONO PROOVEDORES
+            
+            agregar.agregarTelefonoProovedor(idProovedores, telefonoProovedores);
+            
+        }
+        else{ //AGREGAR TELEFONO PROOVEDORES Y EMPLEADOS
+            
+            agregar.agregarTelefonoProovedor(idProovedores, telefonoProovedores);
+            agregar.agregarTelefonoEmpleado(idEmpleados,telefonoEmpleados);
+            
+        }
+    }//GEN-LAST:event_lblAgregarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -585,26 +622,28 @@ public class ventanaTelefonos extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel17;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel21;
+    private javax.swing.JPanel jPanel22;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
@@ -619,9 +658,11 @@ public class ventanaTelefonos extends javax.swing.JFrame {
     private javax.swing.JLabel lblModificar;
     private javax.swing.JLabel lblProovedores;
     private javax.swing.JLabel lblTelefonos;
+    private javax.swing.JSpinner spinnerIdEmpleado;
+    private javax.swing.JSpinner spinnerIdProovedores;
     private javax.swing.JTextField txtBuscar;
     private javax.swing.JTextField txtBuscar1;
-    public static javax.swing.JTextField txtId;
-    public static javax.swing.JTextField txtTelefono;
+    public static javax.swing.JTextField txtTelefonoEmpleados;
+    public static javax.swing.JTextField txtTelefonoProovedores;
     // End of variables declaration//GEN-END:variables
 }

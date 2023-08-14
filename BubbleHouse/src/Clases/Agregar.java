@@ -27,13 +27,13 @@ public class Agregar {
             idCol = verificacion.getInt(2);
 
             if (idCol == 0) { //NO ENCONTRO COLONIA, SE AGREGA
-                
+
                 java.sql.CallableStatement agregarColonia;
                 agregarColonia = ConexionSql.conectar.prepareCall("{call AltaColonias(?)}");
                 agregarColonia.setString(1, colonia);
                 agregarColonia.execute();
                 agregado = 1; //VARIABLE PARA DECIR QUE SE AGREGÓ LA NUEVA COLONIA
-                
+
             } else {
 
                 java.sql.CallableStatement agregar;
@@ -102,21 +102,21 @@ public class Agregar {
             idPuesto = verificacionPuesto.getInt(2);
 
             if (idCol == 0) { //NO ENCONTRO COLONIA, SE AGREGA
-                
+
                 java.sql.CallableStatement agregarColonia;
                 agregarColonia = ConexionSql.conectar.prepareCall("{call AltaColonias(?)}");
                 agregarColonia.setString(1, colonia);
                 agregarColonia.execute();
                 agregado = 1; //VARIABLE PARA DECIR QUE SE AGREGÓ LA NUEVA COLONIA
-                
+
             } else if (idPuesto == 0) { //NO ENCONTRO EL PUESTO, LO AGREGA
-                
+
                 java.sql.CallableStatement agregarPuesto;
                 agregarPuesto = ConexionSql.conectar.prepareCall("{call AltaPuesto(?)}");
                 agregarPuesto.setString(1, puesto);
                 agregarPuesto.execute();
                 agregadoPuesto = 1;//VARIABLE PARA DECIR QUE SE AGREGÓ
-                
+
             } else {
 
                 java.sql.CallableStatement agregar;
@@ -217,29 +217,28 @@ public class Agregar {
     }
 
     public void agregarLote(String lote, String fechaCaducidad, int existencia, String ingrediente, String fechaEntrada, int valorUnitario) {
-        
+
         int idIngrediente = 0;
         int equivalenciaExistencia = (existencia * valorUnitario) * 1000;
-        
+
         //BUSCA SI LA PROVEEDOR YA EXISTE
         try {
-            
+
             java.sql.CallableStatement verificacion;
             verificacion = ConexionSql.conectar.prepareCall("{call BuscarIdIngrediente(?, ?)}");
             verificacion.setString(1, ingrediente);
             verificacion.registerOutParameter(2, Types.INTEGER);
             verificacion.execute();
             idIngrediente = verificacion.getInt(2);
-            
-            if(idIngrediente == 0) {
-                
+
+            if (idIngrediente == 0) {
+
                 JOptionPane.showMessageDialog(null, "NO EXISTE EL INGREDIENTE");
-                
-            }
-            else {
- 
+
+            } else {
+
                 try {
-                     //CONVERTIR STRINGS A FECHAS SQL
+                    //CONVERTIR STRINGS A FECHAS SQL
                     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
                     java.util.Date utilDate1 = dateFormat.parse(fechaCaducidad);
@@ -259,7 +258,7 @@ public class Agregar {
                     agregar.setInt(7, idIngrediente);
                     agregar.execute();
                     JOptionPane.showMessageDialog(null, "INGREDIENTE AGREGADO");
-                    
+
                 } catch (ParseException ex) {
                     Logger.getLogger(Agregar.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -268,7 +267,7 @@ public class Agregar {
         } catch (SQLException ex) {
             Logger.getLogger(Agregar.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
     }
 
     public void agregarBebida(String fechasalida, String empleado) {
@@ -276,9 +275,9 @@ public class Agregar {
     }
 
     public void agregarCorreo(int idpro, String correo, String depar) {
-        
-        try{
-           
+
+        try {
+
             java.sql.CallableStatement agregar;
             agregar = ConexionSql.conectar.prepareCall("{call AltaCorreoPro(?,?,?)}");
             agregar.setInt(3, idpro);
@@ -287,11 +286,97 @@ public class Agregar {
             agregar.execute();
             JOptionPane.showMessageDialog(null, "CORREO AGREGADO");
 
-
-        }
-        catch(SQLException ex){
+        } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error: " + ex);
         }
+    }
+
+    public void agregarTelefonoEmpleado(int id, String telefono) {
+
+        int respuestaId = 0;
+
+        try {
+
+            java.sql.CallableStatement verificacion;
+            verificacion = ConexionSql.conectar.prepareCall("{call BuscarIdEmpleado(?, ?)}");
+            verificacion.setInt(1, id);
+            verificacion.registerOutParameter(2, Types.INTEGER);
+            verificacion.execute();
+            respuestaId = verificacion.getInt(2);
+
+            if (respuestaId == 0) {
+
+                JOptionPane.showMessageDialog(null, "PROOVEDOR INEXISTENTE");
+
+            } else {
+                
+                try {
+
+                    java.sql.CallableStatement agregar;
+                    agregar = ConexionSql.conectar.prepareCall("{call AltaTelefonoEmp(?,?)}");
+                    agregar.setInt(1, id);
+                    agregar.setString(2, telefono);
+                    agregar.execute();
+                    JOptionPane.showMessageDialog(null, "TELÉFONO AGREGADO");
+
+                } catch (SQLException ex) {
+
+                    JOptionPane.showMessageDialog(null, "Error: " + ex);
+
+                }
+                
+            }
+
+        } catch (SQLException ex) {
+
+            Logger.getLogger(Agregar.class.getName()).log(Level.SEVERE, null, ex);
+
+        }
+
+    }
+
+    public void agregarTelefonoProovedor(int id, String telefono) {
+
+        int respuestaId = 0;
+
+        try {
+
+            java.sql.CallableStatement verificacion;
+            verificacion = ConexionSql.conectar.prepareCall("{call BuscarIdProovedor(?, ?)}");
+            verificacion.setInt(1, id);
+            verificacion.registerOutParameter(2, Types.INTEGER);
+            verificacion.execute();
+            respuestaId = verificacion.getInt(2);
+
+            if (respuestaId == 0) {
+
+                JOptionPane.showMessageDialog(null, "PROOVEDOR INEXISTENTE");
+
+            } else {
+
+                try {
+
+                    java.sql.CallableStatement agregar;
+                    agregar = ConexionSql.conectar.prepareCall("{call AltaTelefonoPro(?,?)}");
+                    agregar.setString(1, telefono);
+                    agregar.setInt(2, id);
+                    agregar.execute();
+                    JOptionPane.showMessageDialog(null, "TELÉFONO AGREGADO");
+
+                } catch (SQLException ex) {
+
+                    JOptionPane.showMessageDialog(null, "Error: " + ex);
+
+                }
+
+            }
+
+        } catch (SQLException ex) {
+
+            Logger.getLogger(Agregar.class.getName()).log(Level.SEVERE, null, ex);
+
+        }
+
     }
 
 }
