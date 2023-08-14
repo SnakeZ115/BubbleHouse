@@ -286,7 +286,8 @@ public class Agregar {
             agregar.setString(3, depar);
             agregar.execute();
             JOptionPane.showMessageDialog(null, "CORREO AGREGADO");
-            
+
+
         }
         catch(SQLException ex){
             JOptionPane.showMessageDialog(null, "Error: " + ex);

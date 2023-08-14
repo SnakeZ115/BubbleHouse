@@ -1,6 +1,7 @@
 
 package Clases;
 
+import java.lang.reflect.Array;
 import java.sql.SQLException;
 import java.sql.Types;
 import java.util.logging.Level;
@@ -212,8 +213,27 @@ public void modificarEmpleado(int id, String nombre, String apellidos, String ca
 
 
         } catch (SQLException ex) {
-            
+            JOptionPane.showMessageDialog(null, "ERROR: "+ex);
         }
     }
-
+    
+    public void modificarCorreoPro(int idcorreo, int idpro, String correo, String departamento){
+        try{
+            java.sql.CallableStatement modificar;
+            modificar = ConexionSql.conectar.prepareCall("call ModificarCorreoPro (?,?,?,?)");
+            
+            modificar.setInt(1, idcorreo);
+            modificar.setInt(2, idpro);
+            modificar.setString(3, correo);
+            modificar.setString(4, departamento);
+            
+            modificar.execute();
+            JOptionPane.showMessageDialog(null, "CORREO MODIFICADO");
+        }catch(SQLException ex){
+            JOptionPane.showMessageDialog(null, "ERROR: "+ex);
+        }
+        
+        
+        
+    }
 }

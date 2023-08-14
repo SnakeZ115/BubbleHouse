@@ -1,4 +1,3 @@
-
 package Clases;
 
 import java.sql.ResultSet;
@@ -8,13 +7,12 @@ import javax.swing.table.DefaultTableModel;
 import Ventanas.*;
 import java.sql.SQLException;
 
-
 public class Eliminar {
-    
+
     public void eliminarProveedor(int idProveedor) {
         String confirmacion;
         try {
-                        
+
             java.sql.CallableStatement eliminarProveedor;
             eliminarProveedor = ConexionSql.conectar.prepareCall("{call EliminarProveedores(?)}");
             eliminarProveedor.setInt(1, idProveedor);
@@ -25,18 +23,18 @@ public class Eliminar {
             }
 
         } catch (Exception e) {
-            
+
             JOptionPane.showMessageDialog(null, e);
-            
+
         }
-            
+
     }
-    
+
     public void eliminarEmpleado(int idEmpleado) {
-        
+
         String confirmacion;
         try {
-                        
+
             java.sql.CallableStatement eliminarProveedor;
             eliminarProveedor = ConexionSql.conectar.prepareCall("{call EliminarEmpleados(?)}");
             eliminarProveedor.setInt(1, idEmpleado);
@@ -47,18 +45,18 @@ public class Eliminar {
             }
 
         } catch (Exception e) {
-            
+
             JOptionPane.showMessageDialog(null, e);
-            
+
         }
-        
+
     }
-    
+
     public void eliminarIngrediente(int idIngrediente) {
-        
-                String confirmacion;
+
+        String confirmacion;
         try {
-                        
+
             java.sql.CallableStatement eliminarProveedor;
             eliminarProveedor = ConexionSql.conectar.prepareCall("{call EliminarIngrediente(?)}");
             eliminarProveedor.setInt(1, idIngrediente);
@@ -69,11 +67,31 @@ public class Eliminar {
             }
 
         } catch (Exception e) {
-            
+
             JOptionPane.showMessageDialog(null, e);
-            
+
         }
-        
+
     }
-    
+
+    public void eliminarCorreoProveedor(int id) {
+        
+        String confirmacion;
+        try {
+
+            java.sql.CallableStatement eliminarCorreo;
+            eliminarCorreo = ConexionSql.conectar.prepareCall("{call EliminarCorreoPro(?)}");
+            eliminarCorreo.setInt(1, id);
+            confirmacion = JOptionPane.showInputDialog(null, "Desea eliminar el registro? Escribir 'SI' para proceder").toUpperCase();
+            if (confirmacion.equals("SI") || confirmacion.equals("SMN")) {
+                eliminarCorreo.execute();
+                JOptionPane.showMessageDialog(null, "CORREO ELIMINADO");
+            }
+
+        } catch (Exception e) {
+
+            JOptionPane.showMessageDialog(null, e);
+
+        }
+    }
 }
