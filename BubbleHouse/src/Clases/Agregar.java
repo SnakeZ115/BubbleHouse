@@ -281,9 +281,9 @@ public class Agregar {
            
             java.sql.CallableStatement agregar;
             agregar = ConexionSql.conectar.prepareCall("{call AltaCorreoPro(?,?,?)}");
-            agregar.setInt(1, idpro);
-            agregar.setString(2, correo);
-            agregar.setString(3, depar);
+            agregar.setInt(3, idpro);
+            agregar.setString(1, correo);
+            agregar.setString(2, depar);
             agregar.execute();
             JOptionPane.showMessageDialog(null, "CORREO AGREGADO");
 
