@@ -39,36 +39,7 @@ public class Mostrar {
         }
     }
 
-    public static void mostrarDatosLotes() {
-        String[] titulos = {"Codigo", "Lote", "Caducidad", "Existencia", "Equivalencia", "Ingredeintes", "Entrada"};
-        String[] registros = new String[7];
-
-        DefaultTableModel modelo = new DefaultTableModel(null, titulos);
-        String SQL = "{call MostrarLotes}";
-        try {
-
-            Statement st = ConexionSql.conectar.createStatement();
-            ResultSet rs = st.executeQuery(SQL);
-
-            while (rs.next()) {
-
-                registros[0] = rs.getString("Idlote");
-                registros[1] = rs.getString("Lotes");
-                registros[2] = rs.getString("FechaCaducidad");
-                registros[3] = rs.getString("Existencia");
-                registros[4] = rs.getString("EquivalenciaExistencia");
-                registros[5] = rs.getString("Ingredientes_idIngredientes");
-                registros[6] = rs.getString("FechaEntrada");
-
-                modelo.addRow(registros);
-            }
-            ventanaLote.jTableLotes.setModel(modelo);
-        } catch (SQLException e) {
-
-            JOptionPane.showMessageDialog(null, "ERROR " + e);
-
-        }
-    }
+    
 
     public static void mostrarDatosIngredientes() {
         String[] titulos = {"Codigo", "Ingrediente", "Marca", "UnidadMedida", "TipoIngrediente", "Proveedor"};
@@ -157,5 +128,32 @@ public class Mostrar {
             JOptionPane.showMessageDialog(null, "ERROR " + e);
 
         }
+    }
+    public static void mostrarDatosLotes(){
+        
+        String [] titulos = {"Codigo","Lote", "FechaCaducidad", "Existencia", "ValorUnitario", "Ingrediente", "FechaEntrada"};
+        String[] registros = new String[7];
+        
+        DefaultTableModel modelo = new DefaultTableModel (null, titulos);
+        String SQL = "{call MostrarLotes}";
+        try{
+            Statement st = ConexionSql.conectar.createStatement();
+            ResultSet rs = st.executeQuery(SQL);
+            
+            while(rs.next()){
+                registros[0] = rs.getString("idLote");
+                registros[1] = rs.getString("Lotes");
+                registros[2] = rs.getString("FechaCaducidad");
+                registros[3] = rs.getString("Existencia");
+                registros[4] = rs.getString("ValorUnitario");
+                registros[5] = rs.getString("NombreIngrediente");
+                registros[6] = rs.getString("FechaEntrada");
+                modelo.addRow(registros);
+            }
+            ventanaLote.jTableLotes.setModel(modelo);
+        }catch(SQLException e){
+            JOptionPane.showMessageDialog(null, "ERROR " + e);
+        }
+        
     }
 }
