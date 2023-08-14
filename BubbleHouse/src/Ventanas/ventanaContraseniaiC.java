@@ -46,7 +46,7 @@ public class ventanaContraseniaiC extends javax.swing.JFrame {
         jEntrarC.setForeground(new java.awt.Color(238, 102, 71));
         jEntrarC.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jEntrarC.setText("Entrar");
-        jEntrarC.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jEntrarC.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jEntrarC.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jEntrarCMouseClicked(evt);

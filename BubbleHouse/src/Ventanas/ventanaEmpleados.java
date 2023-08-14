@@ -164,7 +164,7 @@ public class ventanaEmpleados extends javax.swing.JFrame {
         lblAgregar.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
         lblAgregar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblAgregar.setText("Agregar");
-        lblAgregar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblAgregar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblAgregar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblAgregarMouseClicked(evt);
@@ -189,7 +189,7 @@ public class ventanaEmpleados extends javax.swing.JFrame {
         lblModificar.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
         lblModificar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblModificar.setText("Modificar");
-        lblModificar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblModificar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblModificar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblModificarMouseClicked(evt);
@@ -214,7 +214,7 @@ public class ventanaEmpleados extends javax.swing.JFrame {
         lblEliminar.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
         lblEliminar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblEliminar.setText("Eliminar");
-        lblEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblEliminar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblEliminarMouseClicked(evt);
@@ -297,7 +297,7 @@ public class ventanaEmpleados extends javax.swing.JFrame {
         lblProovedores.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
         lblProovedores.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblProovedores.setText("Proovedores");
-        lblProovedores.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblProovedores.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblProovedores.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblProovedoresMouseClicked(evt);
@@ -326,7 +326,7 @@ public class ventanaEmpleados extends javax.swing.JFrame {
         lblEmpleados.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
         lblEmpleados.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblEmpleados.setText("Empleados");
-        lblEmpleados.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblEmpleados.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
@@ -348,7 +348,7 @@ public class ventanaEmpleados extends javax.swing.JFrame {
         lblIngredientes.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
         lblIngredientes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblIngredientes.setText("Ingredientes");
-        lblIngredientes.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblIngredientes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblIngredientes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblIngredientesMouseClicked(evt);
@@ -377,7 +377,7 @@ public class ventanaEmpleados extends javax.swing.JFrame {
         lblLotes.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
         lblLotes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblLotes.setText("Lotes");
-        lblLotes.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblLotes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblLotes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblLotesMouseClicked(evt);
@@ -406,7 +406,7 @@ public class ventanaEmpleados extends javax.swing.JFrame {
         lblCorreos.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
         lblCorreos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblCorreos.setText("Correos");
-        lblCorreos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblCorreos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblCorreos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblCorreosMouseClicked(evt);
@@ -435,7 +435,7 @@ public class ventanaEmpleados extends javax.swing.JFrame {
         lblTelefonos.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
         lblTelefonos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTelefonos.setText("Teléfonos");
-        lblTelefonos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblTelefonos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblTelefonos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblTelefonosMouseClicked(evt);

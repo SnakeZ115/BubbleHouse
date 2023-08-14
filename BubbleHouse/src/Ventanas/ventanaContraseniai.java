@@ -53,7 +53,7 @@ public class ventanaContraseniai extends javax.swing.JFrame {
         jLabelEntrarAdministrador.setForeground(new java.awt.Color(238, 102, 71));
         jLabelEntrarAdministrador.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelEntrarAdministrador.setText("Entrar");
-        jLabelEntrarAdministrador.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jLabelEntrarAdministrador.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabelEntrarAdministrador.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabelEntrarAdministradorMouseClicked(evt);

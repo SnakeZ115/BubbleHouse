@@ -82,7 +82,7 @@ public class ventanaReporte extends javax.swing.JFrame {
         lblAgregar.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
         lblAgregar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblAgregar.setText("Buscar");
-        lblAgregar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblAgregar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblAgregar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblAgregarMouseClicked(evt);
@@ -127,7 +127,7 @@ public class ventanaReporte extends javax.swing.JFrame {
         lblSalir.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
         lblSalir.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblSalir.setText("Salir");
-        lblSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);

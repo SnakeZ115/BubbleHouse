@@ -42,8 +42,6 @@ public class ventanaLote extends javax.swing.JFrame {
         txtBuscarLote = new javax.swing.JTextField();
         jPanel8 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
-        jPanel10 = new javax.swing.JPanel();
-        jLabel13 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableLotes = new javax.swing.JTable();
         spinnerValorUnitarioLote = new javax.swing.JSpinner();
@@ -126,7 +124,7 @@ public class ventanaLote extends javax.swing.JFrame {
         jLabel11.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel11.setText("Agregar");
-        jLabel11.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jLabel11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel11MouseClicked(evt);
@@ -149,30 +147,6 @@ public class ventanaLote extends javax.swing.JFrame {
         );
 
         jPanel4.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 320, 180, -1));
-
-        jPanel10.setBackground(new java.awt.Color(245, 191, 174));
-
-        jLabel13.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
-        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel13.setText("Salir");
-        jLabel13.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-
-        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
-        jPanel10.setLayout(jPanel10Layout);
-        jPanel10Layout.setHorizontalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        jPanel10Layout.setVerticalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
-        jPanel4.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 470, 180, -1));
 
         jTableLotes.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
         jTableLotes.setModel(new javax.swing.table.DefaultTableModel(
@@ -233,7 +207,7 @@ public class ventanaLote extends javax.swing.JFrame {
         lblProovedores.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
         lblProovedores.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblProovedores.setText("Proovedores");
-        lblProovedores.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblProovedores.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblProovedores.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblProovedoresMouseClicked(evt);
@@ -262,7 +236,7 @@ public class ventanaLote extends javax.swing.JFrame {
         lblEmpleados.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
         lblEmpleados.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblEmpleados.setText("Empleados");
-        lblEmpleados.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblEmpleados.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblEmpleados.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblEmpleadosMouseClicked(evt);
@@ -291,7 +265,7 @@ public class ventanaLote extends javax.swing.JFrame {
         lblIngredientes.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
         lblIngredientes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblIngredientes.setText("Ingredientes");
-        lblIngredientes.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblIngredientes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblIngredientes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblIngredientesMouseClicked(evt);
@@ -320,7 +294,7 @@ public class ventanaLote extends javax.swing.JFrame {
         lblLotes.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
         lblLotes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblLotes.setText("Lotes");
-        lblLotes.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblLotes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
@@ -344,7 +318,7 @@ public class ventanaLote extends javax.swing.JFrame {
         lblCorreos.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
         lblCorreos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblCorreos.setText("Correos");
-        lblCorreos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblCorreos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblCorreos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblCorreosMouseClicked(evt);
@@ -373,7 +347,7 @@ public class ventanaLote extends javax.swing.JFrame {
         lblTelefonos.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
         lblTelefonos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTelefonos.setText("Teléfonos");
-        lblTelefonos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblTelefonos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblTelefonos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblTelefonosMouseClicked(evt);
@@ -542,7 +516,6 @@ public class ventanaLote extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel3;
@@ -551,7 +524,6 @@ public class ventanaLote extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
