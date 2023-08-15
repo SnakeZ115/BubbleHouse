@@ -358,8 +358,8 @@ public class Agregar {
 
                     java.sql.CallableStatement agregar;
                     agregar = ConexionSql.conectar.prepareCall("{call AltaTelefonoPro(?,?)}");
-                    agregar.setString(1, telefono);
-                    agregar.setInt(2, id);
+                    agregar.setInt(1, id);
+                    agregar.setString(2, telefono);
                     agregar.execute();
                     JOptionPane.showMessageDialog(null, "TELÉFONO AGREGADO");
 

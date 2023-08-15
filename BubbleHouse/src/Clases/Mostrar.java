@@ -39,8 +39,6 @@ public class Mostrar {
         }
     }
 
-    
-
     public static void mostrarDatosIngredientes() {
         String[] titulos = {"Codigo", "Ingrediente", "Marca", "UnidadMedida", "TipoIngrediente", "Proveedor"};
         String[] registros = new String[6];
@@ -119,7 +117,7 @@ public class Mostrar {
                 registros[4] = rs.getString("CorreoProveedores");
                 registros[5] = rs.getString("NombreEmpresa");
                 registros[6] = rs.getString("DepartamentoProveedor");
-                
+
                 modelo.addRow(registros);
             }
             ventanaCorreos.jtableCorreos.setModel(modelo);
@@ -129,18 +127,19 @@ public class Mostrar {
 
         }
     }
-    public static void mostrarDatosLotes(){
-        
-        String [] titulos = {"Codigo","Lote", "FechaCaducidad", "Existencia", "ValorUnitario", "Ingrediente", "FechaEntrada"};
+
+    public static void mostrarDatosLotes() {
+
+        String[] titulos = {"Codigo", "Lote", "FechaCaducidad", "Existencia", "ValorUnitario", "Ingrediente", "FechaEntrada"};
         String[] registros = new String[7];
-        
-        DefaultTableModel modelo = new DefaultTableModel (null, titulos);
+
+        DefaultTableModel modelo = new DefaultTableModel(null, titulos);
         String SQL = "{call MostrarLotes}";
-        try{
+        try {
             Statement st = ConexionSql.conectar.createStatement();
             ResultSet rs = st.executeQuery(SQL);
-            
-            while(rs.next()){
+
+            while (rs.next()) {
                 registros[0] = rs.getString("idLote");
                 registros[1] = rs.getString("Lotes");
                 registros[2] = rs.getString("FechaCaducidad");
@@ -151,9 +150,63 @@ public class Mostrar {
                 modelo.addRow(registros);
             }
             ventanaLote.jTableLotes.setModel(modelo);
-        }catch(SQLException e){
+        } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "ERROR " + e);
         }
-        
+
+    }
+
+    public static void mostrarDatosTelefonosEmpleados() {
+
+        String[] titulos = {"Codigo","CodigoEmp", "Nombre", "Apellido", "Numero"};
+        String[] registros = new String[5];
+
+        DefaultTableModel modelo = new DefaultTableModel(null, titulos);
+        String SQL = "{call mostrarTelefonosEmpleados}";
+        try {
+
+            Statement st = ConexionSql.conectar.createStatement();
+            ResultSet rs = st.executeQuery(SQL);
+            while (rs.next()) {
+
+                registros[0] = rs.getString("idTelefonoEmp");
+                registros[1] = rs.getString("idEmpleados");
+                registros[2] = rs.getString("NombreEmp");
+                registros[4] = rs.getString("NumeroEmpleado");
+                registros[3] = rs.getString("ApellidosEmp");
+                modelo.addRow(registros);
+
+            }
+            ventanaTelefonos.jTableEmpleados.setModel(modelo);
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "ERROR " + e);
+        }
+    }
+    
+     public static void mostrarDatosTelefonosProveedor() {
+
+        String[] titulos = {"Codigo","CodigoPro", "Nombre", "Apellido", "Numero"};
+        String[] registros = new String[5];
+
+        DefaultTableModel modelo = new DefaultTableModel(null, titulos);
+        String SQL = "{call mostrarTelefonosProovedor}";
+        try {
+
+            Statement st = ConexionSql.conectar.createStatement();
+            ResultSet rs = st.executeQuery(SQL);
+            while (rs.next()) {
+
+                registros[0] = rs.getString("idTelefonoPro");
+                registros[1] = rs.getString("idProveedores");
+                registros[2] = rs.getString("NombrePro");
+                registros[4] = rs.getString("NumeroProveedor");
+                registros[3] = rs.getString("ApellidosPro");
+                modelo.addRow(registros);
+
+            }
+            ventanaTelefonos.jTableProveedores.setModel(modelo);
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "ERROR " + e);
+        }
     }
 }

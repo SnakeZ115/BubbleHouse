@@ -284,4 +284,92 @@ public class Modificar {
         }
 
     }
+    public void ModificarTelefonoEmpleado(int idNumero, int id, String telefono) {
+
+        int respuestaId = 0;
+
+        try {
+
+            java.sql.CallableStatement verificacion;
+            verificacion = ConexionSql.conectar.prepareCall("{call BuscarIdEmpleado(?, ?)}");
+            verificacion.setInt(1, id);
+            verificacion.registerOutParameter(2, Types.INTEGER);
+            verificacion.execute();
+            respuestaId = verificacion.getInt(2);
+
+            if (respuestaId == 0) {
+
+                JOptionPane.showMessageDialog(null, "EMPLEADO INEXISTENTE");
+
+            } else {
+                
+                try {
+
+                    java.sql.CallableStatement modificar;
+                    modificar = ConexionSql.conectar.prepareCall("{call ModificarTelefonoEmpl(?,?,?)}");
+                    modificar.setInt(1, idNumero);
+                    modificar.setInt(2, id);
+                    modificar.setString(3, telefono);
+                    modificar.execute();
+                    JOptionPane.showMessageDialog(null, "TELÉFONO MODIFICADO");
+
+                } catch (SQLException ex) {
+
+                    JOptionPane.showMessageDialog(null, "Error: " + ex);
+
+                }
+                
+            }
+
+        } catch (SQLException ex) {
+
+            Logger.getLogger(Agregar.class.getName()).log(Level.SEVERE, null, ex);
+
+        }
+    }
+    
+    public void ModificarTelefonoProovedor(int idNumero, int id, String telefono) {
+
+        int respuestaId = 0;
+
+        try {
+
+            java.sql.CallableStatement verificacion;
+            verificacion = ConexionSql.conectar.prepareCall("{call BuscarIdProovedor(?, ?)}");
+            verificacion.setInt(1, id);
+            verificacion.registerOutParameter(2, Types.INTEGER);
+            verificacion.execute();
+            respuestaId = verificacion.getInt(2);
+
+            if (respuestaId == 0) {
+
+                JOptionPane.showMessageDialog(null, "PROOVEDOR INEXISTENTE");
+
+            } else {
+
+                try {
+
+                    java.sql.CallableStatement modificar;
+                    modificar = ConexionSql.conectar.prepareCall("{call ModificarTelefonoPro(?,?,?)}");
+                    modificar.setInt(1, idNumero);
+                    modificar.setInt(2, id);
+                    modificar.setString(3, telefono);
+                    modificar.execute();
+                    JOptionPane.showMessageDialog(null, "TELÉFONO MODIFICADO");
+
+                } catch (SQLException ex) {
+
+                    JOptionPane.showMessageDialog(null, "Error: " + ex);
+
+                }
+
+            }
+
+        } catch (SQLException ex) {
+
+            Logger.getLogger(Agregar.class.getName()).log(Level.SEVERE, null, ex);
+
+        }
+
+    }
 }

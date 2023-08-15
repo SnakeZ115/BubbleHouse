@@ -101,12 +101,12 @@ public class Buscar {
         }
     }
 
-    public static void buscarLotes (String Nombre){
+    public static void buscarLotes (String nombre){
         String[] titulos = {"Codigo", "Lote", "Caducidad", "Existencia", "Equivalencia", "Ingredeintes", "Entrada"};
         String[] registros = new String[7];
         
         DefaultTableModel modelo=new DefaultTableModel(null, titulos);
-        String SQL = "select * from lotes where Lotes like '%"+Nombre+"%'"; //Agregar procedimiento almacenado
+        String SQL = "call FiltrarLote('" +nombre+"')"; //Agregar procedimiento almacenado
         try{
             
             Statement st = ConexionSql.conectar.createStatement();
@@ -163,5 +163,58 @@ public class Buscar {
         }
     }
     
+    public static void BuscarTelefonosEmpleados(String nombre) {
+
+        String[] titulos = {"Codigo","CodigoEmp", "Nombre", "Apellido", "Numero"};
+        String[] registros = new String[5];
+
+        DefaultTableModel modelo = new DefaultTableModel(null, titulos);
+        String SQL = "{call BuscarTelefonoEmp('"+nombre+"')}";
+        try {
+
+            Statement st = ConexionSql.conectar.createStatement();
+            ResultSet rs = st.executeQuery(SQL);
+            while (rs.next()) {
+
+                registros[0] = rs.getString("idTelefonoEmp");
+                registros[1] = rs.getString("idEmpleados");
+                registros[2] = rs.getString("NombreEmp");
+                registros[4] = rs.getString("NumeroEmpleado");
+                registros[3] = rs.getString("ApellidosEmp");
+                modelo.addRow(registros);
+
+            }
+            ventanaTelefonos.jTableEmpleados.setModel(modelo);
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "ERROR " + e);
+        }
+    }
+    
+    public static void BuscarTelefonosProveedor(String nombre) {
+
+        String[] titulos = {"Codigo","CodigoPro", "Nombre", "Apellido", "Numero"};
+        String[] registros = new String[5];
+
+        DefaultTableModel modelo = new DefaultTableModel(null, titulos);
+        String SQL = "{call BuscarTelefonoPro('"+nombre+"')}";
+        try {
+
+            Statement st = ConexionSql.conectar.createStatement();
+            ResultSet rs = st.executeQuery(SQL);
+            while (rs.next()) {
+
+                registros[0] = rs.getString("idTelefonoPro");
+                registros[1] = rs.getString("idProveedores");
+                registros[2] = rs.getString("NombrePro");
+                registros[4] = rs.getString("NumeroProveedor");
+                registros[3] = rs.getString("ApellidosPro");
+                modelo.addRow(registros);
+
+            }
+            ventanaTelefonos.jTableProveedores.setModel(modelo);
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "ERROR " + e);
+        }
+    }
 }
 

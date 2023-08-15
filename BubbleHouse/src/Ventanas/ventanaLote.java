@@ -6,6 +6,8 @@ package Ventanas;
 
 import Clases.*;
 import java.util.Calendar;
+import javax.print.event.PrintJobEvent;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -30,6 +32,7 @@ public class ventanaLote extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        txtidLote = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
@@ -50,9 +53,11 @@ public class ventanaLote extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jdcCaducidad = new com.toedter.calendar.JDateChooser();
         jdcEntrada = new com.toedter.calendar.JDateChooser();
-        txtNombreLote = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         spinnerExistenciaLote = new javax.swing.JSpinner();
+        txtNombreLote = new javax.swing.JTextField();
+        jPanel9 = new javax.swing.JPanel();
+        jLabelModificar = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         lblProovedores = new javax.swing.JLabel();
@@ -67,6 +72,13 @@ public class ventanaLote extends javax.swing.JFrame {
         jPanel15 = new javax.swing.JPanel();
         lblTelefonos = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
+
+        txtidLote.setFont(new java.awt.Font("Leelawadee UI", 0, 14)); // NOI18N
+        txtidLote.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtidLoteActionPerformed(evt);
+            }
+        });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -160,6 +172,11 @@ public class ventanaLote extends javax.swing.JFrame {
 
             }
         ));
+        jTableLotes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableLotesMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTableLotes);
 
         jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 60, 640, 390));
@@ -183,6 +200,11 @@ public class ventanaLote extends javax.swing.JFrame {
         jPanel4.add(jdcCaducidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, 210, 30));
         jPanel4.add(jdcEntrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 260, 210, 30));
 
+        jLabel14.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
+        jLabel14.setText("Ingrediente");
+        jPanel4.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 210, -1, -1));
+        jPanel4.add(spinnerExistenciaLote, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 120, 80, 30));
+
         txtNombreLote.setFont(new java.awt.Font("Leelawadee UI", 0, 14)); // NOI18N
         txtNombreLote.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -191,10 +213,34 @@ public class ventanaLote extends javax.swing.JFrame {
         });
         jPanel4.add(txtNombreLote, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 40, 260, 30));
 
-        jLabel14.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
-        jLabel14.setText("Ingrediente");
-        jPanel4.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 210, -1, -1));
-        jPanel4.add(spinnerExistenciaLote, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 120, 80, 30));
+        jPanel9.setBackground(new java.awt.Color(245, 191, 174));
+
+        jLabelModificar.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        jLabelModificar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelModificar.setText("Modificar");
+        jLabelModificar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabelModificar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabelModificarMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabelModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabelModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        jPanel4.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 320, -1, -1));
 
         jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 1280, 530));
 
@@ -444,7 +490,7 @@ public class ventanaLote extends javax.swing.JFrame {
 
     private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
         // TODO add your handling code here:
-        String nombre = txtNombreLote.getText();
+        String nombre = txtidLote.getText();
 
         // FECHA DE CADUCIDAD
         String diaCaducidad = Integer.toString(jdcCaducidad.getCalendar().get(Calendar.DAY_OF_MONTH));
@@ -466,9 +512,9 @@ public class ventanaLote extends javax.swing.JFrame {
         agregar.agregarLote(nombre, fechaCaducidad, existencia, ingrediente, fechaEntrada, valorUnitario);
     }//GEN-LAST:event_jLabel11MouseClicked
 
-    private void txtNombreLoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreLoteActionPerformed
+    private void txtidLoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtidLoteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtNombreLoteActionPerformed
+    }//GEN-LAST:event_txtidLoteActionPerformed
 
     private void lblTelefonosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTelefonosMouseClicked
         // TODO add your handling code here:
@@ -476,6 +522,48 @@ public class ventanaLote extends javax.swing.JFrame {
         newframe.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_lblTelefonosMouseClicked
+
+    private void jTableLotesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableLotesMouseClicked
+        
+        int filaSeleccionada = jTableLotes.rowAtPoint(evt.getPoint());
+        
+        txtidLote.setText((String) jTableLotes.getValueAt(filaSeleccionada, 0));
+        txtNombreLote.setText( jTableLotes.getValueAt(filaSeleccionada, 1).toString());
+        txtIngredienteLote.setText(jTableLotes.getValueAt(filaSeleccionada, 5).toString());
+        
+    }//GEN-LAST:event_jTableLotesMouseClicked
+
+    private void txtNombreLoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreLoteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNombreLoteActionPerformed
+
+    private void jLabelModificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelModificarMouseClicked
+        
+        int id = Integer.parseInt(txtidLote.getText());
+        String nombre = txtNombreLote.getText();
+
+        // FECHA DE CADUCIDAD
+        String diaCaducidad = Integer.toString(jdcCaducidad.getCalendar().get(Calendar.DAY_OF_MONTH));
+        String mesCaducidad = Integer.toString(jdcCaducidad.getCalendar().get(Calendar.MONTH));
+        String anioCaducidad = Integer.toString(jdcCaducidad.getCalendar().get(Calendar.YEAR));
+        String fechaCaducidad = (anioCaducidad + "-" + mesCaducidad + "-" + diaCaducidad);
+
+        int existencia = (int)spinnerExistenciaLote.getValue();
+        int valorUnitario = (int)spinnerValorUnitarioLote.getValue();
+        String ingrediente = txtIngredienteLote.getText();
+
+        // FECHA DE ENTRADA
+        String diaEntrada = Integer.toString(jdcEntrada.getCalendar().get(Calendar.DAY_OF_MONTH));
+        String mesEntrada = Integer.toString(jdcEntrada.getCalendar().get(Calendar.MONTH));
+        String anioEntrada = Integer.toString(jdcEntrada.getCalendar().get(Calendar.YEAR));
+        String fechaEntrada = (anioEntrada + "-" + mesEntrada + "-" + diaEntrada);
+
+        Modificar modificar = new Modificar();
+        JOptionPane.showMessageDialog(null, "IDLOTE" +id);
+        modificar.modificarLote(id, nombre, fechaCaducidad, existencia, ingrediente, fechaEntrada, valorUnitario);
+        
+        
+    }//GEN-LAST:event_jLabelModificarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -523,6 +611,7 @@ public class ventanaLote extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabelModificar;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
@@ -534,6 +623,7 @@ public class ventanaLote extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     public static javax.swing.JTable jTableLotes;
@@ -550,5 +640,6 @@ public class ventanaLote extends javax.swing.JFrame {
     private javax.swing.JTextField txtBuscarLote;
     private javax.swing.JTextField txtIngredienteLote;
     private javax.swing.JTextField txtNombreLote;
+    private javax.swing.JTextField txtidLote;
     // End of variables declaration//GEN-END:variables
 }

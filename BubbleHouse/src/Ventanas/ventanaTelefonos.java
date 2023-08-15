@@ -3,6 +3,7 @@
  * and open the template in the editor.
  */
 package Ventanas;
+
 import Clases.*;
 import javax.swing.JOptionPane;
 
@@ -17,7 +18,8 @@ public class ventanaTelefonos extends javax.swing.JFrame {
      */
     public ventanaTelefonos() {
         initComponents();
-        Mostrar.mostrarDatosProveedores();
+        Mostrar.mostrarDatosTelefonosEmpleados();
+        Mostrar.mostrarDatosTelefonosProveedor();
     }
 
     /**
@@ -29,6 +31,8 @@ public class ventanaTelefonos extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        txtidTelEmp = new javax.swing.JTextField();
+        txtIdTelPro = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
@@ -42,7 +46,7 @@ public class ventanaTelefonos extends javax.swing.JFrame {
         jTableProveedores = new javax.swing.JTable();
         jLabel16 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTableProveedores1 = new javax.swing.JTable();
+        jTableEmpleados = new javax.swing.JTable();
         jLabel8 = new javax.swing.JLabel();
         txtBuscar1 = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
@@ -72,6 +76,10 @@ public class ventanaTelefonos extends javax.swing.JFrame {
         jPanel17 = new javax.swing.JPanel();
         lblTelefonos = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
+
+        txtidTelEmp.setText("jTextField1");
+
+        txtIdTelPro.setText("jTextField1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -135,6 +143,11 @@ public class ventanaTelefonos extends javax.swing.JFrame {
 
             }
         ));
+        jTableProveedores.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableProveedoresMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTableProveedores);
 
         jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 80, 480, 250));
@@ -143,8 +156,8 @@ public class ventanaTelefonos extends javax.swing.JFrame {
         jLabel16.setText("ID");
         jPanel4.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 350, -1, -1));
 
-        jTableProveedores1.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
-        jTableProveedores1.setModel(new javax.swing.table.DefaultTableModel(
+        jTableEmpleados.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        jTableEmpleados.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
                 {},
@@ -155,7 +168,12 @@ public class ventanaTelefonos extends javax.swing.JFrame {
 
             }
         ));
-        jScrollPane2.setViewportView(jTableProveedores1);
+        jTableEmpleados.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableEmpleadosMouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(jTableEmpleados);
 
         jPanel4.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, 480, 250));
 
@@ -232,6 +250,11 @@ public class ventanaTelefonos extends javax.swing.JFrame {
         lblModificar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblModificar.setText("Modificar");
         lblModificar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblModificar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblModificarMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel21Layout = new javax.swing.GroupLayout(jPanel21);
         jPanel21.setLayout(jPanel21Layout);
@@ -254,6 +277,11 @@ public class ventanaTelefonos extends javax.swing.JFrame {
         lblEliminar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblEliminar.setText("Eliminar");
         lblEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblEliminar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblEliminarMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
         jPanel22.setLayout(jPanel22Layout);
@@ -485,7 +513,7 @@ public class ventanaTelefonos extends javax.swing.JFrame {
     }//GEN-LAST:event_txtTelefonoProovedoresActionPerformed
 
     private void lblEmpleadosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblEmpleadosMouseClicked
-        
+
         ventanaEmpleados newframe = new ventanaEmpleados();
         newframe.setVisible(true);
         this.dispose();
@@ -493,7 +521,7 @@ public class ventanaTelefonos extends javax.swing.JFrame {
     }//GEN-LAST:event_lblEmpleadosMouseClicked
 
     private void lblIngredientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblIngredientesMouseClicked
-        
+
         ventanaIngrediente newframe = new ventanaIngrediente();
         newframe.setVisible(true);
         this.dispose();
@@ -501,7 +529,7 @@ public class ventanaTelefonos extends javax.swing.JFrame {
     }//GEN-LAST:event_lblIngredientesMouseClicked
 
     private void lblTelefonosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTelefonosMouseClicked
-        
+
         ventanaLote newframe = new ventanaLote();
         newframe.setVisible(true);
         this.dispose();
@@ -509,9 +537,9 @@ public class ventanaTelefonos extends javax.swing.JFrame {
     }//GEN-LAST:event_lblTelefonosMouseClicked
 
     private void txtBuscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarKeyReleased
-        
-        Buscar.buscarProovedores(txtBuscar.getText());
-        
+
+        Buscar.BuscarTelefonosProveedor(txtBuscar.getText());
+
     }//GEN-LAST:event_txtBuscarKeyReleased
 
     private void lblLotesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLotesMouseClicked
@@ -530,7 +558,9 @@ public class ventanaTelefonos extends javax.swing.JFrame {
     }//GEN-LAST:event_txtBuscar1ActionPerformed
 
     private void txtBuscar1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscar1KeyReleased
-        // TODO add your handling code here:
+
+        Buscar.BuscarTelefonosEmpleados(txtBuscar1.getText());
+
     }//GEN-LAST:event_txtBuscar1KeyReleased
 
     private void txtTelefonoEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefonoEmpleadosActionPerformed
@@ -538,38 +568,141 @@ public class ventanaTelefonos extends javax.swing.JFrame {
     }//GEN-LAST:event_txtTelefonoEmpleadosActionPerformed
 
     private void lblAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAgregarMouseClicked
-       
+
         int idProovedores = 0;
         int idEmpleados = 0;
-        
+
         String telefonoProovedores;
         String telefonoEmpleados;
-        
+
         idProovedores = (int) spinnerIdProovedores.getValue();
         idEmpleados = (int) spinnerIdEmpleado.getValue();
-        
+
         telefonoProovedores = txtTelefonoProovedores.getText();
         telefonoEmpleados = txtTelefonoEmpleados.getText();
-        
+
         Agregar agregar = new Agregar();
-        
-        if(telefonoProovedores.isEmpty() && idProovedores == 0){ //AGREGAR TELEFONO EMPLEADOS 
-            
-            agregar.agregarTelefonoEmpleado(idEmpleados,telefonoEmpleados);
-            
-        }
-        else if(telefonoEmpleados.isEmpty() && idEmpleados == 0){ //AGREGAR TELEFONO PROOVEDORES
-            
+
+        if (telefonoProovedores.isEmpty() && idProovedores == 0) { //AGREGAR TELEFONO EMPLEADOS 
+
+            agregar.agregarTelefonoEmpleado(idEmpleados, telefonoEmpleados);
+
+        } else if (telefonoEmpleados.isEmpty() && idEmpleados == 0) { //AGREGAR TELEFONO PROOVEDORES
+
             agregar.agregarTelefonoProovedor(idProovedores, telefonoProovedores);
-            
-        }
-        else{ //AGREGAR TELEFONO PROOVEDORES Y EMPLEADOS
-            
+
+        } else { //AGREGAR TELEFONO PROOVEDORES Y EMPLEADOS
+
             agregar.agregarTelefonoProovedor(idProovedores, telefonoProovedores);
-            agregar.agregarTelefonoEmpleado(idEmpleados,telefonoEmpleados);
-            
+            agregar.agregarTelefonoEmpleado(idEmpleados, telefonoEmpleados);
+
         }
+        Mostrar.mostrarDatosTelefonosEmpleados();
+        Mostrar.mostrarDatosTelefonosProveedor();
     }//GEN-LAST:event_lblAgregarMouseClicked
+
+    private void jTableEmpleadosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableEmpleadosMouseClicked
+
+        int filaSeleccionada = jTableEmpleados.rowAtPoint(evt.getPoint());
+        int id = Integer.parseInt((String) jTableEmpleados.getValueAt(filaSeleccionada, 1));
+
+        txtTelefonoEmpleados.setText(jTableEmpleados.getValueAt(filaSeleccionada, 4).toString());
+        spinnerIdEmpleado.setValue(id);
+        txtidTelEmp.setText(jTableEmpleados.getValueAt(filaSeleccionada, 0).toString());
+
+
+    }//GEN-LAST:event_jTableEmpleadosMouseClicked
+
+    private void jTableProveedoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableProveedoresMouseClicked
+        int filaSeleccionada = jTableProveedores.rowAtPoint(evt.getPoint());
+        int id = Integer.parseInt((String) jTableProveedores.getValueAt(filaSeleccionada, 1));
+
+        txtTelefonoProovedores.setText(jTableProveedores.getValueAt(filaSeleccionada, 4).toString());
+        spinnerIdProovedores.setValue(id);
+        txtIdTelPro.setText(jTableProveedores.getValueAt(filaSeleccionada, 0).toString());
+
+    }//GEN-LAST:event_jTableProveedoresMouseClicked
+
+    private void lblModificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblModificarMouseClicked
+
+        int idProovedores = 0;
+        int idEmpleados = 0;
+        int idTelEmp = 0;
+        int idTelPro = 0;
+
+        String telefonoProovedores;
+        String telefonoEmpleados;
+
+        idProovedores = (int) spinnerIdProovedores.getValue();
+        idEmpleados = (int) spinnerIdEmpleado.getValue();
+
+        telefonoProovedores = txtTelefonoProovedores.getText();
+        telefonoEmpleados = txtTelefonoEmpleados.getText();
+
+        Modificar modificar = new Modificar();
+
+        if (telefonoProovedores.isEmpty() && idProovedores == 0) { //AGREGAR TELEFONO EMPLEADOS 
+            idTelEmp = Integer.parseInt(txtidTelEmp.getText());
+            modificar.ModificarTelefonoEmpleado(idTelEmp, idEmpleados, telefonoEmpleados);
+
+        } else if (telefonoEmpleados.isEmpty() && idEmpleados == 0) { //AGREGAR TELEFONO PROOVEDORES
+            idTelPro = Integer.parseInt(txtIdTelPro.getText());
+            modificar.ModificarTelefonoProovedor(idTelPro, idProovedores, telefonoProovedores);
+        } else { //AGREGAR TELEFONO PROOVEDORES Y EMPLEADOS
+
+            idTelEmp = Integer.parseInt(txtidTelEmp.getText());
+            idTelPro = Integer.parseInt(txtIdTelPro.getText());
+
+            modificar.ModificarTelefonoProovedor(idTelPro, idProovedores, telefonoProovedores);
+            modificar.ModificarTelefonoEmpleado(idTelEmp, idEmpleados, telefonoEmpleados);
+
+        }
+        Mostrar.mostrarDatosTelefonosEmpleados();
+        Mostrar.mostrarDatosTelefonosProveedor();
+    }//GEN-LAST:event_lblModificarMouseClicked
+
+    private void lblEliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblEliminarMouseClicked
+
+        try {
+            int idProovedores = 0;
+            int idEmpleados = 0;
+            int idTelEmp = 0;
+            int idTelPro = 0;
+
+            String telefonoProovedores;
+            String telefonoEmpleados;
+
+            idProovedores = (int) spinnerIdProovedores.getValue();
+            idEmpleados = (int) spinnerIdEmpleado.getValue();
+
+            telefonoProovedores = txtTelefonoProovedores.getText();
+            telefonoEmpleados = txtTelefonoEmpleados.getText();
+            
+            Eliminar eliminar = new Eliminar();
+
+            if (telefonoProovedores.isEmpty() && idProovedores == 0) { //AGREGAR TELEFONO EMPLEADOS 
+                idTelEmp = Integer.parseInt(txtidTelEmp.getText());
+                eliminar.EliminarTelefonoEmpleado(idTelEmp);
+
+            } else if (telefonoEmpleados.isEmpty() && idEmpleados == 0) { //AGREGAR TELEFONO PROOVEDORES
+                idTelPro = Integer.parseInt(txtIdTelPro.getText());
+                eliminar.EliminarTelefonoProveedor(idTelPro);
+            } else { //AGREGAR TELEFONO PROOVEDORES Y EMPLEADOS
+
+                idTelEmp = Integer.parseInt(txtidTelEmp.getText());
+                idTelPro = Integer.parseInt(txtIdTelPro.getText());
+
+                eliminar.EliminarTelefonoEmpleado(idTelEmp);
+                eliminar.EliminarTelefonoProveedor(idTelPro);
+
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "REGISTRO NO DETECTADO");
+        }
+        Mostrar.mostrarDatosTelefonosEmpleados();
+        Mostrar.mostrarDatosTelefonosProveedor();
+    }//GEN-LAST:event_lblEliminarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -647,8 +780,8 @@ public class ventanaTelefonos extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
+    public static javax.swing.JTable jTableEmpleados;
     public static javax.swing.JTable jTableProveedores;
-    public static javax.swing.JTable jTableProveedores1;
     private javax.swing.JLabel lblAgregar;
     private javax.swing.JLabel lblCorreos;
     private javax.swing.JLabel lblEliminar;
@@ -662,7 +795,9 @@ public class ventanaTelefonos extends javax.swing.JFrame {
     private javax.swing.JSpinner spinnerIdProovedores;
     private javax.swing.JTextField txtBuscar;
     private javax.swing.JTextField txtBuscar1;
+    private javax.swing.JTextField txtIdTelPro;
     public static javax.swing.JTextField txtTelefonoEmpleados;
     public static javax.swing.JTextField txtTelefonoProovedores;
+    private javax.swing.JTextField txtidTelEmp;
     // End of variables declaration//GEN-END:variables
 }
