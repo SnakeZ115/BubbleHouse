@@ -1,8 +1,12 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Ventanas;
+
+import Clases.*;
+import java.sql.SQLException;
+import java.sql.Types;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -15,6 +19,8 @@ public class ventanaSalidas extends javax.swing.JFrame {
      */
     public ventanaSalidas() {
         initComponents();
+        Mostrar mostrar = new Mostrar();
+        mostrar.mostrarCajeros();
     }
 
     /**
@@ -37,11 +43,13 @@ public class ventanaSalidas extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         jPanel12 = new javax.swing.JPanel();
         lblTerminado1 = new javax.swing.JLabel();
-        cmbPerlas = new javax.swing.JComboBox<>();
-        cmbTamaño = new javax.swing.JComboBox<>();
-        cmbBase = new javax.swing.JComboBox<>();
-        cmbLeche = new javax.swing.JComboBox<>();
+        cmbCajeros = new javax.swing.JComboBox<String>();
+        cmbTamaño = new javax.swing.JComboBox<String>();
+        cmbBase = new javax.swing.JComboBox<String>();
+        cmbLeche = new javax.swing.JComboBox<String>();
         jLabel1 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        cmbPerlas = new javax.swing.JComboBox<String>();
         jPanel3 = new javax.swing.JPanel();
         jPanel13 = new javax.swing.JPanel();
         lblReporte = new javax.swing.JLabel();
@@ -77,8 +85,8 @@ public class ventanaSalidas extends javax.swing.JFrame {
         jPanel4.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 230, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Leelawadee UI", 1, 24)); // NOI18N
-        jLabel10.setText("Perlas");
-        jPanel4.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 290, -1, -1));
+        jLabel10.setText("Cajero");
+        jPanel4.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 350, -1, -1));
 
         jLabel16.setFont(new java.awt.Font("Leelawadee UI", 1, 24)); // NOI18N
         jLabel16.setText("Tamaño");
@@ -89,7 +97,12 @@ public class ventanaSalidas extends javax.swing.JFrame {
         lblTerminado1.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
         lblTerminado1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTerminado1.setText("Terminado");
-        lblTerminado1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblTerminado1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblTerminado1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblTerminado1MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
@@ -108,24 +121,31 @@ public class ventanaSalidas extends javax.swing.JFrame {
 
         jPanel4.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 460, -1, -1));
 
-        cmbPerlas.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
-        cmbPerlas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Original", "Fresa", "Kiwi", "Taro" }));
-        jPanel4.add(cmbPerlas, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 290, 110, 40));
+        cmbCajeros.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        jPanel4.add(cmbCajeros, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 350, 110, 40));
 
         cmbTamaño.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
-        cmbTamaño.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Chico", "Mediano", "Grande", " " }));
+        cmbTamaño.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Chico", "Mediano", "Grande", " " }));
         jPanel4.add(cmbTamaño, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 110, 110, 40));
 
         cmbBase.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
-        cmbBase.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Coco", "Taro", "Tchai", "Blueberry", "Fresa", "Kiwi", "Matcha", "Vainilla", " ", " " }));
+        cmbBase.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Coco", "Taro", "Tchai", "Blueberry", "Fresa", "Kiwi", "Matcha", "Vainilla", " ", " " }));
         jPanel4.add(cmbBase, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 170, 110, 40));
 
         cmbLeche.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
-        cmbLeche.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Entera", "Light", "Deslactosada", " ", " " }));
+        cmbLeche.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Entera", "Light", "Deslactosada", " ", " " }));
         jPanel4.add(cmbLeche, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 230, 110, 40));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/logoPanda.png"))); // NOI18N
         jPanel4.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 30, -1, -1));
+
+        jLabel11.setFont(new java.awt.Font("Leelawadee UI", 1, 24)); // NOI18N
+        jLabel11.setText("Perlas");
+        jPanel4.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 290, -1, -1));
+
+        cmbPerlas.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        cmbPerlas.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Original", "Fresa", "Kiwi", "Taro" }));
+        jPanel4.add(cmbPerlas, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 290, 110, 40));
 
         jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 1280, 530));
 
@@ -138,7 +158,7 @@ public class ventanaSalidas extends javax.swing.JFrame {
         lblReporte.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
         lblReporte.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblReporte.setText("Reporte");
-        lblReporte.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblReporte.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
@@ -183,6 +203,65 @@ public class ventanaSalidas extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void lblTerminado1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTerminado1MouseClicked
+        
+            // TODO add your handling code here:
+            int idTamaño = 0;
+            int idBase = 0;
+            int idLeche = 0;
+            int idPerlas = 0;
+            int idLoteBase = 0;
+            int idLoteLeche = 0;
+            int idLotePerlas = 0;
+                    
+            String tamaño = (String)cmbTamaño.getSelectedItem();
+            String base = (String)cmbBase.getSelectedItem();
+            String leche = (String)cmbLeche.getSelectedItem();
+            String perlas = (String)cmbPerlas.getSelectedItem();
+            String cajero = (String)cmbCajeros.getSelectedItem();
+            
+            Bebidas comprobacion = new Bebidas();
+            
+            // COMPROBACION DE INGREDIENTES
+            idBase = comprobacion.comprobarIngrediente(base);
+            idLeche = comprobacion.comprobarIngrediente(leche);
+            idPerlas = comprobacion.comprobarIngrediente(perlas);
+            
+            // COMPROBACION DE LOTE DE UN INGREDIENTE
+            idLoteBase = comprobacion.comprobarLote(idBase);
+            idLoteLeche = comprobacion.comprobarLote(idLeche);
+            idLotePerlas = comprobacion.comprobarLote(idPerlas);
+            
+            
+            
+            if(idBase != 0 && idLeche != 0 && idPerlas != 0){
+                if(idLoteBase != 0 && idLoteLeche != 0 && idLotePerlas != 0){
+                    if (tamaño.equals("Chico")) {
+                        idTamaño = 1;
+                        comprobacion.tamaño(idTamaño, idLoteBase, idLoteLeche, idLotePerlas, cajero);
+                        comprobacion.registrarBebida(idBase, idLeche, idPerlas, cajero, 1);
+                    } else if (tamaño.equals("Mediano")) {
+                        idTamaño = 2;
+                        comprobacion.tamaño(idTamaño, idLoteBase, idLoteLeche, idLotePerlas, cajero);
+                        comprobacion.registrarBebida(idBase, idLeche, idPerlas, cajero, 2);
+                    } else {
+                        idTamaño = 3;
+                        comprobacion.tamaño(idTamaño, idLoteBase, idLoteLeche, idLotePerlas, cajero);
+                        comprobacion.registrarBebida(idBase, idLeche, idPerlas, cajero, 3);
+                    }
+                }
+                else {
+                    JOptionPane.showMessageDialog(null, "ALGUNO DE LOS LOTES NO EXISTE");
+                }
+            }
+            else {
+                JOptionPane.showMessageDialog(null, "ALGUNO DE LOS INGREDIENTES NO EXISTE");
+            }
+           
+            
+        
+    }//GEN-LAST:event_lblTerminado1MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -226,11 +305,13 @@ public class ventanaSalidas extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> cmbBase;
+    public static javax.swing.JComboBox<String> cmbCajeros;
     private javax.swing.JComboBox<String> cmbLeche;
     private javax.swing.JComboBox<String> cmbPerlas;
     private javax.swing.JComboBox<String> cmbTamaño;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel3;

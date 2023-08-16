@@ -6,9 +6,25 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import Ventanas.*;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.ArrayList;
 
 public class Mostrar {
 
+    public void mostrarCajeros() {
+        try {
+            String SQL = "{call MostrarCajeros}";
+            Statement st = ConexionSql.conectar.createStatement();
+            ResultSet rs = st.executeQuery(SQL);
+            while(rs.next()){
+                ventanaSalidas.cmbCajeros.addItem(rs.getString("NombreEmp"));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Mostrar.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     public static void mostrarDatosEmpleados() {
         String[] titulos = {"Codigo", "Nombres", "Apellidos", "Calle y Numero", "Puesto", "Colonia"};
         String[] registros = new String[6];
