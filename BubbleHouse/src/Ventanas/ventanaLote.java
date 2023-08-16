@@ -5,6 +5,8 @@
 package Ventanas;
 
 import Clases.*;
+import java.awt.Toolkit;
+import java.awt.event.KeyEvent;
 import java.util.Calendar;
 import javax.print.event.PrintJobEvent;
 import javax.swing.JOptionPane;
@@ -190,6 +192,11 @@ public class ventanaLote extends javax.swing.JFrame {
         txtIngredienteLote.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtIngredienteLoteActionPerformed(evt);
+            }
+        });
+        txtIngredienteLote.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtIngredienteLoteKeyTyped(evt);
             }
         });
         jPanel4.add(txtIngredienteLote, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 210, 260, 30));
@@ -453,11 +460,11 @@ public class ventanaLote extends javax.swing.JFrame {
     }//GEN-LAST:event_txtIngredienteLoteActionPerformed
 
     private void lblIngredientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblIngredientesMouseClicked
-        
+
         ventanaIngrediente newframe = new ventanaIngrediente();
         newframe.setVisible(true);
         this.dispose();
-        
+
     }//GEN-LAST:event_lblIngredientesMouseClicked
 
     private void lblEmpleadosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblEmpleadosMouseClicked
@@ -465,21 +472,21 @@ public class ventanaLote extends javax.swing.JFrame {
         ventanaEmpleados newframe = new ventanaEmpleados();
         newframe.setVisible(true);
         this.dispose();
-        
+
     }//GEN-LAST:event_lblEmpleadosMouseClicked
 
     private void lblProovedoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblProovedoresMouseClicked
-        
+
         ventanaProovedores newframe = new ventanaProovedores();
         newframe.setVisible(true);
         this.dispose();
-            
+
     }//GEN-LAST:event_lblProovedoresMouseClicked
 
     private void txtBuscarLoteKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarLoteKeyReleased
 
         Buscar.buscarLotes(txtBuscarLote.getText());
-        
+
     }//GEN-LAST:event_txtBuscarLoteKeyReleased
 
     private void lblCorreosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCorreosMouseClicked
@@ -498,8 +505,8 @@ public class ventanaLote extends javax.swing.JFrame {
         String anioCaducidad = Integer.toString(jdcCaducidad.getCalendar().get(Calendar.YEAR));
         String fechaCaducidad = (anioCaducidad + "-" + mesCaducidad + "-" + diaCaducidad);
 
-        int existencia = (int)spinnerExistenciaLote.getValue();
-        int valorUnitario = (int)spinnerValorUnitarioLote.getValue();
+        int existencia = (int) spinnerExistenciaLote.getValue();
+        int valorUnitario = (int) spinnerValorUnitarioLote.getValue();
         String ingrediente = txtIngredienteLote.getText();
 
         // FECHA DE ENTRADA
@@ -524,13 +531,13 @@ public class ventanaLote extends javax.swing.JFrame {
     }//GEN-LAST:event_lblTelefonosMouseClicked
 
     private void jTableLotesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableLotesMouseClicked
-        
+
         int filaSeleccionada = jTableLotes.rowAtPoint(evt.getPoint());
-        
+
         txtidLote.setText((String) jTableLotes.getValueAt(filaSeleccionada, 0));
-        txtNombreLote.setText( jTableLotes.getValueAt(filaSeleccionada, 1).toString());
+        txtNombreLote.setText(jTableLotes.getValueAt(filaSeleccionada, 1).toString());
         txtIngredienteLote.setText(jTableLotes.getValueAt(filaSeleccionada, 5).toString());
-        
+
     }//GEN-LAST:event_jTableLotesMouseClicked
 
     private void txtNombreLoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreLoteActionPerformed
@@ -538,7 +545,7 @@ public class ventanaLote extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNombreLoteActionPerformed
 
     private void jLabelModificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelModificarMouseClicked
-        
+
         int id = Integer.parseInt(txtidLote.getText());
         String nombre = txtNombreLote.getText();
 
@@ -548,8 +555,8 @@ public class ventanaLote extends javax.swing.JFrame {
         String anioCaducidad = Integer.toString(jdcCaducidad.getCalendar().get(Calendar.YEAR));
         String fechaCaducidad = (anioCaducidad + "-" + mesCaducidad + "-" + diaCaducidad);
 
-        int existencia = (int)spinnerExistenciaLote.getValue();
-        int valorUnitario = (int)spinnerValorUnitarioLote.getValue();
+        int existencia = (int) spinnerExistenciaLote.getValue();
+        int valorUnitario = (int) spinnerValorUnitarioLote.getValue();
         String ingrediente = txtIngredienteLote.getText();
 
         // FECHA DE ENTRADA
@@ -559,41 +566,22 @@ public class ventanaLote extends javax.swing.JFrame {
         String fechaEntrada = (anioEntrada + "-" + mesEntrada + "-" + diaEntrada);
 
         Modificar modificar = new Modificar();
-        JOptionPane.showMessageDialog(null, "IDLOTE" +id);
+        JOptionPane.showMessageDialog(null, "IDLOTE" + id);
         modificar.modificarLote(id, nombre, fechaCaducidad, existencia, ingrediente, fechaEntrada, valorUnitario);
-        
-        
+
+
     }//GEN-LAST:event_jLabelModificarMouseClicked
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ventanaLote.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ventanaLote.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ventanaLote.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ventanaLote.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+    private void txtIngredienteLoteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIngredienteLoteKeyTyped
+        char c = evt.getKeyChar();
+        if (!Character.isLetter(c) && c != KeyEvent.VK_BACK_SPACE) {
+            evt.consume();
+            Toolkit.getDefaultToolkit().beep();
         }
-        //</editor-fold>
-        //</editor-fold>
+     }//GEN-LAST:event_txtIngredienteLoteKeyTyped
 
-        /* Create and display the form */
+    public static void main(String args[]) {
+
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new ventanaLote().setVisible(true);

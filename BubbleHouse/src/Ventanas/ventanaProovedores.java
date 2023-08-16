@@ -1,15 +1,12 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Ventanas;
+
 import Clases.*;
+import java.awt.Toolkit;
+import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Evelyn Ximena
- */
+
 public class ventanaProovedores extends javax.swing.JFrame {
 
     /**
@@ -135,6 +132,11 @@ public class ventanaProovedores extends javax.swing.JFrame {
         txtApellidosProovedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtApellidosProovedorActionPerformed(evt);
+            }
+        });
+        txtApellidosProovedor.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtApellidosProovedorKeyTyped(evt);
             }
         });
         jPanel4.add(txtApellidosProovedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 80, 190, 30));
@@ -276,6 +278,11 @@ public class ventanaProovedores extends javax.swing.JFrame {
         txtNombreProovedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNombreProovedorActionPerformed(evt);
+            }
+        });
+        txtNombreProovedor.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNombreProovedorKeyTyped(evt);
             }
         });
         jPanel4.add(txtNombreProovedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 40, 190, 30));
@@ -509,7 +516,7 @@ public class ventanaProovedores extends javax.swing.JFrame {
     }//GEN-LAST:event_txtIdActionPerformed
 
     private void lblEmpleadosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblEmpleadosMouseClicked
-        
+
         ventanaEmpleados newframe = new ventanaEmpleados();
         newframe.setVisible(true);
         this.dispose();
@@ -517,7 +524,7 @@ public class ventanaProovedores extends javax.swing.JFrame {
     }//GEN-LAST:event_lblEmpleadosMouseClicked
 
     private void lblIngredientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblIngredientesMouseClicked
-        
+
         ventanaIngrediente newframe = new ventanaIngrediente();
         newframe.setVisible(true);
         this.dispose();
@@ -525,7 +532,7 @@ public class ventanaProovedores extends javax.swing.JFrame {
     }//GEN-LAST:event_lblIngredientesMouseClicked
 
     private void lblTelefonosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTelefonosMouseClicked
-        
+
         ventanaTelefonos newframe = new ventanaTelefonos();
         newframe.setVisible(true);
         this.dispose();
@@ -539,11 +546,10 @@ public class ventanaProovedores extends javax.swing.JFrame {
         String calleNumero = txtCalleNumProovedor.getText();
         String colonia = txtColoniaProovedor.getText().toUpperCase();
         String empresa = txtEmpresaProveedor.getText();
-        
+
         if (nombre.isEmpty() || apellidos.isEmpty() || calleNumero.isEmpty() || colonia.isEmpty() || empresa.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Por favor, complete todos los campos.", "Campos Vacíos", JOptionPane.WARNING_MESSAGE);
-        } 
-        else {
+        } else {
             try {
                 Agregar agregar = new Agregar();
                 agregar.agregarProovedores(nombre, apellidos, calleNumero, colonia, empresa);
@@ -553,17 +559,17 @@ public class ventanaProovedores extends javax.swing.JFrame {
                 Mostrar.mostrarDatosProveedores();
             }
         }
-        
+
     }//GEN-LAST:event_lblAgregarMouseClicked
 
     private void txtBuscarProovedorKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarProovedorKeyReleased
-        
+
         Buscar.buscarProovedores(txtBuscarProovedor.getText());
-        
+
     }//GEN-LAST:event_txtBuscarProovedorKeyReleased
 
     private void lblLotesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLotesMouseClicked
-    // TODO add your handling code here:
+        // TODO add your handling code here:
         ventanaLote newframe = new ventanaLote();
         newframe.setVisible(true);
         this.dispose();
@@ -576,17 +582,17 @@ public class ventanaProovedores extends javax.swing.JFrame {
     }//GEN-LAST:event_lblCorreosMouseClicked
 
     private void jTableProveedoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableProveedoresMouseClicked
-        
-        int filaSeleccionada=jTableProveedores.rowAtPoint(evt.getPoint());
-        
+
+        int filaSeleccionada = jTableProveedores.rowAtPoint(evt.getPoint());
+
         txtId.setText((String) jTableProveedores.getValueAt(filaSeleccionada, 0));
         txtNombreProovedor.setText(jTableProveedores.getValueAt(filaSeleccionada, 1).toString());
         txtApellidosProovedor.setText(jTableProveedores.getValueAt(filaSeleccionada, 2).toString());
         txtCalleNumProovedor.setText(jTableProveedores.getValueAt(filaSeleccionada, 5).toString());
         txtColoniaProovedor.setText(jTableProveedores.getValueAt(filaSeleccionada, 4).toString());
         txtEmpresaProveedor.setText(jTableProveedores.getValueAt(filaSeleccionada, 3).toString());
-        
-        
+
+
     }//GEN-LAST:event_jTableProveedoresMouseClicked
 
     private void txtNombreProovedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreProovedorActionPerformed
@@ -594,26 +600,25 @@ public class ventanaProovedores extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNombreProovedorActionPerformed
 
     private void lblModificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblModificarMouseClicked
-       
+
         int id = Integer.parseInt(txtId.getText());
         String nombre = txtNombreProovedor.getText();
         String apellidos = txtApellidosProovedor.getText();
         String calleNumero = txtCalleNumProovedor.getText();
         String colonia = txtColoniaProovedor.getText().toUpperCase();
         String empresa = txtEmpresaProveedor.getText();
-        
+
         if (nombre.isEmpty() || apellidos.isEmpty() || calleNumero.isEmpty() || colonia.isEmpty() || empresa.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Por favor, complete todos los campos.", "Campos Vacíos", JOptionPane.WARNING_MESSAGE);
-        } 
-        else {
+        } else {
             try {
                 Modificar modificar = new Modificar();
                 modificar.modificarProovedores(id, nombre, apellidos, calleNumero, colonia, empresa);
                 Mostrar.mostrarDatosProveedores();
-                
+
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, e);
-                
+
             }
         }
 
@@ -622,16 +627,34 @@ public class ventanaProovedores extends javax.swing.JFrame {
     private void lblEliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblEliminarMouseClicked
         // TODO add your handling code here:
         int id = Integer.parseInt(txtId.getText());
-        
+
         try {
-            
+
             Eliminar eliminar = new Eliminar();
             eliminar.eliminarProveedor(id);
-            
+
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
         }
     }//GEN-LAST:event_lblEliminarMouseClicked
+
+    private void txtNombreProovedorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreProovedorKeyTyped
+        char c = evt.getKeyChar();
+        if (!Character.isLetter(c) && c != KeyEvent.VK_BACK_SPACE) {
+            evt.consume();
+            Toolkit.getDefaultToolkit().beep();
+
+        } 
+    }//GEN-LAST:event_txtNombreProovedorKeyTyped
+
+    private void txtApellidosProovedorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApellidosProovedorKeyTyped
+        char c = evt.getKeyChar();
+        if (!Character.isLetter(c) && c != KeyEvent.VK_BACK_SPACE) {
+            evt.consume();
+            Toolkit.getDefaultToolkit().beep();
+
+        } 
+    }//GEN-LAST:event_txtApellidosProovedorKeyTyped
 
     /**
      * @param args the command line arguments

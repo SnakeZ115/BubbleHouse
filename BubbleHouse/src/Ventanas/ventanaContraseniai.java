@@ -144,7 +144,7 @@ public class ventanaContraseniai extends javax.swing.JFrame {
             newframe.setVisible(true);
             this.dispose();
         } else {
-            JOptionPane.showMessageDialog(null, "Error de contrasenia");
+            JOptionPane.showMessageDialog(null, "CONTRASEÑA INCORRECTA");
         }
     }//GEN-LAST:event_jLabelEntrarAdministradorMouseClicked
 

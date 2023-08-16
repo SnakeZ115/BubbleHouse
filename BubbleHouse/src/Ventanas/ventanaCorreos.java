@@ -2,6 +2,7 @@
 package Ventanas;
 
 import Clases.*;
+import java.awt.event.KeyEvent;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
@@ -230,6 +231,11 @@ public class ventanaCorreos extends javax.swing.JFrame {
                 txtDepartamentoActionPerformed(evt);
             }
         });
+        txtDepartamento.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtDepartamentoKeyTyped(evt);
+            }
+        });
         jPanel4.add(txtDepartamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, 190, 30));
 
         jLabel8.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
@@ -240,6 +246,11 @@ public class ventanaCorreos extends javax.swing.JFrame {
         txtIdPro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtIdProActionPerformed(evt);
+            }
+        });
+        txtIdPro.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtIdProKeyTyped(evt);
             }
         });
         jPanel4.add(txtIdPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 40, 190, 30));
@@ -584,6 +595,20 @@ public class ventanaCorreos extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_lblEliminarMouseClicked
+
+    private void txtIdProKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIdProKeyTyped
+        
+        char validar = evt.getKeyChar();
+        if(!Character.isDigit(validar)&& validar != KeyEvent.VK_BACK_SPACE){
+            getToolkit().beep();
+            evt.consume();
+            
+        }
+    }//GEN-LAST:event_txtIdProKeyTyped
+
+    private void txtDepartamentoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDepartamentoKeyTyped
+        
+    }//GEN-LAST:event_txtDepartamentoKeyTyped
 
     /**
      * @param args the command line arguments

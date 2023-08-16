@@ -1,4 +1,3 @@
-
 package Ventanas;
 
 import java.sql.ResultSet;
@@ -6,6 +5,8 @@ import java.sql.Statement;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import Clases.*;
+import java.awt.Toolkit;
+import java.awt.event.KeyEvent;
 
 /**
  *
@@ -20,8 +21,6 @@ public class ventanaEmpleados extends javax.swing.JFrame {
         initComponents();
         Mostrar.mostrarDatosEmpleados();
     }
-    
-        
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -141,6 +140,11 @@ public class ventanaEmpleados extends javax.swing.JFrame {
         txtApellidosEmpleado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtApellidosEmpleadoActionPerformed(evt);
+            }
+        });
+        txtApellidosEmpleado.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtApellidosEmpleadoKeyTyped(evt);
             }
         });
         jPanel4.add(txtApellidosEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 80, 190, 30));
@@ -282,6 +286,11 @@ public class ventanaEmpleados extends javax.swing.JFrame {
         txtNombresEmpleado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNombresEmpleadoActionPerformed(evt);
+            }
+        });
+        txtNombresEmpleado.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNombresEmpleadoKeyTyped(evt);
             }
         });
         jPanel4.add(txtNombresEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 40, 190, 30));
@@ -509,27 +518,27 @@ public class ventanaEmpleados extends javax.swing.JFrame {
     }//GEN-LAST:event_txtColoniaEmpleadoActionPerformed
 
     private void lblProovedoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblProovedoresMouseClicked
-        
+
         ventanaProovedores newframe = new ventanaProovedores();
         newframe.setVisible(true);
         this.dispose();
-        
+
     }//GEN-LAST:event_lblProovedoresMouseClicked
 
     private void lblIngredientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblIngredientesMouseClicked
-            
+
         ventanaIngrediente newframe = new ventanaIngrediente();
         newframe.setVisible(true);
         this.dispose();
-        
+
     }//GEN-LAST:event_lblIngredientesMouseClicked
 
     private void lblCorreosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCorreosMouseClicked
-        
+
         ventanaCorreos newframe = new ventanaCorreos();
         newframe.setVisible(true);
         this.dispose();
-        
+
     }//GEN-LAST:event_lblCorreosMouseClicked
 
     private void lblAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAgregarMouseClicked
@@ -539,11 +548,10 @@ public class ventanaEmpleados extends javax.swing.JFrame {
         String puesto = txtPuestoEmpleado.getText().toUpperCase();
         String calleNumero = txtCalleNumEmpleado.getText();
         String colonia = txtColoniaEmpleado.getText().toUpperCase();
-        
+
         if (nombre.isEmpty() || apellidos.isEmpty() || calleNumero.isEmpty() || puesto.isEmpty() || colonia.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Por favor, complete todos los campos.", "Campos Vacíos", JOptionPane.WARNING_MESSAGE);
-        }
-        else {
+        } else {
             try {
                 Agregar agregar = new Agregar();
                 agregar.agregarEmpleado(nombre, apellidos, calleNumero, colonia, puesto);
@@ -552,7 +560,7 @@ public class ventanaEmpleados extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, e);
             }
         }
-        
+
 
     }//GEN-LAST:event_lblAgregarMouseClicked
 
@@ -563,7 +571,7 @@ public class ventanaEmpleados extends javax.swing.JFrame {
     private void txtBuscarEmpleadoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarEmpleadoKeyReleased
 
         Buscar.buscarEmpleados(txtBuscarEmpleado.getText());
-        
+
     }//GEN-LAST:event_txtBuscarEmpleadoKeyReleased
 
     private void lblTelefonosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTelefonosMouseClicked
@@ -582,8 +590,8 @@ public class ventanaEmpleados extends javax.swing.JFrame {
 
     private void jTablempleadosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTablempleadosMouseClicked
 
-        int filaSeleccionada=jTablempleados.rowAtPoint(evt.getPoint());
-        
+        int filaSeleccionada = jTablempleados.rowAtPoint(evt.getPoint());
+
         txtId.setText((String) jTablempleados.getValueAt(filaSeleccionada, 0));
         txtNombresEmpleado.setText(jTablempleados.getValueAt(filaSeleccionada, 1).toString());
         txtApellidosEmpleado.setText(jTablempleados.getValueAt(filaSeleccionada, 2).toString());
@@ -594,18 +602,17 @@ public class ventanaEmpleados extends javax.swing.JFrame {
     }//GEN-LAST:event_jTablempleadosMouseClicked
 
     private void lblModificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblModificarMouseClicked
-        
+
         int id = Integer.parseInt(txtId.getText());
         String nombre = txtNombresEmpleado.getText();
         String apellidos = txtApellidosEmpleado.getText();
         String puesto = txtPuestoEmpleado.getText().toUpperCase();
         String calleNumero = txtCalleNumEmpleado.getText();
         String colonia = txtColoniaEmpleado.getText().toUpperCase();
-        
+
         if (nombre.isEmpty() || apellidos.isEmpty() || calleNumero.isEmpty() || puesto.isEmpty() || colonia.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Por favor, complete todos los campos.", "Campos Vacíos", JOptionPane.WARNING_MESSAGE);
-        }
-        else {
+        } else {
             try {
                 Modificar modificar = new Modificar();
                 modificar.modificarEmpleado(id, nombre, apellidos, calleNumero, colonia, puesto);
@@ -614,7 +621,6 @@ public class ventanaEmpleados extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Error: " + e);
             }
         }
-        
 
 
     }//GEN-LAST:event_lblModificarMouseClicked
@@ -630,16 +636,35 @@ public class ventanaEmpleados extends javax.swing.JFrame {
     private void lblEliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblEliminarMouseClicked
         // TODO add your handling code here:
         try {
-            
+
             int id = Integer.parseInt(txtId.getText());
             Eliminar eliminar = new Eliminar();
             eliminar.eliminarEmpleado(id);
             Mostrar.mostrarDatosEmpleados();
-            
+
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "REGISTRO NO DETECTADO");
         }
     }//GEN-LAST:event_lblEliminarMouseClicked
+
+    private void txtNombresEmpleadoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombresEmpleadoKeyTyped
+
+        char c = evt.getKeyChar();
+        if (!Character.isLetter(c) && c != KeyEvent.VK_BACK_SPACE) {
+            evt.consume();
+            Toolkit.getDefaultToolkit().beep();
+        }
+
+    }//GEN-LAST:event_txtNombresEmpleadoKeyTyped
+
+    private void txtApellidosEmpleadoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApellidosEmpleadoKeyTyped
+        char c = evt.getKeyChar();
+        if (!Character.isLetter(c) && c != KeyEvent.VK_BACK_SPACE) {
+            evt.consume();
+            Toolkit.getDefaultToolkit().beep();
+            
+        }        
+    }//GEN-LAST:event_txtApellidosEmpleadoKeyTyped
 
     /**
      * @param args the command line arguments

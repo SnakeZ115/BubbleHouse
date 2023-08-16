@@ -5,6 +5,8 @@
 package Ventanas;
 
 import Clases.*;
+import java.awt.Toolkit;
+import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 
 /**
@@ -121,6 +123,11 @@ public class ventanaIngrediente extends javax.swing.JFrame {
                 txtProveedorIngredienteActionPerformed(evt);
             }
         });
+        txtProveedorIngrediente.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtProveedorIngredienteKeyTyped(evt);
+            }
+        });
         jPanel4.add(txtProveedorIngrediente, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 240, 190, 30));
 
         txtBuscar.setFont(new java.awt.Font("Leelawadee UI", 0, 14)); // NOI18N
@@ -146,6 +153,11 @@ public class ventanaIngrediente extends javax.swing.JFrame {
         txtUnidadIngrediente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtUnidadIngredienteActionPerformed(evt);
+            }
+        });
+        txtUnidadIngrediente.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtUnidadIngredienteKeyTyped(evt);
             }
         });
         jPanel4.add(txtUnidadIngrediente, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 140, 190, 30));
@@ -263,12 +275,22 @@ public class ventanaIngrediente extends javax.swing.JFrame {
                 txtTipoIngredienteActionPerformed(evt);
             }
         });
+        txtTipoIngrediente.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtTipoIngredienteKeyTyped(evt);
+            }
+        });
         jPanel4.add(txtTipoIngrediente, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 190, 190, 30));
 
         txtNombreIngrediente.setFont(new java.awt.Font("Leelawadee UI", 0, 14)); // NOI18N
         txtNombreIngrediente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNombreIngredienteActionPerformed(evt);
+            }
+        });
+        txtNombreIngrediente.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNombreIngredienteKeyTyped(evt);
             }
         });
         jPanel4.add(txtNombreIngrediente, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 40, 190, 30));
@@ -498,11 +520,11 @@ public class ventanaIngrediente extends javax.swing.JFrame {
     }//GEN-LAST:event_txtIdActionPerformed
 
     private void lblTelefonosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTelefonosMouseClicked
-        
+
         ventanaTelefonos newframe = new ventanaTelefonos();
         newframe.setVisible(true);
         this.dispose();
-        
+
     }//GEN-LAST:event_lblTelefonosMouseClicked
 
     private void lblEmpleadosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblEmpleadosMouseClicked
@@ -512,11 +534,11 @@ public class ventanaIngrediente extends javax.swing.JFrame {
     }//GEN-LAST:event_lblEmpleadosMouseClicked
 
     private void lblProovedoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblProovedoresMouseClicked
-        
+
         ventanaProovedores newframe = new ventanaProovedores();
         newframe.setVisible(true);
         this.dispose();
-        
+
     }//GEN-LAST:event_lblProovedoresMouseClicked
 
     private void txtBuscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarKeyReleased
@@ -544,23 +566,23 @@ public class ventanaIngrediente extends javax.swing.JFrame {
 
     private void lblAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAgregarMouseClicked
         // TODO add your handling code here:
-        
+
         String nombre = txtNombreIngrediente.getText();
         String marca = txtMarcaIngrediente.getText();
         String unidad = txtUnidadIngrediente.getText();
         String tipo = txtTipoIngrediente.getText().toUpperCase();
         String proveedor = txtProveedorIngrediente.getText();
-        
-        if(nombre.isEmpty()||marca.isEmpty()||unidad.isEmpty()||tipo.isEmpty()||proveedor.isEmpty()){
+
+        if (nombre.isEmpty() || marca.isEmpty() || unidad.isEmpty() || tipo.isEmpty() || proveedor.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Por favor, complete todos los campos.", "Campos Vacíos", JOptionPane.WARNING_MESSAGE);
         }
-        
+
         try {
             Agregar agregar = new Agregar();
             agregar.agregarIngrediente(nombre, marca, unidad, tipo, proveedor);
             Mostrar.mostrarDatosIngredientes();
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error: "+e);
+            JOptionPane.showMessageDialog(null, "Error: " + e);
         }
     }//GEN-LAST:event_lblAgregarMouseClicked
 
@@ -570,8 +592,8 @@ public class ventanaIngrediente extends javax.swing.JFrame {
 
     private void jTableIngredientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableIngredientesMouseClicked
 
-        int filaSeleccionada=jTableIngredientes.rowAtPoint(evt.getPoint());
-        
+        int filaSeleccionada = jTableIngredientes.rowAtPoint(evt.getPoint());
+
         txtId.setText((String) jTableIngredientes.getValueAt(filaSeleccionada, 0));
         txtNombreIngrediente.setText(jTableIngredientes.getValueAt(filaSeleccionada, 1).toString());
         txtMarcaIngrediente.setText(jTableIngredientes.getValueAt(filaSeleccionada, 2).toString());
@@ -579,28 +601,28 @@ public class ventanaIngrediente extends javax.swing.JFrame {
         txtTipoIngrediente.setText(jTableIngredientes.getValueAt(filaSeleccionada, 4).toString());
         txtProveedorIngrediente.setText(jTableIngredientes.getValueAt(filaSeleccionada, 5).toString());
 
-        
+
     }//GEN-LAST:event_jTableIngredientesMouseClicked
 
     private void lblModificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblModificarMouseClicked
-       
+
         int id = Integer.parseInt(txtId.getText());
         String nombre = txtNombreIngrediente.getText();
         String marca = txtMarcaIngrediente.getText();
         String unidad = txtUnidadIngrediente.getText();
         String tipo = txtTipoIngrediente.getText().toUpperCase();
         String proveedor = txtProveedorIngrediente.getText();
-        
-        if(nombre.isEmpty()||marca.isEmpty()||unidad.isEmpty()||tipo.isEmpty()||proveedor.isEmpty()){
+
+        if (nombre.isEmpty() || marca.isEmpty() || unidad.isEmpty() || tipo.isEmpty() || proveedor.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Por favor, complete todos los campos.", "Campos Vacíos", JOptionPane.WARNING_MESSAGE);
         }
-        
+
         try {
             Modificar modificar = new Modificar();
             modificar.modificarIngrediente(id, nombre, marca, unidad, tipo, proveedor);
             Mostrar.mostrarDatosIngredientes();
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error: "+e);
+            JOptionPane.showMessageDialog(null, "Error: " + e);
         }
 
     }//GEN-LAST:event_lblModificarMouseClicked
@@ -619,9 +641,41 @@ public class ventanaIngrediente extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_lblEliminarMouseClicked
 
-  
+    private void txtNombreIngredienteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreIngredienteKeyTyped
+        char c = evt.getKeyChar();
+        if (!Character.isLetter(c) && c != KeyEvent.VK_BACK_SPACE) {
+            evt.consume();
+            Toolkit.getDefaultToolkit().beep();
+
+        }
+    }//GEN-LAST:event_txtNombreIngredienteKeyTyped
+
+    private void txtUnidadIngredienteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUnidadIngredienteKeyTyped
+        char c = evt.getKeyChar();
+        if (!Character.isLetter(c) && c != KeyEvent.VK_BACK_SPACE) {
+            evt.consume();
+            Toolkit.getDefaultToolkit().beep();
+
+        }     }//GEN-LAST:event_txtUnidadIngredienteKeyTyped
+
+    private void txtProveedorIngredienteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtProveedorIngredienteKeyTyped
+        char c = evt.getKeyChar();
+        if (!Character.isLetter(c) && c != KeyEvent.VK_BACK_SPACE) {
+            evt.consume();
+            Toolkit.getDefaultToolkit().beep();
+
+        }     }//GEN-LAST:event_txtProveedorIngredienteKeyTyped
+
+    private void txtTipoIngredienteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTipoIngredienteKeyTyped
+        char c = evt.getKeyChar();
+        if (!Character.isLetter(c) && c != KeyEvent.VK_BACK_SPACE) {
+            evt.consume();
+            Toolkit.getDefaultToolkit().beep();
+
+        }     }//GEN-LAST:event_txtTipoIngredienteKeyTyped
+
     public static void main(String args[]) {
-    
+
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new ventanaIngrediente().setVisible(true);
