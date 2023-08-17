@@ -1,16 +1,19 @@
-
 package Ventanas;
+
 import Clases.*;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.Calendar;
 import javax.swing.JOptionPane;
 
 public class ventanaReporte extends javax.swing.JFrame {
 
     public ventanaReporte() {
         initComponents();
-        Mostrar.mostrarDatosProveedores();
+        Mostrar.mostrarReporte();
     }
 
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -20,20 +23,12 @@ public class ventanaReporte extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
-        jPanel8 = new javax.swing.JPanel();
-        lblAgregar = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTableProveedores = new javax.swing.JTable();
+        jTableReporte = new javax.swing.JTable();
         jPanel12 = new javax.swing.JPanel();
         lblSalir = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        spinnerAñoFinal = new javax.swing.JSpinner();
-        spinnerDiaFinal = new javax.swing.JSpinner();
-        spinnerMesFinal = new javax.swing.JSpinner();
-        jSpinner4 = new javax.swing.JSpinner();
-        jSpinner5 = new javax.swing.JSpinner();
-        spinnerAñoInicial = new javax.swing.JSpinner();
+        txtBuscar = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
 
@@ -59,41 +54,8 @@ public class ventanaReporte extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(245, 245, 245));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel7.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
-        jLabel7.setText("Fecha final");
-        jPanel4.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, -1, -1));
-
-        jPanel8.setBackground(new java.awt.Color(245, 191, 174));
-
-        lblAgregar.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
-        lblAgregar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblAgregar.setText("Buscar");
-        lblAgregar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lblAgregar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblAgregarMouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
-        jPanel8.setLayout(jPanel8Layout);
-        jPanel8Layout.setHorizontalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(lblAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        jPanel8Layout.setVerticalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(lblAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
-        jPanel4.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, 180, -1));
-
-        jTableProveedores.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
-        jTableProveedores.setModel(new javax.swing.table.DefaultTableModel(
+        jTableReporte.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        jTableReporte.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
                 {},
@@ -104,9 +66,9 @@ public class ventanaReporte extends javax.swing.JFrame {
 
             }
         ));
-        jScrollPane1.setViewportView(jTableProveedores);
+        jScrollPane1.setViewportView(jTableReporte);
 
-        jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 40, 480, 390));
+        jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 90, 770, 440));
 
         jPanel12.setBackground(new java.awt.Color(245, 191, 174));
 
@@ -114,6 +76,11 @@ public class ventanaReporte extends javax.swing.JFrame {
         lblSalir.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblSalir.setText("Salir");
         lblSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblSalir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblSalirMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
@@ -133,14 +100,15 @@ public class ventanaReporte extends javax.swing.JFrame {
         jPanel4.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 470, -1, -1));
 
         jLabel17.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
-        jLabel17.setText("Fecha inicial");
-        jPanel4.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, -1, -1));
-        jPanel4.add(spinnerAñoFinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 80, -1, 30));
-        jPanel4.add(spinnerDiaFinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 80, -1, 30));
-        jPanel4.add(spinnerMesFinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 80, -1, 30));
-        jPanel4.add(jSpinner4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, -1, 30));
-        jPanel4.add(jSpinner5, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 40, -1, 30));
-        jPanel4.add(spinnerAñoInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 40, -1, 30));
+        jLabel17.setText("Buscar");
+        jPanel4.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 50, -1, -1));
+
+        txtBuscar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtBuscarKeyReleased(evt);
+            }
+        });
+        jPanel4.add(txtBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 50, 320, 30));
 
         jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 1280, 530));
 
@@ -180,12 +148,22 @@ public class ventanaReporte extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void lblAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAgregarMouseClicked
+    private void txtBuscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarKeyReleased
+
+        Buscar.BuscarReporte(txtBuscar.getText());
+
+    }//GEN-LAST:event_txtBuscarKeyReleased
+
+    private void lblSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSalirMouseClicked
+    
+        VentanaLogin newframe = new VentanaLogin();
+        newframe.setVisible(true);
+        this.dispose();
         
-    }//GEN-LAST:event_lblAgregarMouseClicked
+    }//GEN-LAST:event_lblSalirMouseClicked
 
     public static void main(String args[]) {
-    
+
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new ventanaReporte().setVisible(true);
@@ -197,22 +175,14 @@ public class ventanaReporte extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JSpinner jSpinner4;
-    private javax.swing.JSpinner jSpinner5;
-    public static javax.swing.JTable jTableProveedores;
-    private javax.swing.JLabel lblAgregar;
+    public static javax.swing.JTable jTableReporte;
     private javax.swing.JLabel lblSalir;
-    private javax.swing.JSpinner spinnerAñoFinal;
-    private javax.swing.JSpinner spinnerAñoInicial;
-    private javax.swing.JSpinner spinnerDiaFinal;
-    private javax.swing.JSpinner spinnerMesFinal;
+    private javax.swing.JTextField txtBuscar;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,4 +1,3 @@
-
 package Ventanas;
 
 import Clases.*;
@@ -6,15 +5,12 @@ import java.awt.event.KeyEvent;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
-
 public class ventanaCorreos extends javax.swing.JFrame {
 
- 
     public ventanaCorreos() {
         initComponents();
         Mostrar.mostrarDatosProveedoresCorreos();
     }
-
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -79,6 +75,11 @@ public class ventanaCorreos extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/IconoCircular.png"))); // NOI18N
+        jLabel15.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel15MouseClicked(evt);
+            }
+        });
         jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 0, 170, 110));
 
         jPanel2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 90));
@@ -495,7 +496,6 @@ public class ventanaCorreos extends javax.swing.JFrame {
 
     private void lblTelefonosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTelefonosMouseClicked
 
-        
         ventanaTelefonos newframe = new ventanaTelefonos();
         newframe.setVisible(true);
         this.dispose();
@@ -504,21 +504,20 @@ public class ventanaCorreos extends javax.swing.JFrame {
 
     private void lblAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAgregarMouseClicked
 
-
         int id = Integer.parseInt(txtIdPro.getText());
         String correo = txtCorreo.getText();
         String departamento = txtDepartamento.getText();
 
         try {
-            
+
             Agregar agregar = new Agregar();
             agregar.agregarCorreo(id, correo, departamento);
             Mostrar.mostrarDatosProveedoresCorreos();
-            
+
         } catch (Exception e) {
-            
-            JOptionPane.showMessageDialog(null,"Error: "+e);
-            
+
+            JOptionPane.showMessageDialog(null, "Error: " + e);
+
         }
 
 
@@ -565,16 +564,16 @@ public class ventanaCorreos extends javax.swing.JFrame {
         int idpro = Integer.parseInt(txtIdPro.getText());
         String correo = txtCorreo.getText();
         String departamento = txtDepartamento.getText();
-        try{
-            
+        try {
+
             Modificar modificar = new Modificar();
-             modificar.modificarCorreoPro(id,idpro, correo, departamento);
-             Mostrar.mostrarDatosProveedoresCorreos(); 
-             
-        }catch(Exception e){
-            JOptionPane.showMessageDialog(null, "ERROR: " +e);
+            modificar.modificarCorreoPro(id, idpro, correo, departamento);
+            Mostrar.mostrarDatosProveedoresCorreos();
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "ERROR: " + e);
         }
-        
+
     }//GEN-LAST:event_lblModificarMouseClicked
 
     private void txtIdProActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdProActionPerformed
@@ -582,33 +581,39 @@ public class ventanaCorreos extends javax.swing.JFrame {
     }//GEN-LAST:event_txtIdProActionPerformed
 
     private void lblEliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblEliminarMouseClicked
-        
+
         try {
-            
+
             int id = Integer.parseInt(txtIdCorreo.getText());
             Eliminar eliminar = new Eliminar();
             eliminar.eliminarCorreoProveedor(id);
             Mostrar.mostrarDatosProveedoresCorreos();
-            
+
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "REGISTRO NO DETECTADO" +e);
+            JOptionPane.showMessageDialog(null, "REGISTRO NO DETECTADO" + e);
         }
 
     }//GEN-LAST:event_lblEliminarMouseClicked
 
     private void txtIdProKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIdProKeyTyped
-        
+
         char validar = evt.getKeyChar();
-        if(!Character.isDigit(validar)&& validar != KeyEvent.VK_BACK_SPACE){
+        if (!Character.isDigit(validar) && validar != KeyEvent.VK_BACK_SPACE) {
             getToolkit().beep();
             evt.consume();
-            
+
         }
     }//GEN-LAST:event_txtIdProKeyTyped
 
     private void txtDepartamentoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDepartamentoKeyTyped
-        
+
     }//GEN-LAST:event_txtDepartamentoKeyTyped
+
+    private void jLabel15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel15MouseClicked
+        VentanaLogin newframe = new VentanaLogin();
+        newframe.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jLabel15MouseClicked
 
     /**
      * @param args the command line arguments

@@ -95,6 +95,11 @@ public class ventanaIngrediente extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/IconoCircular.png"))); // NOI18N
+        jLabel15.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel15MouseClicked(evt);
+            }
+        });
         jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 0, 170, 110));
 
         jPanel2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 90));
@@ -673,6 +678,12 @@ public class ventanaIngrediente extends javax.swing.JFrame {
             Toolkit.getDefaultToolkit().beep();
 
         }     }//GEN-LAST:event_txtTipoIngredienteKeyTyped
+
+    private void jLabel15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel15MouseClicked
+        VentanaLogin newframe = new VentanaLogin();
+        newframe.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jLabel15MouseClicked
 
     public static void main(String args[]) {
 

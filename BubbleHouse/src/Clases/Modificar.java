@@ -218,10 +218,10 @@ public class Modificar {
             java.sql.CallableStatement modificar;
             modificar = ConexionSql.conectar.prepareCall("call ModificarCorreoPro (?,?,?,?)");
 
-            modificar.setInt(1, idcorreo);
-            modificar.setInt(2, idpro);
-            modificar.setString(3, correo);
-            modificar.setString(4, departamento);
+            modificar.setInt(4, idcorreo);
+            modificar.setInt(1, idpro);
+            modificar.setString(2, correo);
+            modificar.setString(3, departamento);
 
             modificar.execute();
             JOptionPane.showMessageDialog(null, "CORREO MODIFICADO");

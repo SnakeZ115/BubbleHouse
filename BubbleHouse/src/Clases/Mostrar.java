@@ -17,14 +17,14 @@ public class Mostrar {
             String SQL = "{call MostrarCajeros}";
             Statement st = ConexionSql.conectar.createStatement();
             ResultSet rs = st.executeQuery(SQL);
-            while(rs.next()){
+            while (rs.next()) {
                 ventanaSalidas.cmbCajeros.addItem(rs.getString("NombreEmp"));
             }
         } catch (SQLException ex) {
             Logger.getLogger(Mostrar.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
     public static void mostrarDatosEmpleados() {
         String[] titulos = {"Codigo", "Nombres", "Apellidos", "Calle y Numero", "Puesto", "Colonia"};
         String[] registros = new String[6];
@@ -174,7 +174,7 @@ public class Mostrar {
 
     public static void mostrarDatosTelefonosEmpleados() {
 
-        String[] titulos = {"Codigo","CodigoEmp", "Nombre", "Apellido", "Numero"};
+        String[] titulos = {"Codigo", "CodigoEmp", "Nombre", "Apellido", "Numero"};
         String[] registros = new String[5];
 
         DefaultTableModel modelo = new DefaultTableModel(null, titulos);
@@ -198,10 +198,10 @@ public class Mostrar {
             JOptionPane.showMessageDialog(null, "ERROR " + e);
         }
     }
-    
-     public static void mostrarDatosTelefonosProveedor() {
 
-        String[] titulos = {"Codigo","CodigoPro", "Nombre", "Apellido", "Numero"};
+    public static void mostrarDatosTelefonosProveedor() {
+
+        String[] titulos = {"Codigo", "CodigoPro", "Nombre", "Apellido", "Numero"};
         String[] registros = new String[5];
 
         DefaultTableModel modelo = new DefaultTableModel(null, titulos);
@@ -221,6 +221,37 @@ public class Mostrar {
 
             }
             ventanaTelefonos.jTableProveedores.setModel(modelo);
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "ERROR " + e);
+        }
+    }
+
+    public static void mostrarReporte() {
+
+        String[] titulos = {"Empleado", "CodigoBebida", "FechaSalida", "NombreIngrediente", "Tamaño", "Base", "Perlas", "Leche"};
+        String[] registros = new String[8];
+
+        DefaultTableModel modelo = new DefaultTableModel(null, titulos);
+        String SQL = "{call mostrarDetallesBebidas}";
+        try {
+
+            Statement st = ConexionSql.conectar.createStatement();
+            ResultSet rs = st.executeQuery(SQL);
+            while (rs.next()) {
+
+                registros[0] = rs.getString("NombreEmp");
+                registros[1] = rs.getString("idBebidas");
+                registros[2] = rs.getString("FechaSalida");
+                registros[3] = rs.getString("NombreIngrediente");
+                registros[4] = rs.getString("ConversionTamanio(idTamanioBebida)");
+                registros[5] = rs.getString("GramosBase")+ " gr";
+                registros[6] = rs.getString("GramosPerlas") + " gr";
+                registros[7] = rs.getString("MililitrosLeche") + " ml";
+
+                modelo.addRow(registros);
+
+            }
+            ventanaReporte.jTableReporte.setModel(modelo);
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "ERROR " + e);
         }

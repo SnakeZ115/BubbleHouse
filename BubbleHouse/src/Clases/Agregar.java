@@ -280,9 +280,9 @@ public class Agregar {
 
             java.sql.CallableStatement agregar;
             agregar = ConexionSql.conectar.prepareCall("{call AltaCorreoPro(?,?,?)}");
-            agregar.setInt(3, idpro);
-            agregar.setString(1, correo);
-            agregar.setString(2, depar);
+            agregar.setInt(1, idpro);
+            agregar.setString(2, correo);
+            agregar.setString(3, depar);
             agregar.execute();
             JOptionPane.showMessageDialog(null, "CORREO AGREGADO");
 
@@ -298,7 +298,7 @@ public class Agregar {
         try {
 
             java.sql.CallableStatement verificacion;
-            verificacion = ConexionSql.conectar.prepareCall("{call BuscarIdEmpleado(?, ?)}");
+            verificacion = ConexionSql.conectar.prepareCall("{call BuscarEmpleadoTelefono(?, ?)}");
             verificacion.setInt(1, id);
             verificacion.registerOutParameter(2, Types.INTEGER);
             verificacion.execute();
@@ -306,7 +306,7 @@ public class Agregar {
 
             if (respuestaId == 0) {
 
-                JOptionPane.showMessageDialog(null, "PROOVEDOR INEXISTENTE");
+                JOptionPane.showMessageDialog(null, "EMPLEADO INEXISTENTE");
 
             } else {
                 
@@ -342,7 +342,7 @@ public class Agregar {
         try {
 
             java.sql.CallableStatement verificacion;
-            verificacion = ConexionSql.conectar.prepareCall("{call BuscarIdProovedor(?, ?)}");
+            verificacion = ConexionSql.conectar.prepareCall("{call BuscarProveedorTelefono(?, ?)}");
             verificacion.setInt(1, id);
             verificacion.registerOutParameter(2, Types.INTEGER);
             verificacion.execute();
@@ -358,8 +358,8 @@ public class Agregar {
 
                     java.sql.CallableStatement agregar;
                     agregar = ConexionSql.conectar.prepareCall("{call AltaTelefonoPro(?,?)}");
-                    agregar.setInt(1, id);
-                    agregar.setString(2, telefono);
+                    agregar.setInt(2, id);
+                    agregar.setString(1, telefono);
                     agregar.execute();
                     JOptionPane.showMessageDialog(null, "TELÉFONO AGREGADO");
 

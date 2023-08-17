@@ -1,21 +1,17 @@
-
 package Ventanas;
 
 import Clases.*;
 import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 
-
 public class ventanaTelefonos extends javax.swing.JFrame {
 
-    
     public ventanaTelefonos() {
         initComponents();
         Mostrar.mostrarDatosTelefonosEmpleados();
         Mostrar.mostrarDatosTelefonosProveedor();
     }
 
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -85,6 +81,11 @@ public class ventanaTelefonos extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/IconoCircular.png"))); // NOI18N
+        jLabel15.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel15MouseClicked(evt);
+            }
+        });
         jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 0, 170, 110));
 
         jPanel2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 90));
@@ -314,6 +315,11 @@ public class ventanaTelefonos extends javax.swing.JFrame {
         lblProovedores.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblProovedores.setText("Proovedores");
         lblProovedores.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblProovedores.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblProovedoresMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -552,7 +558,11 @@ public class ventanaTelefonos extends javax.swing.JFrame {
     }//GEN-LAST:event_lblLotesMouseClicked
 
     private void lblCorreosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCorreosMouseClicked
-        // TODO add your handling code here:
+
+        ventanaCorreos newframe = new ventanaCorreos();
+        newframe.setVisible(true);
+        this.dispose();
+
     }//GEN-LAST:event_lblCorreosMouseClicked
 
     private void txtBuscar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscar1ActionPerformed
@@ -679,7 +689,7 @@ public class ventanaTelefonos extends javax.swing.JFrame {
 
             telefonoProovedores = txtTelefonoProovedores.getText();
             telefonoEmpleados = txtTelefonoEmpleados.getText();
-            
+
             Eliminar eliminar = new Eliminar();
 
             if (telefonoProovedores.isEmpty() && idProovedores == 0) { //AGREGAR TELEFONO EMPLEADOS 
@@ -707,36 +717,46 @@ public class ventanaTelefonos extends javax.swing.JFrame {
     }//GEN-LAST:event_lblEliminarMouseClicked
 
     private void txtTelefonoEmpleadosKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoEmpleadosKeyReleased
-        
-        
-       
+
+
     }//GEN-LAST:event_txtTelefonoEmpleadosKeyReleased
 
     private void txtTelefonoEmpleadosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoEmpleadosKeyTyped
-        
+
         char validar = evt.getKeyChar();
-        if(!Character.isDigit(validar)&& validar != KeyEvent.VK_BACK_SPACE){
+        if (!Character.isDigit(validar) && validar != KeyEvent.VK_BACK_SPACE) {
             getToolkit().beep();
             evt.consume();
-            
+
         }
-        
+
     }//GEN-LAST:event_txtTelefonoEmpleadosKeyTyped
 
     private void txtTelefonoProovedoresKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoProovedoresKeyTyped
 
         char validar = evt.getKeyChar();
-        if(!Character.isDigit(validar)&& validar != KeyEvent.VK_BACK_SPACE){
+        if (!Character.isDigit(validar) && validar != KeyEvent.VK_BACK_SPACE) {
             getToolkit().beep();
             evt.consume();
-            
+
         }
 
     }//GEN-LAST:event_txtTelefonoProovedoresKeyTyped
 
-    
+    private void jLabel15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel15MouseClicked
+        VentanaLogin newframe = new VentanaLogin();
+        newframe.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jLabel15MouseClicked
+
+    private void lblProovedoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblProovedoresMouseClicked
+        ventanaProovedores newframe = new ventanaProovedores();
+        newframe.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_lblProovedoresMouseClicked
+
     public static void main(String args[]) {
-       
+
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new ventanaTelefonos().setVisible(true);
